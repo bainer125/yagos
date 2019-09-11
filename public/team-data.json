@@ -1,0 +1,37 @@
+{"Teams": [
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Calgary",
+		"Full Name":"Calgary Flames","Location":"Calgary","Nickname":"Flames","Abbreviation":"CGY",
+		"Color1":"#C8102E","Color2":"#F1BE48","Color3":"#111111","Color4":"#FFFFFF"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Denver",
+		"Full Name":"Colorado Avalanche","Location":"Colorado","Nickname":"Avalanche","Abbreviation":"COL",
+		"Color1":"#6F263D","Color2":"#236192","Color3":"#A2AAAD","Color4":"#000000"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Winnipeg",
+		"Full Name":"Winnipeg Jets","Location":"Winnipeg","Nickname":"Jets","Abbreviation":"WPG",
+		"Color1":"#041E42","Color2":"#004C97","Color3":"#8E9090","Color4":"#AC162C"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Edmonton",
+		"Full Name":"Edmonton Oilers","Location":"Edmonton","Nickname":"Oilers","Abbreviation":"EDM",
+		"Color1":"#FF4C00","Color2":"#041E42","Color3":"#FFFFFF","Color4":"#FF4C00"
+	},
+	{
+		"Sport":"Ice Hockey","League":"AHL","City":"Bakersfield",
+		"Full Name":"Bakersfield Condors","Location":"Bakersfield","Nickname":"Condors","Abbreviation":"BAK",
+		"Color1":"#FF4C00","Color2":"#041E42","Color3":"#FFFFFF","Color4":"#FF4C00"
+	},
+	{
+		"Sport":"Ice Hockey","League":"AHL","City":"Winnipeg",
+		"Full Name":"Manitoba Moose","Location":"Manitoba","Nickname":"Moose","Abbreviation":"MBA",
+		"Color1":"#041E42","Color2":"#004C97","Color3":"#8E9090","Color4":"#AC162C"
+	},
+	{
+		"Sport":"Ice Hockey","League":"AHL","City":"Grand Rapids",
+		"Full Name":"Grand Rapids Griffins","Location":"Grand Rapids","Nickname":"Griffins","Abbreviation":"GR",
+		"Color1":"#003359","Color2":"#B71234","Color3":"#B3995D","Color4":"#FFFFFF"
+	}
+]}

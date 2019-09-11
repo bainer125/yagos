@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   preserveAspectRatio="xMidYMid meet"
+   width="453.80624"
+   height="127.6161"
+   viewbox="0 0 4000 2000"
+   version="1.1"
+   id="Intermission"
+   sodipodi:docname="intermission.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <metadata
+     id="metadata45">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>scbd</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs43" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1550"
+     id="namedview41"
+     showgrid="false"
+     inkscape:zoom="2.1001071"
+     inkscape:cx="182.70168"
+     inkscape:cy="-27.659928"
+     inkscape:window-x="900"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="mainGroup"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="true" />
+  <title
+     id="title2">scbd</title>
+  <style
+     type="text/css"
+     id="style6" />
+  <g
+     style="display:inline"
+     id="mainGroup"
+     inkscape:label="scoreboard"
+     transform="translate(205.7038,102.37572)">
+    <rect
+       y="-67.375725"
+       x="21.199326"
+       height="92.616104"
+       width="226.90312"
+       id="awayColor"
+       class="awayColor1"
+       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.51201975;stroke-opacity:1"
+       inkscape:label="awayColor" />
+    <rect
+       y="-67.375725"
+       x="-205.7038"
+       height="92.616104"
+       width="226.90312"
+       id="homeColor"
+       class="homeColor1"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.5157209;stroke-opacity:1"
+       inkscape:label="homeColor" />
+    <rect
+       y="-67.375732"
+       x="-43.329086"
+       height="92.616119"
+       width="129.05682"
+       id="scoreShade"
+       style="fill:#000000;fill-opacity:0.44444448;stroke:none;stroke-width:0.49186298;stroke-opacity:1" />
+    <rect
+       y="-102.37572"
+       x="-205.7038"
+       height="34.999996"
+       width="453.80624"
+       id="periodBack"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.44835344;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="-125.2312"
+       y="-0.85393578"
+       id="homeName"
+       inkscape:label="homeName">CAN</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="164.27785"
+       y="-3.471066"
+       id="awayName"
+       inkscape:label="awayName">USA</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="20.475658"
+       y="-74.899567"
+       id="periodText">End of 1st</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="-10.704814"
+       y="-2.7586017"
+       id="homeScore">2</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="55.95845"
+       y="-2.9949002"
+       id="awayScore">1</text>
+  </g>
+</svg>

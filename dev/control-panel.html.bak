@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>hockey-scoreboard</title>
+  </head>
+  <body>
+    <div style="text-align: center;"><button value="true" name="btn_clock" type="submit" style="font-size:20pt; width: 200px; height: 47px;">Start
+        Clock</button></div>
+  </body>
+</html>

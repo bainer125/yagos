@@ -1,0 +1,15 @@
+<html lang="en">
+	<object data="scbd.svg" width="700" height="300"></object>
+	<script type="text/javascript">
+
+		console.log("Started Listening");
+
+		var evtSource = new EventSource("/updates");
+
+		evtSource.addEventListener("clock", function(e) {
+			
+		    console.log(e.data);
+		    document.getElementById("clockText").innerHTML = e.data;
+		})
+	</script>
+</html>
