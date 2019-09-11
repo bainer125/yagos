@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-  shape-rendering="crispEdges"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -8,11 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   shape-rendering="crispEdges"
    width="702.1369"
    height="70"
    version="1.1"
    id="svg39"
-   sodipodi:docname="scbd.svg"
+   sodipodi:docname="scoreboard.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata45">
@@ -37,15 +37,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1539"
+     inkscape:window-width="1366"
+     inkscape:window-height="718"
      id="namedview41"
      showgrid="false"
-     inkscape:zoom="2.1001071"
-     inkscape:cx="370.65653"
-     inkscape:cy="-44.143958"
-     inkscape:window-x="900"
-     inkscape:window-y="32"
+     inkscape:zoom="1.0500536"
+     inkscape:cx="230.11096"
+     inkscape:cy="-35.891804"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="scoreboard"
      inkscape:pagecheckerboard="true"
@@ -105,14 +105,16 @@
        x="-11.903652"
        y="27"
        id="homeName"
-       inkscape:label="homeName">CAN</text>
+       inkscape:label="homeName"
+       class="homeLocation">CAN</text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none"
        x="243.56946"
        y="27"
        id="awayName"
-       inkscape:label="awayName">USA</text>
+       inkscape:label="awayName"
+       class="awayLocation">USA</text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"

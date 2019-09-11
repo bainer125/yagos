@@ -477,4 +477,8 @@ function update_team_info(team,data){
 	for (i=0,len=abbr.length;i<len;i++){
 		abbr[i].innerHTML=data.Abbreviation;
 	}
+	var loc = scoreboard.getElementsByClassName(team+"Location"),i,len;
+	for (i=0,len=loc.length;i<len;i++){
+		loc[i].innerHTML=data.Location;
+	}
 }
