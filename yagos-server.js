@@ -330,7 +330,7 @@ app.post('/confirm-update',function(req,res){
   		var d = update.indexOf(req.body.confirmation);
   		if(d>-1){
 			update.splice(d,1);
-			console.log("Received "+req.body.confirmation);
+			console.log("Overlay received "+req.body.confirmation);
   		}
 	}
     res.end();

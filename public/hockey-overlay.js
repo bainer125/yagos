@@ -1,8 +1,11 @@
 
+var visuals = [];
+
 var a = document.getElementById('scoreboard');
 var scoreboard;
 a.addEventListener("load",function() {
     scoreboard = a.contentDocument;
+    visuals.push(scoreboard);
     //console.log(scoreboard);
     update_team_info("home",home_info);
 	update_team_info("away",away_info);
@@ -12,10 +15,9 @@ var b = document.getElementById('intermission');
 var intermission;
 b.addEventListener("load",function() {
     intermission = b.contentDocument;
+    visuals.push(intermission);
     //console.log(scoreboard);
 }, false);
-
-
 
 
 
@@ -468,17 +470,21 @@ function show_intermission(){
 }
 
 function update_team_info(team,data){
-	var fill = scoreboard.getElementsByClassName(team+"Color1"),i,len;
-	console.log(team+"Color1");
-	for (i=0,len=fill.length;i<len;i++){
-		fill[i].style.fill=data.Color1;
-	}
-	var abbr = scoreboard.getElementsByClassName(team+"Abbreviation"),i,len;
-	for (i=0,len=abbr.length;i<len;i++){
-		abbr[i].innerHTML=data.Abbreviation;
-	}
-	var loc = scoreboard.getElementsByClassName(team+"Location"),i,len;
-	for (i=0,len=loc.length;i<len;i++){
-		loc[i].innerHTML=data.Location;
+	var visLength = visuals.length;
+	console.log(visuals);
+	for (var j = 0; j < visLength; j++) {
+		var fill = visuals[j].getElementsByClassName(team+"Color1"),i,len;
+		console.log(team+"Color1");
+		for (i=0,len=fill.length;i<len;i++){
+			fill[i].style.fill=data.Color1;
+		}
+		var abbr = visuals[j].getElementsByClassName(team+"Abbreviation"),i,len;
+		for (i=0,len=abbr.length;i<len;i++){
+			abbr[i].innerHTML=data.Abbreviation;
+		}
+		var loc = visuals[j].getElementsByClassName(team+"Location"),i,len;
+		for (i=0,len=loc.length;i<len;i++){
+			loc[i].innerHTML=data.Location;
+		}
 	}
 }

@@ -102,6 +102,7 @@
        x="-125.2312"
        y="-0.85393578"
        id="homeName"
+       class="homeAbbreviation"
        inkscape:label="homeName">CAN</text>
     <text
        xml:space="preserve"
@@ -109,6 +110,7 @@
        x="164.27785"
        y="-3.471066"
        id="awayName"
+       class="awayAbbreviation"
        inkscape:label="awayName">USA</text>
     <text
        xml:space="preserve"
