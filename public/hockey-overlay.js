@@ -1,21 +1,27 @@
 
 var visuals = [];
 
-var a = document.getElementById('scoreboard');
+var graphics = {};
+
+var animations = ["showGraphic","hideGraphic","homeGoal","awayGoal","homePenalty","awayPenalty"];
+
+var a = document.getElementById('Scoreboard');
 var scoreboard;
 a.addEventListener("load",function() {
     scoreboard = a.contentDocument;
     visuals.push(scoreboard);
+    graphics["Scoreboard"]=scoreboard;
     //console.log(scoreboard);
     update_team_info("home",home_info);
 	update_team_info("away",away_info);
 }, false);
 
-var b = document.getElementById('intermission');
+var b = document.getElementById('Intermission');
 var intermission;
 b.addEventListener("load",function() {
     intermission = b.contentDocument;
     visuals.push(intermission);
+    graphics["Intermission"]=intermission;
     //console.log(scoreboard);
 }, false);
 
@@ -23,31 +29,9 @@ b.addEventListener("load",function() {
 
 var game = new h_scbd("",update_timers);
 
-var current = {
-	Mode: "Ice Hockey",
+var current = {};
 
-	// Sports graphics
-	Game: 0,
-	Scoreboard: true,
-	Intermission: false,
-	Commercial: false,
-	Full_Screen: false,
-	Player_Info: false,
-	Player_Stats: false,
-	Coach_Info: false,
-	Coach_Stats: false,
-
-	// News graphics
-	Lower_Third: false,
-
-	// Generic graphics
-	Ticker: false,
-
-	Size_x: 1920,
-	Size_y: 1080,
-	Animations: true,
-	Keyer: false,
-};
+var old_current = {};
 
 var home_info = {
 	"Sport": "Ice Hockey",
@@ -178,10 +162,11 @@ evtSource.addEventListener("full", function(e) {
 
 evtSource.addEventListener("graphics", function(e) {
 	var graph = JSON.parse(e.data);
+	Object.assign(old_current,current);
 	Object.assign(current,graph);
     console.log(graph);
-    show_scoreboard();
-    show_intermission();
+    show_graphic("Scoreboard",true);
+    show_graphic("Intermission",true);
     send_confirmation("graphics");
 })
 
@@ -440,34 +425,50 @@ function sortWithIndeces(toSort) {
   	return toSort;
 }
 
-function send_event(button,value){
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "/overlay", true);
-	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.send(JSON.stringify({
-	    "button": button, "value": value
-	}));
+
+// New function to show or hide specific graphic
+function show_graphic(graphic,animate){
+	if(current[graphic]!=old_current[graphic]){
+
+		if(animate){
+			// Show graphic
+			if(current[graphic]){
+				var a = graphics[graphic].getElementsByClassName("showGraphic");
+				for (i=0,len=a.length;i<len;i++){
+					a[i].beginElement();
+				}
+			}
+
+			// Hide graphic
+			else{
+				var a = graphics[graphic].getElementsByClassName("hideGraphic");
+				for (i=0,len=a.length;i<len;i++){
+					a[i].beginElement();
+				}
+			}
+		}
+		else{
+			if(current[graphic]){
+				hide_show(graphic,true);
+			}
+			else{
+				hide_show(graphic,false);
+			}
+		}
+	}
 }
 
-function show_scoreboard(){
-	if(current.Scoreboard){
-		console.log("set visibility");
-		console.log(scoreboard);
-		document.getElementById("scoreboard").style.display="inline";
+function hide_show(id,bool){
+	if(bool){
+		document.getElementById(id).style.display="inline";
 	}
 	else{
-		document.getElementById("scoreboard").style.display="none";
+		document.getElementById(id).style.display="none";
 	}
 }
 
-function show_intermission(){
-	if(current.Intermission){
-		document.getElementById("intermission").style.display="inline";
-	}
-	else{
-		document.getElementById("intermission").style.display="none";
-	}
-}
+
+
 
 function update_team_info(team,data){
 	var visLength = visuals.length;
@@ -487,4 +488,17 @@ function update_team_info(team,data){
 			loc[i].innerHTML=data.Location;
 		}
 	}
+}
+
+
+
+
+
+function send_event(button,value){
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "/overlay", true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send(JSON.stringify({
+	    "button": button, "value": value
+	}));
 }

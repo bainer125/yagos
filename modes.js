@@ -76,20 +76,22 @@ class timer {
 
 class h_scbd {
 	constructor(name,callback){
-		this.update = callback || function(){};
-		this.name = name;
-		this.period = 1;
-		this.clock = new timer(20, true, this.update);
-		this.home_score = 0;
+		this.update = callback || function(){};		// Function to be run on timer update
+		this.name = name;		// Game name
+		this.period = 1;		// Period
+		this.clock = new timer(20, true, this.update);	// Main clock
+		this.home_score = 0;	// Scores
 		this.away_score = 0;
-		this.home_shots = 0;
+		this.home_shots = 0;	// Shots
 		this.away_shots = 0;
-		this.home_pen = [];
+		this.home_pen = [];		// Penalties
 		this.away_pen = [];
-		this.home_to = false;
+		this.home_to = false;	// Timeouts
 		this.away_to = false;
-		this.home_en = false;
+		this.home_en = false;	// Empty net
 		this.away_en = false;
+		this.home_dp = false;	// Delayed penalty
+		this.away_dp = false;
 
 		this.add_pen = function (team, pen){
 			if (team=='h'){

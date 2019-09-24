@@ -15,6 +15,8 @@
    id="Intermission"
    sodipodi:docname="intermission.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <animate class="showGraphic" attributeName="opacity" values="0;1" dur="0.7s" begin="indefinite" repeatCount="once" fill="freeze" />
+  <animate class="hideGraphic" attributeName="opacity" values="1;0" dur="0.7s" begin="indefinite" repeatCount="once" fill="freeze" />
   <metadata
      id="metadata45">
     <rdf:RDF>
