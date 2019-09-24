@@ -3,6 +3,10 @@ var visuals = [];
 
 var graphics = {};
 
+//************************************************************************************************
+// Make buttons named the same as the animations in order to further modularize events and actions
+//************************************************************************************************
+
 var animations = ["showGraphic","hideGraphic","homeGoal","awayGoal","homePenalty","awayPenalty"];
 
 var a = document.getElementById('Scoreboard');
