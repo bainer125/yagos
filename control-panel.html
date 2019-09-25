@@ -227,6 +227,9 @@
 
 			Object.assign(home_info,home[0]);
 			Object.assign(away_info,away[0]);
+
+			home_info["Logo1"] = '/Teams/'.concat(home_info["League"],"/",home_info["Location"],"/logo1.png");
+			away_info["Logo1"] = '/Teams/'.concat(away_info["League"],"/",away_info["Location"],"/logo1.png");
 			//console.log(away_info);
 /*
 			filtered.forEach(function(item){

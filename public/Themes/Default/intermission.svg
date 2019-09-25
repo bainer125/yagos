@@ -5,18 +5,32 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    preserveAspectRatio="xMidYMid meet"
-   width="453.80624"
-   height="127.6161"
-   viewbox="0 0 4000 2000"
+   width="1000"
+   viewBox="0 0 542 150"
    version="1.1"
    id="Intermission"
    sodipodi:docname="intermission.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
-  <animate class="showGraphic" attributeName="opacity" values="0;1" dur="0.7s" begin="indefinite" repeatCount="once" fill="freeze" />
-  <animate class="hideGraphic" attributeName="opacity" values="1;0" dur="0.7s" begin="indefinite" repeatCount="once" fill="freeze" />
+  <animate
+     class="showGraphic"
+     attributeName="opacity"
+     values="0;1"
+     dur="0.7s"
+     begin="indefinite"
+     repeatCount="once"
+     fill="freeze" />
+  <animate
+     class="hideGraphic"
+     attributeName="opacity"
+     values="1;0"
+     dur="0.7s"
+     begin="indefinite"
+     repeatCount="once"
+     fill="freeze" />
   <metadata
      id="metadata45">
     <rdf:RDF>
@@ -30,7 +44,32 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs43" />
+     id="defs43">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath976">
+      <rect
+         y="-67.375725"
+         x="-249.98727"
+         height="92.616104"
+         width="271.18658"
+         id="rect978"
+         style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.56380457;stroke-opacity:1"
+         inkscape:label="homeLogoMask" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1084">
+      <rect
+         y="-67.375725"
+         x="21.199337"
+         height="92.616104"
+         width="271.18658"
+         id="rect1086"
+         style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.55975837;stroke-opacity:1"
+         inkscape:label="awayLogoClip" />
+    </clipPath>
+  </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -45,8 +84,8 @@
      id="namedview41"
      showgrid="false"
      inkscape:zoom="2.1001071"
-     inkscape:cx="182.70168"
-     inkscape:cy="-27.659928"
+     inkscape:cx="387.23046"
+     inkscape:cy="85.985534"
      inkscape:window-x="900"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -65,25 +104,51 @@
      style="display:inline"
      id="mainGroup"
      inkscape:label="scoreboard"
-     transform="translate(205.7038,102.37572)">
+     transform="translate(249.98727,102.37572)">
     <rect
        y="-67.375725"
        x="21.199326"
        height="92.616104"
-       width="226.90312"
+       width="271.18658"
        id="awayColor"
        class="awayColor1"
-       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.51201975;stroke-opacity:1"
+       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.55975837;stroke-opacity:1"
        inkscape:label="awayColor" />
     <rect
        y="-67.375725"
-       x="-205.7038"
+       x="-249.98727"
        height="92.616104"
-       width="226.90312"
+       width="271.18658"
        id="homeColor"
        class="homeColor1"
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.5157209;stroke-opacity:1"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.56380457;stroke-opacity:1"
        inkscape:label="homeColor" />
+    <image
+       sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/United States/logo1.png"
+       y="-93.709412"
+       x="204.80255"
+       id="image1073"
+       xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/United%20States/logo1.png"
+       style="opacity:0.60477451;image-rendering:optimizeQuality"
+       preserveAspectRatio="xMidYMid meet"
+       height="146.19591"
+       width="146.19591"
+       inkscape:label="awayLogo"
+       class="awayLogo1"
+       clip-path="url(#clipPath1084)" />
+    <image
+       sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
+       y="-107.55975"
+       x="-335.50668"
+       id="image944"
+       xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
+       style="opacity:0.60500004;image-rendering:optimizeQuality"
+       preserveAspectRatio="xMidYMid meet"
+       height="151.66426"
+       width="187.81953"
+       inkscape:label="homeLogo"
+       class="homeLogo1"
+       clip-path="url(#clipPath976)" />
     <rect
        y="-67.375732"
        x="-43.329086"
@@ -93,27 +158,29 @@
        style="fill:#000000;fill-opacity:0.44444448;stroke:none;stroke-width:0.49186298;stroke-opacity:1" />
     <rect
        y="-102.37572"
-       x="-205.7038"
+       x="-249.98727"
        height="34.999996"
-       width="453.80624"
+       width="542.37317"
        id="periodBack"
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.44835344;stroke-opacity:1" />
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.49015605;stroke-opacity:1" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="-125.2312"
-       y="-0.85393578"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:35.35866547px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.6629647"
+       x="-62.30994"
+       y="-0.086311147"
        id="homeName"
-       class="homeAbbreviation"
-       inkscape:label="homeName">CAN</text>
+       class="homeNickname"
+       inkscape:label="homeName">Canada</text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="164.27785"
-       y="-3.471066"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:34.89999771px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.65438527"
+       x="104.01826"
+       y="-0.66670215"
        id="awayName"
-       class="awayAbbreviation"
-       inkscape:label="awayName">USA</text>
+       class="awayNickname"
+       inkscape:label="awayName"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:34.89999771px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;stroke-width:0.65438527"
+         id="tspan866">USA</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
@@ -132,5 +199,23 @@
        x="55.95845"
        y="-2.9949002"
        id="awayScore">1</text>
+    <text
+       xml:space="preserve"
+       style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.6629647"
+       x="-62.482372"
+       y="-32.783287"
+       id="homeName-4"
+       class="homeLocation"
+       inkscape:label="homeLocation">Team</text>
+    <text
+       xml:space="preserve"
+       style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.65438527"
+       x="105.45325"
+       y="-32.952766"
+       id="awayName-8"
+       class="awayLocation"
+       inkscape:label="awayLocation"><tspan
+         style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;stroke-width:0.65438527"
+         id="tspan866-1">Team</tspan></text>
   </g>
 </svg>

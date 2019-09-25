@@ -491,6 +491,14 @@ function update_team_info(team,data){
 		for (i=0,len=loc.length;i<len;i++){
 			loc[i].innerHTML=data.Location;
 		}
+		var loc = visuals[j].getElementsByClassName(team+"Nickname"),i,len;
+		for (i=0,len=loc.length;i<len;i++){
+			loc[i].innerHTML=data.Nickname;
+		}
+		var loc = visuals[j].getElementsByClassName(team+"Logo1"),i,len;
+		for (i=0,len=loc.length;i<len;i++){
+			loc[i].setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', data["Logo1"]);
+		}
 	}
 }
 
