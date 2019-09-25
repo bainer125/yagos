@@ -476,25 +476,44 @@ function hide_show(id,bool){
 
 function update_team_info(team,data){
 	var visLength = visuals.length;
+	var tobeupd = ["City","Full Name","Location","Nickname","Abbreviation"];
 	console.log(visuals);
 	for (var j = 0; j < visLength; j++) {
+
 		var fill = visuals[j].getElementsByClassName(team+"Color1"),i,len;
-		console.log(team+"Color1");
 		for (i=0,len=fill.length;i<len;i++){
-			fill[i].style.fill=data.Color1;
+			if(fill[i].tagName=="stop"){
+				fill[i].style["stop-color"]=data.Color1;
+			}
+			else{
+				fill[i].style.fill=data.Color1;
+			}
 		}
-		var abbr = visuals[j].getElementsByClassName(team+"Abbreviation"),i,len;
-		for (i=0,len=abbr.length;i<len;i++){
-			abbr[i].innerHTML=data.Abbreviation;
+
+		var fill = visuals[j].getElementsByClassName(team+"Color2"),i,len;
+		for (i=0,len=fill.length;i<len;i++){
+			if(fill[i].tagName=="stop"){
+				fill[i].style["stop-color"]=data.Color2;
+			}
+			else{
+				fill[i].style.fill=data.Color2;
+			}
 		}
-		var loc = visuals[j].getElementsByClassName(team+"Location"),i,len;
-		for (i=0,len=loc.length;i<len;i++){
-			loc[i].innerHTML=data.Location;
+
+		var fill = visuals[j].getElementsByClassName(team+"Color3"),i,len;
+		for (i=0,len=fill.length;i<len;i++){
+			if(fill[i].tagName=="stop"){
+				fill[i].style["stop-color"]=data.Color3;
+			}
+			else{
+				fill[i].style.fill=data.Color3;
+			}
 		}
-		var loc = visuals[j].getElementsByClassName(team+"Nickname"),i,len;
-		for (i=0,len=loc.length;i<len;i++){
-			loc[i].innerHTML=data.Nickname;
+
+		for (var k = 0; k < tobeupd.length; k++){
+			update_inner_html(team,data,tobeupd[k],visuals[j]);
 		}
+
 		var loc = visuals[j].getElementsByClassName(team+"Logo1"),i,len;
 		for (i=0,len=loc.length;i<len;i++){
 			loc[i].setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', data["Logo1"]);
@@ -502,8 +521,13 @@ function update_team_info(team,data){
 	}
 }
 
-
-
+// Updates inner HTML for text based values
+function update_inner_html(team,data,type,graphic){
+	var a = graphic.getElementsByClassName(team+type),i,len;
+	for (i=0,len=a.length;i<len;i++){
+		a[i].innerHTML=data[type];
+	}
+}
 
 
 function send_event(button,value){
