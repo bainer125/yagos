@@ -130,12 +130,12 @@ evtSource.addEventListener("clock", function(e) {
 			game.away_pen[index].clock.stop();
 		});
 	}
-    console.log(e.data);
+    //console.log(e.data);
     send_confirmation("clock");
 })
 
 evtSource.addEventListener("static", function(e) {
-	console.log(e.data);
+	//console.log(e.data);
 	var data = JSON.parse(e.data);
 	console.log(game.name);
 	game.home_score=data.home_score
@@ -161,16 +161,20 @@ evtSource.addEventListener("full", function(e) {
 	update_penalty_display();
 	update_clock(full.clock);
     send_confirmation("full");
-    console.log(game);
+    //console.log(game);
 })
 
 evtSource.addEventListener("graphics", function(e) {
 	var graph = JSON.parse(e.data);
 	Object.assign(old_current,current);
 	Object.assign(current,graph);
-    console.log(graph);
-    show_graphic("Scoreboard",true);
-    show_graphic("Intermission",true);
+    //console.log(graph);
+    if(current["Scoreboard"]!=old_current["Scoreboard"]){
+    	show_graphic(document.getElementById("Scoreboard"),true,current["Scoreboard"]);
+    }
+    if(current["Intermission"]!=old_current["Intermission"]){
+    	show_graphic(document.getElementById("Intermission"),true,current["Intermission"]);
+	}
     send_confirmation("graphics");
 })
 
@@ -188,19 +192,35 @@ evtSource.addEventListener("away", function(e) {
 	send_confirmation("away");
 })
 
+evtSource.addEventListener("homeGoal", function(e) {
+	var data = JSON.parse(e.data);
+	game.home_score=data.home_score;
+	play_animation("Scoreboard","homeGoal");
+	send_confirmation("homeGoal");
+	update_score();
+})
+
+evtSource.addEventListener("awayGoal", function(e) {
+	var data = JSON.parse(e.data);
+	game.away_score=data.away_score;
+	play_animation("Scoreboard","awayGoal");
+	send_confirmation("awayGoal");
+	update_score();
+})
+
 
 
 function update_timers(){
 	if(game.clock.min>0){
 		if(game.clock.sec>9){
-			scoreboard.getElementById("clockText").innerHTML=`${game.clock.min}:${game.clock.sec}`;
+			update_html_text(`${game.clock.min}:${game.clock.sec}`,"clockText");
 		}
 		else{
-			scoreboard.getElementById("clockText").innerHTML=`${game.clock.min}:0${game.clock.sec}`;
+			update_html_text(`${game.clock.min}:0${game.clock.sec}`,"clockText");
 		}
 	}
 	else{
-		scoreboard.getElementById("clockText").innerHTML=`${game.clock.sec}.${game.clock.ms}`;
+		update_html_text(`${game.clock.sec}.${game.clock.ms}`,"clockText");
 	}
 
 	var hpr = [];
@@ -268,6 +288,7 @@ function send_confirmation(status){
 	    "confirmation": status
 	}));
 }
+
 function update_period(per){
 	var txt;
 	switch(per){
@@ -291,8 +312,9 @@ function update_period(per){
 		break;
 	}
 	game.period = per;
-	scoreboard.getElementById("periodText").innerHTML=`${txt}`;
+	update_html_text(`${txt}`,"periodText");
 }
+
 function update_penalties(h,a){
 	game.home_pen=[];
 	game.away_pen=[];
@@ -327,74 +349,74 @@ function update_penalty_time(min,sec){
 		text = `${min}:${sec}`;
 	}
 	console.log(text);
-	scoreboard.getElementById("homePenaltyClock").innerHTML=text;
-	scoreboard.getElementById("awayPenaltyClock").innerHTML=text;
-	scoreboard.getElementById("evenPenaltyClock").innerHTML=text;
+	update_html_text(text,"homePenaltyClock");
+	update_html_text(text,"awayPenaltyClock");
+	update_html_text(text,"evenPenaltyClock");
 }
 
 
 
 function update_penalty_display(){
 	if(game.home_pen.length == 0 && game.away_pen.length == 0){
-		scoreboard.getElementById("homePenalty").style.display="none";
-		scoreboard.getElementById("awayPenalty").style.display="none";
-		scoreboard.getElementById("evenPenalty").style.display="none";
+		// scoreboard.getElementById("homePenalty").style.display="none";
+		// scoreboard.getElementById("awayPenalty").style.display="none";
+		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
 	else if(game.home_pen.length == 1 && game.away_pen.length == 0){
-		scoreboard.getElementById("homePenalty").style.display="inline";
-		scoreboard.getElementById("homePenaltyText").innerHTML="Power Play";
-		scoreboard.getElementById("awayPenalty").style.display="none";
-		scoreboard.getElementById("evenPenalty").style.display="none";
+		// scoreboard.getElementById("homePenalty").style.display="inline";
+		// scoreboard.getElementById("homePenaltyText").innerHTML="Power Play";
+		// scoreboard.getElementById("awayPenalty").style.display="none";
+		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
 	else if(game.home_pen.length > 1 && game.away_pen.length == 1){
-		scoreboard.getElementById("homePenalty").style.display="inline";
-		scoreboard.getElementById("homePenaltyText").innerHTML="4 on 3";
-		scoreboard.getElementById("awayPenalty").style.display="none";
-		scoreboard.getElementById("evenPenalty").style.display="none";
+		// scoreboard.getElementById("homePenalty").style.display="inline";
+		// scoreboard.getElementById("homePenaltyText").innerHTML="4 on 3";
+		// scoreboard.getElementById("awayPenalty").style.display="none";
+		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
 	else if(game.home_pen.length > 1 && game.away_pen.length == 0){
-		scoreboard.getElementById("homePenalty").style.display="inline";
-		scoreboard.getElementById("homePenaltyText").innerHTML="5 on 3";
-		scoreboard.getElementById("awayPenalty").style.display="none";
-		scoreboard.getElementById("evenPenalty").style.display="none";
+		// scoreboard.getElementById("homePenalty").style.display="inline";
+		// scoreboard.getElementById("homePenaltyText").innerHTML="5 on 3";
+		// scoreboard.getElementById("awayPenalty").style.display="none";
+		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
 	else if(game.home_pen.length == 0 && game.away_pen.length == 1){
-		scoreboard.getElementById("homePenalty").style.display="none";
-		scoreboard.getElementById("awayPenalty").style.display="inline";
-		scoreboard.getElementById("awayPenaltyText").innerHTML="Power Play";
-		scoreboard.getElementById("evenPenalty").style.display="none";
+		// scoreboard.getElementById("homePenalty").style.display="none";
+		// scoreboard.getElementById("awayPenalty").style.display="inline";
+		// scoreboard.getElementById("awayPenaltyText").innerHTML="Power Play";
+		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
 	else if(game.home_pen.length == 1 && game.away_pen.length > 1){
-		scoreboard.getElementById("homePenalty").style.display="none";
-		scoreboard.getElementById("awayPenalty").style.display="inline";
-		scoreboard.getElementById("awayPenaltyText").innerHTML="4 on 3";
-		scoreboard.getElementById("evenPenalty").style.display="none";
+		// scoreboard.getElementById("homePenalty").style.display="none";
+		// scoreboard.getElementById("awayPenalty").style.display="inline";
+		// scoreboard.getElementById("awayPenaltyText").innerHTML="4 on 3";
+		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
 	else if(game.home_pen.length == 0 && game.away_pen.length > 1){
-		scoreboard.getElementById("homePenalty").style.display="none";
-		scoreboard.getElementById("awayPenalty").style.display="inline";
-		scoreboard.getElementById("awayPenaltyText").innerHTML="5 on 3";
-		scoreboard.getElementById("evenPenalty").style.display="none";
+		// scoreboard.getElementById("homePenalty").style.display="none";
+		// scoreboard.getElementById("awayPenalty").style.display="inline";
+		// scoreboard.getElementById("awayPenaltyText").innerHTML="5 on 3";
+		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
 	else if(game.home_pen.length == 1 && game.away_pen.length == 1){
-		scoreboard.getElementById("homePenalty").style.display="none";
-		scoreboard.getElementById("awayPenalty").style.display="none";
-		scoreboard.getElementById("evenPenalty").style.display="inline";
-		scoreboard.getElementById("evenPenaltyText").innerHTML="4 on 4";
+		// scoreboard.getElementById("homePenalty").style.display="none";
+		// scoreboard.getElementById("awayPenalty").style.display="none";
+		// scoreboard.getElementById("evenPenalty").style.display="inline";
+		// scoreboard.getElementById("evenPenaltyText").innerHTML="4 on 4";
 	}
 
 	else if(game.home_pen.length > 1 && game.away_pen.length > 1){
-		scoreboard.getElementById("homePenalty").style.display="none";
-		scoreboard.getElementById("awayPenalty").style.display="none";
-		scoreboard.getElementById("evenPenalty").style.display="inline";
-		scoreboard.getElementById("evenPenaltyText").innerHTML="3 on 3";
+		// scoreboard.getElementById("homePenalty").style.display="none";
+		// scoreboard.getElementById("awayPenalty").style.display="none";
+		// scoreboard.getElementById("evenPenalty").style.display="inline";
+		// scoreboard.getElementById("evenPenaltyText").innerHTML="3 on 3";
 	}
 }
 function update_clock(time){
@@ -402,17 +424,17 @@ function update_clock(time){
 	update_timers(game);
 }
 function update_score(){
-	scoreboard.getElementById("homeScore").innerHTML=game.home_score;
-	scoreboard.getElementById("awayScore").innerHTML=game.away_score;
+	update_html_text(game.home_score,"Score","home");
+	update_html_text(game.away_score,"Score","away");
 }
 function update_shots(){
-	scoreboard.getElementById("homeShots").innerHTML=game.home_shots;
-	scoreboard.getElementById("awayShots").innerHTML=game.away_shots;
+	update_html_text(game.home_shots,"Shots","home");
+	update_html_text(game.away_shots,"Shots","away");
 }
 
 
 
-
+// Sorts the values from largest to smallest
 function sortWithIndeces(toSort) {
   // Sorts largest to smallest
 	for (var i = 0; i < toSort.length; i++) {
@@ -430,105 +452,100 @@ function sortWithIndeces(toSort) {
 }
 
 
-// New function to show or hide specific graphic
-function show_graphic(graphic,animate){
-	if(current[graphic]!=old_current[graphic]){
-
-		if(animate){
-			// Show graphic
-			if(current[graphic]){
-				var a = graphics[graphic].getElementsByClassName("showGraphic");
-				for (i=0,len=a.length;i<len;i++){
-					a[i].beginElement();
-				}
-			}
-
-			// Hide graphic
-			else{
-				var a = graphics[graphic].getElementsByClassName("hideGraphic");
-				for (i=0,len=a.length;i<len;i++){
-					a[i].beginElement();
-				}
-			}
+// New function to show or hide entire specific graphic
+function show_graphic(a,animate,bool){
+	if(animate){
+		// Show graphic
+		if(bool){
+			play_animation(a.id,"showGraphic");
 		}
+
+		// Hide graphic
 		else{
-			if(current[graphic]){
-				hide_show(graphic,true);
-			}
-			else{
-				hide_show(graphic,false);
-			}
+			play_animation(a.id,"hideGraphic");
 		}
-	}
-}
-
-function hide_show(id,bool){
-	if(bool){
-		document.getElementById(id).style.display="inline";
 	}
 	else{
-		document.getElementById(id).style.display="none";
+		if(bool){
+		a.style.display="inline";
+		}
+		else{
+			a.style.display="none";
+		}
+	}
+}
+
+// Hides or shows element depending on boolean
+function hide_show(a,animate,bool){
+	if(bool){
+		a.style.display="inline";
+	}
+	else{
+		a.style.display="none";
 	}
 }
 
 
+function play_animation(graphic,event){
+	var a = graphics[graphic].getElementsByClassName(event);
+	for (i=0,len=a.length;i<len;i++){
+		a[i].beginElement();
+	}
+}
 
 
 function update_team_info(team,data){
-	var visLength = visuals.length;
 	var tobeupd = ["City","Full Name","Location","Nickname","Abbreviation"];
-	console.log(visuals);
-	for (var j = 0; j < visLength; j++) {
+	var vals = Object.values(graphics);
+	for (const graphic of vals) {
 
-		var fill = visuals[j].getElementsByClassName(team+"Color1"),i,len;
-		for (i=0,len=fill.length;i<len;i++){
-			if(fill[i].tagName=="stop"){
-				fill[i].style["stop-color"]=data.Color1;
-			}
-			else{
-				fill[i].style.fill=data.Color1;
-			}
-		}
+		var fill = graphic.getElementsByClassName(team+"Color1");
+		change_color(fill,data.Color1);
 
-		var fill = visuals[j].getElementsByClassName(team+"Color2"),i,len;
-		for (i=0,len=fill.length;i<len;i++){
-			if(fill[i].tagName=="stop"){
-				fill[i].style["stop-color"]=data.Color2;
-			}
-			else{
-				fill[i].style.fill=data.Color2;
-			}
-		}
+		var fill = graphic.getElementsByClassName(team+"Color2");
+		change_color(fill,data.Color2);
 
-		var fill = visuals[j].getElementsByClassName(team+"Color3"),i,len;
-		for (i=0,len=fill.length;i<len;i++){
-			if(fill[i].tagName=="stop"){
-				fill[i].style["stop-color"]=data.Color3;
-			}
-			else{
-				fill[i].style.fill=data.Color3;
-			}
-		}
+		var fill = graphic.getElementsByClassName(team+"Color3");
+		change_color(fill,data.Color3);
+
+		var fill = graphic.getElementsByClassName(team+"Color4");
+		change_color(fill,data.Color4);
 
 		for (var k = 0; k < tobeupd.length; k++){
-			update_inner_html(team,data,tobeupd[k],visuals[j]);
+			update_inner_html(data,tobeupd[k],team);
 		}
 
-		var loc = visuals[j].getElementsByClassName(team+"Logo1"),i,len;
+		var loc = graphic.getElementsByClassName(team+"Logo1"),i,len;
 		for (i=0,len=loc.length;i<len;i++){
 			loc[i].setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', data["Logo1"]);
 		}
 	}
 }
 
+// To update values, no longer take graphic as input. Simply iterate through all graphics in "graphics".
+// If the graphic is 'false' in the "current" object, skip it. If it is 'true', then iterate through all
+// elements that need to be updated and update them.
+
 // Updates inner HTML for text based values
-function update_inner_html(team,data,type,graphic){
-	var a = graphic.getElementsByClassName(team+type),i,len;
-	for (i=0,len=a.length;i<len;i++){
-		a[i].innerHTML=data[type];
+function update_inner_html(data,type,team=""){
+	var vals = Object.keys(graphics);
+	for (const graphic of vals) {
+		var a = graphics[graphic].getElementsByClassName(team+type),i,len;
+		for (i=0,len=a.length;i<len;i++){
+			a[i].innerHTML=data[type];
+		}
 	}
 }
 
+function update_html_text(data,type,team=""){
+	var vals = Object.keys(graphics);
+	for (const graphic of vals) {
+		var a = graphics[graphic].getElementsByClassName(team+type),i,len;
+		for (i=0,len=a.length;i<len;i++){
+			a[i].innerHTML=data;
+		}
+	}
+}
 
 function send_event(button,value){
 	var xhr = new XMLHttpRequest();
@@ -537,4 +554,15 @@ function send_event(button,value){
 	xhr.send(JSON.stringify({
 	    "button": button, "value": value
 	}));
+}
+
+function change_color(elems,color){
+	for (i=0,len=elems.length;i<len;i++){
+		if(elems[i].tagName=="stop"){
+			elems[i].style["stop-color"]=color;
+		}
+		else{
+			elems[i].style.fill=color;
+		}
+	}
 }

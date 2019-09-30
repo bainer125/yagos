@@ -290,6 +290,16 @@ app.post('/hockey-scoreboard',function(req,res){
 			update.push('static');
 		}
 
+		if (event.button == 'homeGoal'){
+			ih_g[event.game].home_score++;
+			update.push('homeGoal');
+		}
+
+		if (event.button == 'awayGoal'){
+			ih_g[event.game].away_score++;
+			update.push('awayGoal');
+		}
+
 		if (event.button =='add_h_pen'){
 			var pendata = JSON.parse(event.value);
 			ih_g[event.game].add_pen('h',new h_pen(pendata.dur,pendata.num,pendata.infr));
@@ -399,6 +409,12 @@ function ih_update_data(event){
 		break;
 		case 'graphics':
 			return JSON.stringify(current);
+		break;
+		case 'homeGoal':
+			return JSON.stringify(ih_g[current.Game]);
+		break;
+		case 'awayGoal':
+			return JSON.stringify(ih_g[current.Game]);
 		break;
 		case 'home':
 			return JSON.stringify(home_info);

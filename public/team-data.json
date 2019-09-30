@@ -33,5 +33,20 @@
 		"Sport":"Ice Hockey","League":"AHL","City":"Grand Rapids",
 		"Full Name":"Grand Rapids Griffins","Location":"Grand Rapids","Nickname":"Griffins","Abbreviation":"GR",
 		"Color1":"#003359","Color2":"#B71234","Color3":"#B3995D","Color4":"#FFFFFF"
+	},
+	{
+		"Sport":"Ice Hockey","League":"ACHA D2","City":"Troy",
+		"Full Name":"Rensselaer Polytechnic Institute","Location":"Rensselaer","Nickname":"Engineers","Abbreviation":"RPI",
+		"Color1":"#d6001c","Color2":"#ffffff","Color3":"#000000","Color4":"#9ea2a2"
+	},
+	{
+		"Sport":"Ice Hockey","League":"ACHA D2","City":"Durham",
+		"Full Name":"University of New Hampshire","Location":"New Hampshire","Nickname":"Wildcats","Abbreviation":"UNH",
+		"Color1":"#041e42","Color2":"#BBBCBC","Color3":"#ffffff","Color4":"#ffffff"
+	},
+	{
+		"Sport":"Ice Hockey","League":"ACHA D2","City":"Amherst",
+		"Full Name":"University of Massachusetts","Location":"Massachusetts","Nickname":"Minutemen","Abbreviation":"UMass",
+		"Color1":"#881c1c","Color2":"#ffffff","Color3":"#000000","Color4":"#ffffff"
 	}
 ]}
