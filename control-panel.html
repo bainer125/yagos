@@ -35,6 +35,12 @@
 			<select id="game_select" onchange="send_event('game_switch',document.getElementById('game_select').value)">
 			</select>
 		</div>
+		<button class="up" id="btn_Scoreboard" value="true" style="background:green">Scoreboard</button>
+		<button class="up" id="btn_Intermission" value="false" style="background:red">Intermission</button>
+		<button class="up" id="btn_Commercial" value="false" style="background:red">Commercial</button>
+		<button class="up" id="btn_Full_Screen" value="false" style="background:red">Full Screen</button>
+		<button class="up" id="btn_Player_Info" value="false" style="background:red">Player Info</button>
+		<button class="up" id="btn_Test_Overlay" value="false" style="background:red">Move Overlay</button>
 		<button class="up solo graphic" id="btn_Scoreboard" value="true">Scoreboard</button>
 		<button class="up solo graphic" id="btn_Intermission" value="false">Intermission</button>
 		<button class="up solo graphic" id="btn_Commercial" value="false">Commercial</button>
@@ -43,6 +49,12 @@
 		<div>
 		</div>
 	</body>
+
+	<form>
+		<br>Top: <input type="text" id="top_Input">
+		<br>Left: <input type="text" id="left_Input">
+		<br><input type="submit" id="update_Pos">
+	</form>
 	<script type="text/javascript">
 
 		var games = [];
@@ -95,6 +107,11 @@
 			"Logo4": "/Teams/International/Canada/logo4.png",
 		}
 
+		var overlay_pos = {
+			"top": "10px",
+			"left": "5px"
+		}
+
 		window.onload = function() {
 			load_league_data(teams);
 		    document.getElementById("league_select").addEventListener("change",load_team_data);
@@ -102,7 +119,7 @@
 			document.getElementById("away_select").addEventListener("change",change_team);
 		}
 
-
+		// Button click listeners
 		document.getElementById("btn_Scoreboard").addEventListener("click",function(){
 			button_bool("btn_Scoreboard");
 			if(document.getElementById("btn_Scoreboard").classList.contains("solo")){
@@ -142,6 +159,22 @@
 		document.getElementById("btn_Player_Info").addEventListener("click",function(){
 			button_bool("btn_Player_Info");
 		});
+
+		document.getElementById("btn_Test_Overlay").addEventListener("click", function(){
+			button_bool("btn_Test_Overlay");
+			send_event("btn_Test_Overlay", document.getElementById("btn_Test_Overlay").value);
+		});
+
+		document.getElementById("update_Pos").addEventListener("click", function() {
+			overlay_pos.top = document.getElementById("top_Input").value;
+			overlay_pos.left = document.getElementById("left_Input").value;
+
+			// Set values for top and left fields
+			document.getElementById("top_Input").value = overlay_pos.top;
+			document.getElementById("left_Input").value = overlay_pos.left;
+
+			send_event("update_Overlay_Pos", overlay_pos);
+		})
 
 		httpGetAsync("/current-scores/ice-hockey",function(res){
 
