@@ -13,6 +13,8 @@ const {base_scbd} = require('./public/modes.js')
 
 var app = express();
 
+console.log("Server Started");
+
 
 
 const hostname = '127.0.0.1';
@@ -104,6 +106,11 @@ var away_info = {
 	"Logo4": "/Teams/International/Canada/logo4.png",
 }
 
+var overlay_pos = {
+	"top": "10px",
+	"left": "5px"
+}
+
 // Dictionaries of available games for each sport
 
 var ih_g = {}
@@ -154,13 +161,6 @@ app.get('/team-data.json',function(req,res){
 });
 */
 
-
-
-
-
-
-
-
 app.post('/control-panel',function(req,res){
 	if (req.body.button == 'game_switch'){
   		current.Game = req.body.value;
@@ -194,6 +194,30 @@ app.post('/control-panel',function(req,res){
   		}
   		update.push("graphics");
   	}
+
+// ----------------------------------------------------ZS Week 2--------------------------------------------------------------
+  	if (req.body.button == 'btn_Test_Overlay') {
+  		switch(req.body.value) {
+  			case "true": update.push("Move_True");
+  				console.log("Move True");
+  			break;
+  			default: update.push("Move_False");
+  				console.log("Move False")
+  			break;
+  		}
+  		update.push("graphics");
+  	}
+
+  	if(req.body.button == 'update_Overlay_Pos') {
+  		console.log("Recived update overlay call");
+
+  		overlay_pos.top = req.body.value.top;
+  		overlay_pos.left = req.body.value.left;
+
+  		update.push("overlay_pos");
+  		update.push("graphics");
+  	}
+// ----------------------------------------------------ZS Week 2--------------------------------------------------------------
 
   	if (req.body.button == 'home_change'){
   		Object.assign(home_info,req.body.value);
@@ -421,6 +445,9 @@ function ih_update_data(event){
 		break;
 		case 'away':
 			return JSON.stringify(away_info);
+		break;
+		case 'overlay_pos':
+			return JSON.stringify(overlay_pos);
 		break;
 		default:
 			return false;
