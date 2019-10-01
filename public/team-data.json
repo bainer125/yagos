@@ -20,6 +20,26 @@
 		"Color1":"#FF4C00","Color2":"#041E42","Color3":"#FFFFFF","Color4":"#FF4C00"
 	},
 	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Tampa Bay",
+		"Full Name":"Tampa Bay Lightning","Location":"Tampa Bay","Nickname":"Lightning","Abbreviation":"TBL",
+		"Color1":"#002868","Color2":"#ffffff","Color3":"#002868","Color4":"#ffffff"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Pittsburgh",
+		"Full Name":"Pittsburgh Penguins","Location":"Pittsburgh","Nickname":"Penguins","Abbreviation":"PIT",
+		"Color1":"#000000","Color2":"#FCB514","Color3":"#FFFFFF","Color4":"#CFC493"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Minneapolis",
+		"Full Name":"Minnesota Wild","Location":"Minnesota","Nickname":"Wild","Abbreviation":"MIN",
+		"Color1":"#154734","Color2":"#A6192E","Color3":"#DDCBA4","Color4":"#EAAA00"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"San Jose",
+		"Full Name":"San Jose Sharks","Location":"San Jose","Nickname":"Sharks","Abbreviation":"SJS",
+		"Color1":"#006D75","Color2":"#000000","Color3":"#EA7200","Color4":"#FFFFFF"
+	},
+	{
 		"Sport":"Ice Hockey","League":"AHL","City":"Bakersfield",
 		"Full Name":"Bakersfield Condors","Location":"Bakersfield","Nickname":"Condors","Abbreviation":"BAK",
 		"Color1":"#FF4C00","Color2":"#041E42","Color3":"#FFFFFF","Color4":"#FF4C00"

@@ -35,11 +35,11 @@
 			<select id="game_select" onchange="send_event('game_switch',document.getElementById('game_select').value)">
 			</select>
 		</div>
-		<button class="up" id="btn_Scoreboard" value="true">Scoreboard</button>
-		<button class="up" id="btn_Intermission" value="false">Intermission</button>
-		<button class="up" id="btn_Commercial" value="false">Commercial</button>
-		<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
-		<button class="up" id="btn_Player_Info" value="false">Player Info</button>
+		<button class="up solo graphic" id="btn_Scoreboard" value="true">Scoreboard</button>
+		<button class="up solo graphic" id="btn_Intermission" value="false">Intermission</button>
+		<button class="up solo graphic" id="btn_Commercial" value="false">Commercial</button>
+		<button class="up solo graphic" id="btn_Full_Screen" value="false">Full Screen</button>
+		<button class="up solo graphic" id="btn_Player_Info" value="false">Player Info</button>
 		<div>
 		</div>
 	</body>
@@ -105,11 +105,29 @@
 
 		document.getElementById("btn_Scoreboard").addEventListener("click",function(){
 			button_bool("btn_Scoreboard");
+			if(document.getElementById("btn_Scoreboard").classList.contains("solo")){
+				var a = document.getElementsByClassName("graphic");
+				for (var i=0;i<a.length;i++){
+					if(a[i].id!="btn_Scoreboard"){
+						a[i].value="false";
+						send_event(a[i].id,"false");
+					}
+				}
+			}
 			send_event("btn_Scoreboard",document.getElementById("btn_Scoreboard").value);
 		});
 
 		document.getElementById("btn_Intermission").addEventListener("click",function(){
 			button_bool("btn_Intermission");
+			if(document.getElementById("btn_Intermission").classList.contains("solo")){
+				var a = document.getElementsByClassName("graphic");
+				for (var i=0;i<a.length;i++){
+					if(a[i].id!="btn_Intermission"){
+						a[i].value="false";
+						send_event(a[i].id,"false");
+					}
+				}
+			}
 			send_event("btn_Intermission",document.getElementById("btn_Intermission").value);
 		});
 
@@ -150,11 +168,11 @@
 
 		function httpGetAsync(theUrl, callback){
 		    var xmlHttp = new XMLHttpRequest();
-		    xmlHttp.onreadystatechange = function() { 
+		    xmlHttp.onreadystatechange = function() {
 		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
 		            callback(xmlHttp.responseText);
 		    }
-		    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		    xmlHttp.open("GET", theUrl, true); // true for asynchronous
 		    xmlHttp.send(null);
 		}
 
@@ -171,7 +189,7 @@
 			console.log(document.getElementById(btn).value);
 		}
 
-		function load_league_data(ti) {   
+		function load_league_data(ti) {
 
 		    var xobj = new XMLHttpRequest();
 		        xobj.overrideMimeType("application/json");
@@ -203,7 +221,7 @@
 					load_team_data();
 		        }
 		    };
-		    xobj.send(null);  
+		    xobj.send(null);
 		}
 
 		function load_team_data(){
@@ -229,6 +247,7 @@
 				option.text = item["Full Name"];
 				x.add(option);
 			});
+			change_team();
 		}
 
 		function change_team(){
