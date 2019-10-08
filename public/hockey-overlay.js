@@ -462,8 +462,8 @@ function update_shots(){
 	from the left.
 */
 function update_overlay_position() {
-	document.getElementById("scoreboard").style.top = overlay_pos.top;
-	document.getElementById("scoreboard").style.left = overlay_pos.left;
+	document.getElementById("Scoreboard").style.top = overlay_pos.top;
+	document.getElementById("Scoreboard").style.left = overlay_pos.left;
 }
 
 // Sorts the values from largest to smallest
@@ -538,6 +538,8 @@ function update_team_info(team,data){
 		var abbr = visuals[j].getElementsByClassName(team+"Abbreviation"),i,len;
 		for (i=0,len=abbr.length;i<len;i++){
 			abbr[i].innerHTML=data.Abbreviation;
+		}
+	}
 
 	var tobeupd = ["City","Full Name","Location","Nickname","Abbreviation"];
 	var vals = Object.values(graphics);
