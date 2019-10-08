@@ -1,39 +1,127 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
+	<title>&#x2730;Hockey Scoreboard</title>
 </head>
 	<body>
+		<div id="header">
+			<h1>Control Panel</h1>
+		</div>
+		<div>
+
 		<select id="game_select">
-		</select>
-		<div class="std" align="center">
-			<button class="up" id="btn_clock" onclick="send_event('clock',true)">Start</button>
+		</select><br>
+
+			<div id="top">
+				<div class="left sections3">
+					<h3>Home</h3>
+					<div class="shots half">
+						<div class="big">22</div>
+						Shots<br/>
+						<button class="up fill" id="btn_h_shots_up" onclick="send_event('h_shots_up',true)">Home Shots Up</button>
+						<button class="down fill" id="btn_h_shots_down" onclick="send_event('h_shots_down',true)">Home Shots Down</button>
+					</div>
+					<div class="score half">
+						<div class="big">3</div>
+						Score<br/>
+						<button class="up fill" id="btn_h_score_up" onclick="send_event('h_score_up',true)">Home Score Up</button>
+						<button class="down fill" id="btn_h_score_down" onclick="send_event('h_score_down',true)">Home Score Down</button>
+					</div>
+				</div>
+
+				<div class="center sections3">
+					<div id="timer">
+
+						<div id="min1" class="time">
+							<button class="plus"></button>
+							1
+							<button class="minus"></button>
+						</div>
+						<div id="min2" class="time">
+							<button class="plus"></button>
+							8
+							<button class="minus"></button>
+						</div>
+						<div class="time">:</div>
+						<div id="sec1" class="time">
+							<button class="plus"></button>
+							2
+							<button class="minus"></button>
+						</div>
+						<div id="sec2"class="time">
+							<button class="plus"></button>
+							4
+							<button class="minus"></button>
+						</div>
+						<div class="time">.</div>
+						<div id="ms"class="time">
+							<button class="plus"></button>
+							5
+							<button class="minus"></button>
+						</div>
+						
+					</div>
+
+					<div id="btn_clock_div"><button class="up fill" onclick="send_event('clock',true)">Start</button></div>
+				</div>
+
+				<div class="right sections3">
+					<h3>Away</h3>
+					<div class="shots half">
+						<div class="big">2</div>
+						Shots<br/>
+						<button class="up fill" id="btn_a_score_up" onclick="send_event('a_score_up',true)">Away Score Up</button>
+						<button class="down fill" id="btn_a_score_down" onclick="send_event('a_score_down',true)">Away Score Down</button>
+					</div>
+					<div class="score half">
+						<div class="big">15</div>
+						Score<br/>
+						<button class="up fill" id="btn_a_shots_up" onclick="send_event('a_shots_up',true)">Away Shots Up</button>
+						<button class="down fill" id="btn_a_shots_down" onclick="send_event('a_shots_down',true)">Away Shots Down</button>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="middle">test</div>
+			<div id="bottom">
+
+
+				<div class="std" align="center">
+					<button class="up" id="btn_add_h_pen" onclick="send_event('add_h_pen',JSON.stringify({
+						'dur':1,'num':11,'infr':'Roughing'
+					}))">Add Home Penalty</button>
+					<button class="up" id="btn_period_up" onclick="send_event('period_up',true)">Period Up</button>
+					<button class="up" id="btn_add_a_pen" onclick="send_event('add_a_pen',JSON.stringify({
+						'dur':1,'num':2,'infr':'Roughing'
+					}))">Add Away Penalty</button>
+				</div>
+				<div class="std" align="center">
+					<button class="down" id="btn_period_down" onclick="send_event('period_down',true)">Period Down</button>
+				</div>
+			</div>
+
+		
+			<!--div id="middle">test</div>
+			<div id="bottom">
+
+
+				<div class="std" align="center">
+					<button class="up" id="btn_add_h_pen" onclick="send_event('add_h_pen',JSON.stringify({
+						'dur':1,'num':11,'infr':'Roughing'
+					}))">Add Home Penalty</button>
+					<button class="up" id="btn_period_up" onclick="send_event('period_up',true)">Period Up</button>
+					<button class="up" id="btn_add_a_pen" onclick="send_event('add_a_pen',JSON.stringify({
+						'dur':1,'num':2,'infr':'Roughing'
+					}))">Add Away Penalty</button>
+				</div>
+				<div class="std" align="center">
+					<button class="down" id="btn_period_down" onclick="send_event('period_down',true)">Period Down</button>
+				</div>
+			</div-->
 		</div>
-		<div class="std" align="center">
-			<button class="up" id="btn_homeGoal" onclick="send_event('homeGoal',true)">Home Goal</button>
-			<button class="up" id="btn_h_shots_up" onclick="send_event('h_shots_up',true)">Home Shots Up</button>
-			<button class="up" id="btn_h_score_up" onclick="send_event('h_score_up',true)">Home Score Up</button>
-			<button class="up" id="btn_a_score_up" onclick="send_event('a_score_up',true)">Away Score Up</button>
-			<button class="up" id="btn_a_shots_up" onclick="send_event('a_shots_up',true)">Away Shots Up</button>
-			<button class="up" id="btn_awayGoal" onclick="send_event('awayGoal',true)">Away Goal</button>
-		</div>
-		<div class="std" align="center">
-			<button class="down" id="btn_h_shots_down" onclick="send_event('h_shots_down',true)">Home Shots Down</button>
-			<button class="down" id="btn_h_score_down" onclick="send_event('h_score_down',true)">Home Score Down</button>
-			<button class="down" id="btn_a_score_down" onclick="send_event('a_score_down',true)">Away Score Down</button>
-			<button class="down" id="btn_a_shots_down" onclick="send_event('a_shots_down',true)">Away Shots Down</button>
-		</div>
-		<div class="std" align="center">
-			<button class="up" id="btn_add_h_pen" onclick="send_event('add_h_pen',JSON.stringify({
-				'dur':1,'num':11,'infr':'Roughing'
-			}))">Add Home Penalty</button>
-			<button class="up" id="btn_period_up" onclick="send_event('period_up',true)">Period Up</button>
-			<button class="up" id="btn_add_a_pen" onclick="send_event('add_a_pen',JSON.stringify({
-				'dur':1,'num':2,'infr':'Roughing'
-			}))">Add Away Penalty</button>
-		</div>
-		<div class="std" align="center">
-			<button class="down" id="btn_period_down" onclick="send_event('period_down',true)">Period Down</button>
-		</div>
+</body>
 	</body>
 	<script type="text/javascript">
 
