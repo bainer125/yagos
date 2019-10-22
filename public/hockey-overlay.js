@@ -17,7 +17,8 @@ a.addEventListener("load",function() {
     graphics["Scoreboard"]=scoreboard;
     //console.log(scoreboard);
     update_team_info("home",home_info);
-	update_team_info("away",away_info);
+		update_team_info("away",away_info);
+		update_overlay_position();
 }, false);
 
 var b = document.getElementById('Intermission');
@@ -77,6 +78,11 @@ var away_info = {
 	"Logo2": "/Teams/International/Canada/logo2.png",
 	"Logo3": "/Teams/International/Canada/logo3.png",
 	"Logo4": "/Teams/International/Canada/logo4.png",
+}
+
+var overlay_pos = {
+	"top": "10px",
+	"left": "5px"
 }
 
 console.log("Started Listening");
@@ -192,6 +198,25 @@ evtSource.addEventListener("away", function(e) {
 	send_confirmation("away");
 })
 
+// Event listener for moving overlay from control panel, on true value
+evtSource.addEventListener("Move_True", function(e) {
+	document.getElementById("scoreboard").style.top = "50%";
+})
+
+// Event listener for moving overlay from control panel, off true value
+evtSource.addEventListener("Move_False", function(e) {
+	document.getElementById("scoreboard").style.top = "10%";
+})
+
+evtSource.addEventListener("overlay_pos", function(e) {
+	var info = JSON.parse(e.data);
+	overlay_pos.top = info.top;
+	overlay_pos.left = info.left;
+
+	console.log(overlay_pos);
+	update_overlay_position();
+})
+
 evtSource.addEventListener("homeGoal", function(e) {
 	var data = JSON.parse(e.data);
 	game.home_score=data.home_score;
@@ -207,8 +232,6 @@ evtSource.addEventListener("awayGoal", function(e) {
 	send_confirmation("awayGoal");
 	update_score();
 })
-
-
 
 function update_timers(){
 	if(game.clock.min>0){
@@ -354,8 +377,6 @@ function update_penalty_time(min,sec){
 	update_html_text(text,"evenPenaltyClock");
 }
 
-
-
 function update_penalty_display(){
 	if(game.home_pen.length == 0 && game.away_pen.length == 0){
 		// scoreboard.getElementById("homePenalty").style.display="none";
@@ -432,7 +453,18 @@ function update_shots(){
 	update_html_text(game.away_shots,"Shots","away");
 }
 
+/*
+	Function that sets the position of the overlay on the screen to
+	whatever values are stored in the var 'overlay_pos'.
 
+	Currently it is setup to set the overlay to a percentage of the
+	total height from the top, and a percentage of the total width
+	from the left.
+*/
+function update_overlay_position() {
+	document.getElementById("Scoreboard").style.top = overlay_pos.top;
+	document.getElementById("Scoreboard").style.left = overlay_pos.left;
+}
 
 // Sorts the values from largest to smallest
 function sortWithIndeces(toSort) {
@@ -495,6 +527,20 @@ function play_animation(graphic,event){
 
 
 function update_team_info(team,data){
+	var visLength = visuals.length;
+	console.log(visuals);
+	for (var j = 0; j < visLength; j++) {
+		var fill = visuals [j].getElementsByClassName(team+"Color1"),i,len;
+		console.log(team+"Color1");
+		for (i=0,len=fill.length;i<len;i++){
+			fill[i].style.fill=data.Color1;
+		}
+		var abbr = visuals[j].getElementsByClassName(team+"Abbreviation"),i,len;
+		for (i=0,len=abbr.length;i<len;i++){
+			abbr[i].innerHTML=data.Abbreviation;
+		}
+	}
+
 	var tobeupd = ["City","Full Name","Location","Nickname","Abbreviation"];
 	var vals = Object.values(graphics);
 	for (const graphic of vals) {
