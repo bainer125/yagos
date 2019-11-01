@@ -1,0 +1,72 @@
+{"Teams": [
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Calgary",
+		"Full Name":"Calgary Flames","Location":"Calgary","Nickname":"Flames","Abbreviation":"CGY",
+		"Color1":"#C8102E","Color2":"#F1BE48","Color3":"#111111","Color4":"#FFFFFF"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Denver",
+		"Full Name":"Colorado Avalanche","Location":"Colorado","Nickname":"Avalanche","Abbreviation":"COL",
+		"Color1":"#6F263D","Color2":"#236192","Color3":"#A2AAAD","Color4":"#000000"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Winnipeg",
+		"Full Name":"Winnipeg Jets","Location":"Winnipeg","Nickname":"Jets","Abbreviation":"WPG",
+		"Color1":"#041E42","Color2":"#004C97","Color3":"#8E9090","Color4":"#AC162C"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Edmonton",
+		"Full Name":"Edmonton Oilers","Location":"Edmonton","Nickname":"Oilers","Abbreviation":"EDM",
+		"Color1":"#FF4C00","Color2":"#041E42","Color3":"#FFFFFF","Color4":"#FF4C00"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Tampa Bay",
+		"Full Name":"Tampa Bay Lightning","Location":"Tampa Bay","Nickname":"Lightning","Abbreviation":"TBL",
+		"Color1":"#002868","Color2":"#ffffff","Color3":"#002868","Color4":"#ffffff"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Pittsburgh",
+		"Full Name":"Pittsburgh Penguins","Location":"Pittsburgh","Nickname":"Penguins","Abbreviation":"PIT",
+		"Color1":"#000000","Color2":"#FCB514","Color3":"#FFFFFF","Color4":"#CFC493"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"Minneapolis",
+		"Full Name":"Minnesota Wild","Location":"Minnesota","Nickname":"Wild","Abbreviation":"MIN",
+		"Color1":"#154734","Color2":"#A6192E","Color3":"#DDCBA4","Color4":"#EAAA00"
+	},
+	{
+		"Sport":"Ice Hockey","League":"NHL","City":"San Jose",
+		"Full Name":"San Jose Sharks","Location":"San Jose","Nickname":"Sharks","Abbreviation":"SJS",
+		"Color1":"#006D75","Color2":"#000000","Color3":"#EA7200","Color4":"#FFFFFF"
+	},
+	{
+		"Sport":"Ice Hockey","League":"AHL","City":"Bakersfield",
+		"Full Name":"Bakersfield Condors","Location":"Bakersfield","Nickname":"Condors","Abbreviation":"BAK",
+		"Color1":"#FF4C00","Color2":"#041E42","Color3":"#FFFFFF","Color4":"#FF4C00"
+	},
+	{
+		"Sport":"Ice Hockey","League":"AHL","City":"Winnipeg",
+		"Full Name":"Manitoba Moose","Location":"Manitoba","Nickname":"Moose","Abbreviation":"MBA",
+		"Color1":"#041E42","Color2":"#004C97","Color3":"#8E9090","Color4":"#AC162C"
+	},
+	{
+		"Sport":"Ice Hockey","League":"AHL","City":"Grand Rapids",
+		"Full Name":"Grand Rapids Griffins","Location":"Grand Rapids","Nickname":"Griffins","Abbreviation":"GR",
+		"Color1":"#003359","Color2":"#B71234","Color3":"#B3995D","Color4":"#FFFFFF"
+	},
+	{
+		"Sport":"Ice Hockey","League":"ACHA D2","City":"Troy",
+		"Full Name":"Rensselaer Polytechnic Institute","Location":"Rensselaer","Nickname":"Engineers","Abbreviation":"RPI",
+		"Color1":"#d6001c","Color2":"#ffffff","Color3":"#000000","Color4":"#9ea2a2"
+	},
+	{
+		"Sport":"Ice Hockey","League":"ACHA D2","City":"Durham",
+		"Full Name":"University of New Hampshire","Location":"New Hampshire","Nickname":"Wildcats","Abbreviation":"UNH",
+		"Color1":"#041e42","Color2":"#BBBCBC","Color3":"#ffffff","Color4":"#ffffff"
+	},
+	{
+		"Sport":"Ice Hockey","League":"ACHA D2","City":"Amherst",
+		"Full Name":"University of Massachusetts","Location":"Massachusetts","Nickname":"Minutemen","Abbreviation":"UMass",
+		"Color1":"#881c1c","Color2":"#ffffff","Color3":"#000000","Color4":"#ffffff"
+	}
+]}

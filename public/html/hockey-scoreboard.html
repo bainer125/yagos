@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
+</head>
+	<body>
+		<select id="game_select">
+		</select>
+		<div class="std" align="center">
+			<button class="up" id="btn_clock" onclick="send_event('clock',true)">Start</button>
+		</div>
+		<div class="std" align="center">
+			<button class="up" id="btn_homeGoal" onclick="send_event('homeGoal',true)">Home Goal</button>
+			<button class="up" id="btn_h_shots_up" onclick="send_event('h_shots_up',true)">Home Shots Up</button>
+			<button class="up" id="btn_h_score_up" onclick="send_event('h_score_up',true)">Home Score Up</button>
+			<button class="up" id="btn_a_score_up" onclick="send_event('a_score_up',true)">Away Score Up</button>
+			<button class="up" id="btn_a_shots_up" onclick="send_event('a_shots_up',true)">Away Shots Up</button>
+			<button class="up" id="btn_awayGoal" onclick="send_event('awayGoal',true)">Away Goal</button>
+		</div>
+		<div class="std" align="center">
+			<button class="down" id="btn_h_shots_down" onclick="send_event('h_shots_down',true)">Home Shots Down</button>
+			<button class="down" id="btn_h_score_down" onclick="send_event('h_score_down',true)">Home Score Down</button>
+			<button class="down" id="btn_a_score_down" onclick="send_event('a_score_down',true)">Away Score Down</button>
+			<button class="down" id="btn_a_shots_down" onclick="send_event('a_shots_down',true)">Away Shots Down</button>
+		</div>
+		<div class="std" align="center">
+			<button class="up" id="btn_add_h_pen" onclick="send_event('add_h_pen',JSON.stringify({
+				'dur':1,'num':11,'infr':'Roughing'
+			}))">Add Home Penalty</button>
+			<button class="up" id="btn_period_up" onclick="send_event('period_up',true)">Period Up</button>
+			<button class="up" id="btn_add_a_pen" onclick="send_event('add_a_pen',JSON.stringify({
+				'dur':1,'num':2,'infr':'Roughing'
+			}))">Add Away Penalty</button>
+		</div>
+		<div class="std" align="center">
+			<button class="down" id="btn_period_down" onclick="send_event('period_down',true)">Period Down</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+
+		/*
+		########################################################
+
+			Handle button input
+		
+		########################################################
+		*/
+
+		var games = [];
+		httpGetAsync("/current-scores/ice-hockey",function(res){
+
+			g = Object.entries(JSON.parse(res));
+			g.forEach(game => {
+				var x = document.getElementById("game_select");
+				var option = document.createElement("option");
+				option.text = game[1].name;
+				option.value = game[0];
+				x.add(option);
+				//console.log(game[1].clock.dur)
+				games.push(game);
+			})
+		});
+
+		console.log(games);
+
+		function send_event(button,value){
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/hockey-scoreboard", true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send(JSON.stringify({
+			    "game": document.getElementById("game_select").value, "button": button, "value": value
+			}));
+		}
+
+		function httpGetAsync(theUrl, callback){
+		    var xmlHttp = new XMLHttpRequest();
+		    xmlHttp.onreadystatechange = function() { 
+		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+		            callback(xmlHttp.responseText);
+		    }
+		    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		    xmlHttp.send(null);
+		}
+
+	</script>
+</html>
