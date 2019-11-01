@@ -1,28 +1,13 @@
-/*
-
-	Web server for YAGOS.
-	Monitors currently displayed graphics and scoreboards.
-
-	Last rev: 10/31/19
-
-	Authors: Liam McBain, Zach Schaller
-
-	YAGOS
-
-*/
-
-// Import necessary modules
-
 var express = require('express');
 var fs = require('fs');
 var bodyParser = require('body-parser');
 
-
-// Import classes
-
-const {timer} = require('./public/js/classes.js')
-const {Scoreboard} = require('./public/js/classes.js')
-const {penalty_timer} = require('./public/js/classes.js')
+const {timer} = require('./public/modes.js')
+const {h_scbd} = require('./public/modes.js')
+const {h_pen} = require('./public/modes.js')
+const {s_scbd} = require('./public/modes.js')
+const {s_book} = require('./public/modes.js')
+const {base_scbd} = require('./public/modes.js')
 
 
 
@@ -42,6 +27,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
+// This is the current amount of games that are loaded on the server. Goes up each time a game is added
+var o=0
+
 // Temp variable for updating test clock, will change to something different for updating overlay
 var update = [];
 
@@ -49,8 +37,6 @@ var update = [];
 Initializes the current values buffer which stores all of the data related to
 displaying the overlay correctly when loaded.
 */
-
-var scoreboards = [];
 
 var current = {
 	Mode: "Ice Hockey",
@@ -125,8 +111,20 @@ var overlay_pos = {
 	"left": "5px"
 }
 
-add_new_scoreboard("Game 1");
+// Dictionaries of available games for each sport
+
+var ih_g = {}
+var base_g = {}
+var f_g = {}
+var s_g = {}
+
+
+
+add_new_scoreboard("Ice Hockey","Game 1");
 current.Game = 0;
+
+
+
 
 app.get('/', function (req, res) {
 	res.sendFile("overlay.html", { root: '.' });
@@ -248,7 +246,114 @@ app.post('/overlay',function(req,res){
 app.post('/hockey-scoreboard',function(req,res){
     // Check to make sure the game is still registered on the server
     event = req.body;
-  	
+  	if(event.game in ih_g){
+
+      	// Here include all the possible button clicks
+
+      	if (event.button == 'clock'){
+      		if (current.Game == event.game){
+      			update.push('clock');
+      		}
+      		if(ih_g[event.game].clock.pause){
+      			ih_g[event.game].clock.start();
+      			ih_g[event.game].home_pen.forEach(function(item, index){
+					ih_g[event.game].home_pen[index].clock.start();
+				});
+				ih_g[event.game].away_pen.forEach(function(item, index){
+					ih_g[event.game].away_pen[index].clock.start();
+				});
+      		}
+      		else{
+      			ih_g[event.game].clock.stop();
+      			ih_g[event.game].home_pen.forEach(function(item, index){
+					ih_g[event.game].home_pen[index].clock.stop();
+				});
+				ih_g[event.game].away_pen.forEach(function(item, index){
+					ih_g[event.game].away_pen[index].clock.stop();
+				});
+			}
+		}
+
+		if (event.button == 'h_score_up'){
+			ih_g[event.game].home_score++;
+			update.push('static');
+		}
+
+		if (event.button == 'a_score_up'){
+			ih_g[event.game].away_score++;
+			update.push('static');
+		}
+
+		if (event.button == 'h_score_down'){
+			ih_g[event.game].home_score--;
+			update.push('static');
+		}
+
+		if (event.button == 'a_score_down'){
+			ih_g[event.game].away_score--;
+			update.push('static');
+		}
+
+		if (event.button == 'h_shots_up'){
+			ih_g[event.game].home_shots++;
+			update.push('static');
+		}
+
+		if (event.button == 'a_shots_up'){
+			ih_g[event.game].away_shots++;
+			update.push('static');
+		}
+
+		if (event.button == 'h_shots_down'){
+			ih_g[event.game].home_shots--;
+			update.push('static');
+		}
+
+		if (event.button == 'a_shots_down'){
+			ih_g[event.game].away_shots--;
+			update.push('static');
+		}
+
+		if (event.button == 'homeGoal'){
+			ih_g[event.game].home_score++;
+			update.push('homeGoal');
+		}
+
+		if (event.button == 'awayGoal'){
+			ih_g[event.game].away_score++;
+			update.push('awayGoal');
+		}
+
+		if (event.button =='add_h_pen'){
+			var pendata = JSON.parse(event.value);
+			ih_g[event.game].add_pen('h',new h_pen(pendata.dur,pendata.num,pendata.infr));
+			if(!ih_g[event.game].clock.pause){
+				ih_g[event.game].home_pen[ih_g[event.game].home_pen.length-1].clock.start();
+			}
+			update.push('full');
+		}
+
+		if (event.button =='add_a_pen'){
+			var pendata = JSON.parse(event.value);
+			ih_g[event.game].add_pen('a',new h_pen(pendata.dur,pendata.num,pendata.infr));
+			if(!ih_g[event.game].clock.pause){
+				ih_g[event.game].away_pen[ih_g[event.game].away_pen.length-1].clock.start();
+			}
+			update.push('full');
+		}
+
+		if (event.button == 'period_up'){
+			ih_g[event.game].period++;
+			update.push('full');
+		}
+		if (event.button == 'period_down'){
+			ih_g[event.game].period--;
+			update.push('full');
+		}
+
+
+
+	}
 	res.end();
 });
 
@@ -294,10 +399,24 @@ function update_display(){
 	console.log("ms");
 }
 
-function add_new_scoreboard(title){
-
-	scoreboards.push(new Scoreboard(title));
-
+function add_new_scoreboard(sport,title){
+	switch(sport){
+		case 'Ice Hockey':
+			ih_g[o] = new h_scbd(title);
+		break;
+		case 'Baseball':
+			base_g[o] = new base_scbd(title);
+		break;
+		case 'Soccer':
+			s_g[o] = new s_scbd(title);
+		break;
+		case 'Football':
+		break;
+		default:
+			ih_g[o] = new h_scbd(title);
+		break;
+	}
+	o++;
 }
 
 // This determines the data to be sent to the overlay based on the event
