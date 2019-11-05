@@ -1,6 +1,4 @@
 
-var visuals = [];
-
 var graphics = {};
 
 //************************************************************************************************
@@ -13,7 +11,6 @@ var a = document.getElementById('Scoreboard');
 var scoreboard;
 a.addEventListener("load",function() {
     scoreboard = a.contentDocument;
-    visuals.push(scoreboard);
     graphics["Scoreboard"]=scoreboard;
     //console.log(scoreboard);
     update_team_info("home",home_info);
@@ -25,60 +22,15 @@ var b = document.getElementById('Intermission');
 var intermission;
 b.addEventListener("load",function() {
     intermission = b.contentDocument;
-    visuals.push(intermission);
     graphics["Intermission"]=intermission;
     //console.log(scoreboard);
 }, false);
-
-
-
-var game = new h_scbd("",update_timers);
 
 var current = {};
 
 var old_current = {};
 
-var home_info = {
-	"Sport": "Ice Hockey",
-	"League": "International",
-	"City": "Ottawa",
-
-	"Full Name": "Team Canada",
-	"Location": "Canada",
-	"Nickname": "Canadians",
-	"Abbreviation": "OTT",
-
-	"Color1": "#ff0000",
-	"Color2": "#000000",
-	"Color3": "#ffffff",
-	"Color4": "#ffffff",
-
-	"Logo1": "/Teams/International/Canada/logo1.png",
-	"Logo2": "/Teams/International/Canada/logo2.png",
-	"Logo3": "/Teams/International/Canada/logo3.png",
-	"Logo4": "/Teams/International/Canada/logo4.png",
-}
-
-var away_info = {
-	"Sport": "Ice Hockey",
-	"League": "International",
-	"City": "Ottawa",
-
-	"Full Name": "Team Canada",
-	"Location": "Canada",
-	"Nickname": "Canadians",
-	"Abbreviation": "OTT",
-
-	"Color1": "#ff0000",
-	"Color2": "#000000",
-	"Color3": "#ffffff",
-	"Color4": "#ffffff",
-
-	"Logo1": "/Teams/International/Canada/logo1.png",
-	"Logo2": "/Teams/International/Canada/logo2.png",
-	"Logo3": "/Teams/International/Canada/logo3.png",
-	"Logo4": "/Teams/International/Canada/logo4.png",
-}
+var game = new Scoreboard( "Main Board" , update_timers);
 
 var overlay_pos = {
 	"top": "10px",
@@ -119,21 +71,21 @@ evtSource.addEventListener("clock", function(e) {
 	if(e.data=="false"){
 		if(game.clock.pause){
 			game.clock.start();
-			game.home_pen.forEach(function(item, index){
-				game.home_pen[index].clock.start();
+			game.home_penalties.forEach(function(item, index){
+				game.home_penalties[index].clock.start();
 			});
-			game.away_pen.forEach(function(item, index){
-				game.away_pen[index].clock.start();
+			game.away_penalties.forEach(function(item, index){
+				game.away_penalties[index].clock.start();
 			});
 		}
 	}
 	else{
 		game.clock.stop();
-		game.home_pen.forEach(function(item, index){
-			game.home_pen[index].clock.stop();
+		game.home_penalties.forEach(function(item, index){
+			game.home_penalties[index].clock.stop();
 		});
-		game.away_pen.forEach(function(item, index){
-			game.away_pen[index].clock.stop();
+		game.away_penalties.forEach(function(item, index){
+			game.away_penalties[index].clock.stop();
 		});
 	}
     //console.log(e.data);
@@ -163,7 +115,7 @@ evtSource.addEventListener("full", function(e) {
 	game.away_shots=full.away_shots
 	update_shots();
 	update_period(full.period);
-	update_penalties(full.home_pen,full.away_pen);
+	update_penalties(full.home_penalties,full.away_penalties);
 	update_penalty_display();
 	update_clock(full.clock);
     send_confirmation("full");
@@ -252,16 +204,16 @@ function update_timers(){
 	var mina = 100000000;
 	var indh;
 	var inda;
-
-	if(game.home_pen.length>0){
-		game.home_pen.forEach(function(item, index){
+/*
+	if(game.home_penalties.length>0){
+		game.home_penalties.forEach(function(item, index){
 			console.log(item);
 			hpr.push(item.clock.total-item.clock.elap);
 		});
 	}
 
-	if(game.away_pen.length>0){
-		game.away_pen.forEach(function(item, index){
+	if(game.away_penalties.length>0){
+		game.away_penalties.forEach(function(item, index){
 			apr.push(item.clock.total-item.clock.elap)
 		});
 	}
@@ -292,14 +244,15 @@ function update_timers(){
 
 	if(minh>mina){
 		if(typeof inda !== 'undefined'){
-			update_penalty_time(game.away_pen[inda].clock.min,game.away_pen[inda].clock.sec);
+			update_penalty_time(game.away_penalties[inda].clock.min,game.away_penalties[inda].clock.sec);
 		}
 	}
 	else{
 		if(typeof indh !== 'undefined'){
-			update_penalty_time(game.home_pen[indh].clock.min,game.home_pen[indh].clock.sec);
+			update_penalty_time(game.home_penalties[indh].clock.min,game.home_penalties[indh].clock.sec);
 		}
 	}
+	*/
 	update_penalty_display();
 }
 
@@ -339,26 +292,26 @@ function update_period(per){
 }
 
 function update_penalties(h,a){
-	game.home_pen=[];
-	game.away_pen=[];
+	game.home_penalties=[];
+	game.away_penalties=[];
 	h.forEach(function(item, index){
-		var pen = new h_pen(item.clock.dur,item.num,item.infr);
+		var pen = new hockey_pen(item.clock.dur,item.num,item.infr);
 		var temp = new timer(item.clock.dur,true);
 		Object.assign(temp,item.clock);
 		Object.assign(pen.clock,temp);
 		game.add_pen('h',pen);
 		if (game.clock.pause == false){
-			game.home_pen[game.home_pen.length-1].clock.start();
+			game.home_penalties[game.home_penalties.length-1].clock.start();
 		}
 	});
 	a.forEach(function(item, index){
-		var pen = new h_pen(item.clock.dur,item.num,item.infr);
+		var pen = new hockey_pen(item.clock.dur,item.num,item.infr);
 		var temp = new timer(item.clock.dur,true);
 		Object.assign(temp,item.clock);
 		Object.assign(pen.clock,temp);
 		game.add_pen('a',pen);
 		if (game.clock.pause == false){
-			game.away_pen[game.away_pen.length-1].clock.start();
+			game.away_penalties[game.away_penalties.length-1].clock.start();
 		}
 	});
 }
@@ -378,62 +331,62 @@ function update_penalty_time(min,sec){
 }
 
 function update_penalty_display(){
-	if(game.home_pen.length == 0 && game.away_pen.length == 0){
+	if(game.home_penalties.length == 0 && game.away_penalties.length == 0){
 		// scoreboard.getElementById("homePenalty").style.display="none";
 		// scoreboard.getElementById("awayPenalty").style.display="none";
 		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
-	else if(game.home_pen.length == 1 && game.away_pen.length == 0){
+	else if(game.home_penalties.length == 1 && game.away_penalties.length == 0){
 		// scoreboard.getElementById("homePenalty").style.display="inline";
 		// scoreboard.getElementById("homePenaltyText").innerHTML="Power Play";
 		// scoreboard.getElementById("awayPenalty").style.display="none";
 		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
-	else if(game.home_pen.length > 1 && game.away_pen.length == 1){
+	else if(game.home_penalties.length > 1 && game.away_penalties.length == 1){
 		// scoreboard.getElementById("homePenalty").style.display="inline";
 		// scoreboard.getElementById("homePenaltyText").innerHTML="4 on 3";
 		// scoreboard.getElementById("awayPenalty").style.display="none";
 		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
-	else if(game.home_pen.length > 1 && game.away_pen.length == 0){
+	else if(game.home_penalties.length > 1 && game.away_penalties.length == 0){
 		// scoreboard.getElementById("homePenalty").style.display="inline";
 		// scoreboard.getElementById("homePenaltyText").innerHTML="5 on 3";
 		// scoreboard.getElementById("awayPenalty").style.display="none";
 		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
-	else if(game.home_pen.length == 0 && game.away_pen.length == 1){
+	else if(game.home_penalties.length == 0 && game.away_penalties.length == 1){
 		// scoreboard.getElementById("homePenalty").style.display="none";
 		// scoreboard.getElementById("awayPenalty").style.display="inline";
 		// scoreboard.getElementById("awayPenaltyText").innerHTML="Power Play";
 		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
-	else if(game.home_pen.length == 1 && game.away_pen.length > 1){
+	else if(game.home_penalties.length == 1 && game.away_penalties.length > 1){
 		// scoreboard.getElementById("homePenalty").style.display="none";
 		// scoreboard.getElementById("awayPenalty").style.display="inline";
 		// scoreboard.getElementById("awayPenaltyText").innerHTML="4 on 3";
 		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
-	else if(game.home_pen.length == 0 && game.away_pen.length > 1){
+	else if(game.home_penalties.length == 0 && game.away_penalties.length > 1){
 		// scoreboard.getElementById("homePenalty").style.display="none";
 		// scoreboard.getElementById("awayPenalty").style.display="inline";
 		// scoreboard.getElementById("awayPenaltyText").innerHTML="5 on 3";
 		// scoreboard.getElementById("evenPenalty").style.display="none";
 	}
 
-	else if(game.home_pen.length == 1 && game.away_pen.length == 1){
+	else if(game.home_penalties.length == 1 && game.away_penalties.length == 1){
 		// scoreboard.getElementById("homePenalty").style.display="none";
 		// scoreboard.getElementById("awayPenalty").style.display="none";
 		// scoreboard.getElementById("evenPenalty").style.display="inline";
 		// scoreboard.getElementById("evenPenaltyText").innerHTML="4 on 4";
 	}
 
-	else if(game.home_pen.length > 1 && game.away_pen.length > 1){
+	else if(game.home_penalties.length > 1 && game.away_penalties.length > 1){
 		// scoreboard.getElementById("homePenalty").style.display="none";
 		// scoreboard.getElementById("awayPenalty").style.display="none";
 		// scoreboard.getElementById("evenPenalty").style.display="inline";
@@ -527,6 +480,7 @@ function play_animation(graphic,event){
 
 
 function update_team_info(team,data){
+	/*
 	var visLength = visuals.length;
 	console.log(visuals);
 	for (var j = 0; j < visLength; j++) {
@@ -540,6 +494,7 @@ function update_team_info(team,data){
 			abbr[i].innerHTML=data.Abbreviation;
 		}
 	}
+	*/
 
 	var tobeupd = ["City","Full Name","Location","Nickname","Abbreviation"];
 	var vals = Object.values(graphics);

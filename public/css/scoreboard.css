@@ -1,35 +1,193 @@
-button.up {
-	background-color: #52d178;
-	border: none; /* Remove borders */
+
+/* Overall Style ======================================= */
+
+body{
+	font-family: 'PT Sans', sans-serif;
+}
+
+h1, h2{
+	font-family: 'PT Serif', serif;
+	color: white;
+}
+
+h3{
+	margin: 5px;
+}
+
+#main{
+	max-width: 850px;
+	margin: auto;
+	margin-top: 120px;
+}
+
+.centered{
+	text-align: center;
+	overflow-wrap: normal;
+}
+
+
+/* ===================================================== */
+
+
+
+/* Header ============================================== */
+
+#header{
+	min-height: 100px;
+	height: 8%;
+	width: 97%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 3%;
+	overflow: hidden;
+	background-color: darkturquoise;
+}
+
+#header > h1{
+	position: absolute;
+	bottom: 0;
+	line-height: 1em;
+}
+/* ===================================================== */
+
+
+
+/* Buttons ============================================= */
+
+button{
+	border: 2px solid darkturquoise;
+	border-radius: 4px;
 	color: white; /* White text */
-	width:20%;
+	width:18%;
 	height:15%;
 	font-size: 16px; /* Set a font size */
 	cursor: pointer; /* Mouse pointer on hover */
+	overflow-wrap: break-word;
+	margin-top: 5px;
 }
 
-button.down {
-	background-color: #db5346;
-	border: none; /* Remove borders */
-	color: white; /* White text */
-	width:20%;
-	height:15%;
-	font-size: 16px; /* Set a font size */
-	cursor: pointer; /* Mouse pointer on hover */
+.down{
+	background-color: blue;
 }
 
-button.up:hover {
-	background-color: #3c8050;
+button.up:active { background-color: #224a2e; }
+button.up { background-color: mediumturquoise; }
+button:hover{ background-color: turquoise; }
+/* button.down { background-color: #ffffff; }*/
+
+/* ===================================================== */
+
+
+
+/* Control Panel > Categories ========================== */
+
+.sections3{
+	display: inline-block;
+	position: absolute;
+	width: 30%;
+	height: 30%;
+	text-align: center;
+	border: 1px solid pink;
+	padding: 0;
+	vertical-align: bottom;
 }
 
-button.up:active {
-	background-color: #224a2e;
+.category{
+	border-radius: 4px;
+	background-color: turquoise;
+	bottom: 3%;
+
+	text-align: center;
 }
 
-button.down:hover {
-	background-color: #8a332b;
+.category > h2 {
+	line-height: 1em;
+	margin-top: 3%;
 }
 
-div.std {
-	padding:0px;
+.left{
+	left: 3%;
 }
+.center{
+	left: 35%;
+}
+.right{
+	right: 3%;
+}
+
+form{
+	text-align: left;
+}
+
+#hideoverflow { overflow: hidden; }
+#outer { position: relative; left: 50%; float: left; }
+#inner { position: relative; left: -50%; float: left; }
+
+/* ===================================================== */
+
+
+
+/* Scoreboards > Timer ================================= */
+
+.half{
+	width: 40%;
+	height: 70%;
+	border: 1px solid orange;
+	display: inline-block;
+}
+
+button.fill{
+	height: 35%;
+	width: 100%;
+}
+
+.big{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.time{
+	width: 12%;
+	height: 60%;
+	display: inline-block;
+	font-size: 4em;
+	vertical-align: middle;
+	line-height: 1em;
+}
+.timer{
+	display: block;
+}
+
+#btn_clock{
+	height: 40%;
+	width: 100%;
+}
+#btn_clock_div{
+	display: block;
+	vertical-align: bottom;
+}
+
+button.plus, button.minus{
+	width: 100%;
+	height: auto;
+}
+
+button.plus::before{
+	content: "+";
+}
+button.minus::before{
+	content: "-";
+}
+
+#top, #middle, #bottom{
+	border: 2px solid lime;
+	height: 27%;
+}
+#top{
+	background-color: gainsboro;
+	height: 30%;
+	width: 100%;
+	margin-top: 5%;
+}
+/* ===================================================== */
