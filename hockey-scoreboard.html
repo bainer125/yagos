@@ -21,11 +21,11 @@
 				</div></div>
 				<div class="row inherit_w stats_score_1">
 					<div class="column inherit_h stats_section_1 margin_right_1">
-						<p class="inherit_h stats_score_num">22</p>
+						<p id="home_shots" class="inherit_h stats_score_num">22</p>
 						<p class="inherit_h stats_score_text">Shots</p>
 					</div>
 					<div class="column inherit_h stats_section_1">
-						<p class="inherit_h stats_score_num">3</p>
+						<p id="home_score" class="inherit_h stats_score_num">3</p>
 						<p class="inherit_h stats_score_text">Score</p>
 					</div>
 				</div>
@@ -64,18 +64,14 @@
 						<div class="col inherit_h timer_div_7 margin_right_1">
 			<!--m2+ -->		<button id="timer_m2_plus" class="inherit_w inherit_h btn_plus">+</button>
 						</div>
-						<div class="col inherit_h timer_div_7 margin_right_1"><!-- 
-							<button class="inherit_w inherit_h btn_plus">+</button> -->
-						</div>
+						<div class="col inherit_h timer_div_7 margin_right_1"></div>
 						<div class="col inherit_h timer_div_7 margin_right_1">
 			<!--s1+ -->		<button id="timer_s1_plus" class="inherit_w inherit_h btn_plus">+</button>
 						</div>
 						<div class="col inherit_h timer_div_7 margin_right_1">
 			<!--s2+ -->		<button id="timer_s2_plus" class="inherit_w inherit_h btn_plus">+</button>
 						</div>
-						<div class="col inherit_h timer_div_7 margin_right_1"><!-- 
-							<button class="inherit_w inherit_h btn_plus">+</button> -->
-						</div>
+						<div class="col inherit_h timer_div_7 margin_right_1"></div>
 						<div class="col inherit_h timer_div_7">
 			<!--ms+ -->		<button id="timer_ms_plus" class="inherit_w inherit_h btn_plus">+</button>
 						</div>
@@ -116,18 +112,14 @@
 						<div class="col inherit_h timer_div_7 margin_right_1">
 			<!--m2- -->		<button id="timer_m2_minus" class="inherit_w inherit_h btn_minus">-</button>
 						</div>
-						<div class="col inherit_h timer_div_7 margin_right_1"><!-- 
-							<button class="inherit_w inherit_h btn_minus">-</button> -->
-						</div>
+						<div class="col inherit_h timer_div_7 margin_right_1"></div>
 						<div class="col inherit_h timer_div_7 margin_right_1">
 			<!--s1- -->		<button id="timer_s1_minus" class="inherit_w inherit_h btn_minus">-</button>
 						</div>
 						<div class="col inherit_h timer_div_7 margin_right_1">
 			<!--s2- -->		<button id="timer_s2_minus" class="inherit_w inherit_h btn_minus">-</button>
 						</div>
-						<div class="col inherit_h timer_div_7 margin_right_1"><!-- 
-							<button class="inherit_w inherit_h btn_minus">-</button> -->
-						</div>
+						<div class="col inherit_h timer_div_7 margin_right_1"></div>
 						<div class="col inherit_h timer_div_7">
 			<!--ms- -->		<button id="timer_ms_minus" class="inherit_w inherit_h btn_minus">-</button>
 						</div>
@@ -148,11 +140,11 @@
 				</div></div>
 				<div class="row inherit_w stats_score_1">
 					<div class="column inherit_h stats_section_1 margin_right_1">
-						<p class="inherit_h stats_score_num">2</p>
+						<p id="away_score" class="inherit_h stats_score_num">2</p>
 						<p class="inherit_h stats_score_text">Score</p>
 					</div>
 					<div class="column inherit_h stats_section_1">
-						<p class="inherit_h stats_score_num">15</p>
+						<p id="away_shots" class="inherit_h stats_score_num">15</p>
 						<p class="inherit_h stats_score_text">Shots</p>
 					</div>
 				</div>
@@ -190,15 +182,28 @@
 			<div class="col inherit_h penalty_section margin_sides_2">
 	<!-- Home Penalty Bar ------------------------------------ -->
 				<div class="row inherit_w penalty_add_bar">
-					<div class="col inherit_h penalty_col">
-						<div class="dropdown inherit_w inherit_h">Number</div>
-					</div>
-					<div class="col inherit_h penalty_col">
-						<div class="dropdown inherit_w inherit_h">Penalty Length</div>
-					</div>
-					<div class="col inherit_h penalty_col">
-						<div class="dropdown inherit_w inherit_h">Infraction</div>
-					</div>
+					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
+						<div class="col inherit_h penalty_col_1">Number:</div>
+						<div class="col inherit_h penalty_col_2">
+            				<input id="diff" type="number" min="0" max="30" value="0" class="inherit_w inherit_h"/> 
+						</div>
+					</div></div>
+					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
+						<div class="col inherit_h penalty_col_1">Penalty Length:</div>
+						<div class="col inherit_h penalty_col_2">
+            				<input id="diff" type="number" min="0" max="1000" value="0" class="inherit_w inherit_h"/> 
+						</div>
+					</div></div>
+					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
+						<div class="col inherit_h penalty_col_3">Infraction</div>
+						<div class="col inherit_h penalty_col_3">
+            				<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)" class="inherit_w	inherit_h">
+								<option>Roughing</option>
+								<option>Tripping</option>
+								<option>Slashing</option>
+							</select> 
+						</div>
+					</div></div>
 					<div class="col inherit_h penalty_btn">
 						<button class="inherit_w inherit_h btn_plus">+</button>
 					</div>
@@ -249,15 +254,28 @@
 			<div class="col inherit_h penalty_section margin_sides_2">
 	<!-- Away Penalty Bar ------------------------------------ -->
 				<div class="row inherit_w penalty_add_bar">
-					<div class="col inherit_h penalty_col">
-						<div class="dropdown inherit_w inherit_h">Number</div>
-					</div>
-					<div class="col inherit_h penalty_col">
-						<div class="dropdown inherit_w inherit_h">Penalty Length</div>
-					</div>
-					<div class="col inherit_h penalty_col">
-						<div class="dropdown inherit_w inherit_h">Infraction</div>
-					</div>
+					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
+						<div class="col inherit_h penalty_col_1">Number:</div>
+						<div class="col inherit_h penalty_col_2">
+            				<input id="diff" type="number" min="0" max="30" value="0" class="inherit_w inherit_h"/> 
+						</div>
+					</div></div>
+					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
+						<div class="col inherit_h penalty_col_1">Penalty Length:</div>
+						<div class="col inherit_h penalty_col_2">
+            				<input id="diff" type="number" min="0" max="1000" value="0" class="inherit_w inherit_h"/> 
+						</div>
+					</div></div>
+					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
+						<div class="col inherit_h penalty_col_3">Infraction</div>
+						<div class="col inherit_h penalty_col_3">
+            				<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)" class="inherit_w	inherit_h">
+								<option>Roughing</option>
+								<option>Tripping</option>
+								<option>Slashing</option>
+							</select> 
+						</div>
+					</div></div>
 					<div class="col inherit_h penalty_btn">
 						<button class="inherit_w inherit_h btn_plus">+</button>
 					</div>
@@ -268,13 +286,13 @@
 		<!-- AWAY INFRACTION 1 --> <!-- these will be added dynamically -->
 					<div class="row inherit_w penalty_list_item">
 						<div class="col inherit_h penalty_col">
-							2
+							12
 						</div>
 						<div class="col inherit_h penalty_col">
-							1:15
+							1:41
 						</div>
 						<div class="col inherit_h penalty_col">
-							Roughing
+							Slashing
 						</div>
 						<div class="col inherit_h penalty_btn">
 							<button class="inherit_w inherit_h btn_minus">-</button>
