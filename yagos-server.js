@@ -84,13 +84,11 @@ wss.on('connection', function connection ( ws ) {
 			case 'score':
 				current.Game = event.game;
 				handle_scoreboard_event( event , scoreboards );
-				Object.values(wss.clients).forEach(function each(client){
-					if (client.readyState === WebSocket.OPEN){
-						client.send(event);
-					}
-				})
+				broadcast(x);
 			break;
 			case 'graphics':
+			break;
+			case 'game':
 			break;
 		}
 	})
@@ -124,4 +122,12 @@ function add_new_scoreboard(title,mode){
 	scoreboards.push(new Scoreboard(title,mode,update_display));
 
 	//console.log (scoreboards[0]);
+}
+
+function broadcast(data){
+	wss.clients.forEach(function each(client){
+		if (client.readyState === WebSocket.OPEN){
+			client.send(JSON.stringify(data));
+		}
+	});
 }

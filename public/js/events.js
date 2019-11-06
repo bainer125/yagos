@@ -15,6 +15,7 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 	action = event.action;
 	item = event.item;
 	value = event.value;
+	subitem = event.subitem;
 
 	var board = boards[event.game];
 
@@ -72,7 +73,12 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 
 		case 'update':
 
-			board[item] = value;
+			if (!subitem){
+				board[item] = value;
+			}
+			else{
+				board[item][subitem] = value;
+			}
 
 		break;
 
@@ -143,7 +149,7 @@ function handle_graphics_event ( event , graphics = {}, animate = false){
 		case 'updateText':
 
 			mod_elements_by_class( item , graphics , function( elem ) {
-				elem.innerText = value;
+				elem.innerHTML = value;
 			});
 
 		break;
@@ -155,7 +161,7 @@ function update_text ( text , id , graphics = {} ) {
 
 	mod_elements_by_class( id , graphics , function( elem ) {
 		
-		elem.innerText = text;
+		elem.innerHTML = text;
 
 	});
 
@@ -169,10 +175,10 @@ function update_item_text ( item , board , graphics = {} , text = false , diff =
 
 	mod_elements_by_class( tbu , graphics , function( elem ) {
 		if (text == false) {
-			elem.innerText = board[item];
+			elem.innerHTML = board[item];
 		}
 		else {
-			elem.innerText = text;
+			elem.innerHTML = text;
 		}
 	});
 
@@ -186,10 +192,10 @@ function update_subitem_text ( item , subitem , board , graphics = {} , text = f
 
 	mod_elements_by_class( tbu , graphics , function( elem ) {
 		if (text == false) {
-			elem.innerText = board[item][subitem];
+			elem.innerHTML = board[item][subitem];
 		}
 		else {
-			elem.innerText = text;
+			elem.innerHTML = text;
 		}
 	});
 
