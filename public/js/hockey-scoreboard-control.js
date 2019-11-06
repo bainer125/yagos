@@ -33,18 +33,39 @@ window.onload = function () {
 		document.getElementById("away_shots_up").addEventListener("click",function(){sendmessage("away_shots","up");});
 		document.getElementById("away_shots_down").addEventListener("click",function(){sendmessage("away_shots","down");});
 
-		document.getElementById("timer_m1_plus").addEventListener("click",function(){sendmessage("clock","update",boards[game].clock.min+10,"min");});
-		document.getElementById("timer_m2_plus").addEventListener("click",function(){sendmessage("clock","update",boards[game].clock.min+1,"min");});
-		document.getElementById("timer_s1_plus").addEventListener("click",function(){sendmessage("clock","update",boards[game].clock.sec+10,"sec");});
-		document.getElementById("timer_s2_plus").addEventListener("click",function(){sendmessage("clock","update",boards[game].clock.sec+1,"sec");});
-		document.getElementById("timer_ms_plus").addEventListener("click",function(){sendmessage("clock","update",boards[game].clock.ms+1,"ms");});
 
-/*
-		document.getElementById("timer_m1_minus").addEventListener("click",function(){sendmessage("clock","update");});
-		document.getElementById("timer_m2_minus").addEventListener("click",function(){sendmessage("clock","update");});
-		document.getElementById("timer_s1_minus").addEventListener("click",function(){sendmessage("clock","update");});
-		document.getElementById("timer_s2_minus").addEventListener("click",function(){sendmessage("clock","update");});
-		document.getElementById("timer_ms_minus").addEventListener("click",function(){sendmessage("clock","update");});*/
+		// Event listeners for timer adjustment
+		document.getElementById("timer_m1_plus").addEventListener("click",function(){
+			adjust_timer(600000,true);
+		});
+		document.getElementById("timer_m2_plus").addEventListener("click",function(){
+			adjust_timer(60000,true);
+		});
+		document.getElementById("timer_s1_plus").addEventListener("click",function(){
+			adjust_timer(10000,true);
+		});
+		document.getElementById("timer_s2_plus").addEventListener("click",function(){
+			adjust_timer(1000,true);
+		});
+		document.getElementById("timer_ms_plus").addEventListener("click",function(){
+			adjust_timer(100,true);
+		});
+
+		document.getElementById("timer_m1_minus").addEventListener("click",function(){
+			adjust_timer(600000,false);
+		});
+		document.getElementById("timer_m2_minus").addEventListener("click",function(){
+			adjust_timer(60000,false);
+		});
+		document.getElementById("timer_s1_minus").addEventListener("click",function(){
+			adjust_timer(10000,false);
+		});
+		document.getElementById("timer_s2_minus").addEventListener("click",function(){
+			adjust_timer(1000,false);
+		});
+		document.getElementById("timer_ms_minus").addEventListener("click",function(){
+			adjust_timer(100,false);
+		});
 
 		document.getElementById("btn_clock").addEventListener("click",function(){
 			if (document.getElementById("btn_clock").value=="start"){
@@ -116,6 +137,25 @@ function update_timers () {
 	update_text(Math.floor(boards[game].clock.sec/10),"s1",graphics);
 	update_text(boards[game].clock.sec%10,"s2",graphics);
 	update_subitem_text("clock","ms",boards[game],graphics,false,"ms");
+}
+
+function adjust_timer ( value , op = false ) {
+	var time;
+	if (op){
+		time = boards[game].clock.elap - value;
+		if (time<0){
+			time = 0;
+		}
+	}
+	else{
+		time = boards[game].clock.elap + value;
+		if (time>boards[game].total){
+			time = boards[game].total;
+		}
+	}
+	sendmessage("clock","update",time,"elap");
+	boards[game].clock.updateclock();
+	update_timers();
 }
 
 function assign_remove_functions(target,obj) {

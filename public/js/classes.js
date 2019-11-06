@@ -77,10 +77,14 @@ class timer {
 		}
 		this.updateclock = function(){
 			if (this.countdown){
-				this.elap = this.total - (this.min*60000 + this.sec*1000 + this.ms*100);
+				this.min = Math.floor((this.total - this.elap)/60000);
+				this.sec = Math.floor((this.total - this.elap)/1000) - 60*this.min;
+				this.ms = Math.floor((this.total - this.elap)/100)%10;
 			}
-			else {
-				this.elap = (this.min*60000 + this.sec*1000 + this.ms*100);
+			else{
+				this.min = Math.floor(this.elap/60000);
+				this.sec = Math.floor(this.elap/1000) - 60*this.min;
+				this.ms = Math.floor(this.elap/100)%10;
 			}
 		}
 
