@@ -71,24 +71,29 @@ wss = new WebSocket.Server({
 });
 
 wss.on('connection', function connection ( ws ) {
-	var msg = {
+	var gamereq = {
 		type: "boards",
 		data: scoreboards
 	}
 	console.log("Connection opened");
-	ws.send(JSON.stringify(msg));
+	ws.send(JSON.stringify(gamereq));
 	ws.on('message', function incoming ( mess ) {
 		var x = JSON.parse(mess);
 		var event = x.data;
 		switch (x.type){
 			case 'score':
-				current.Game = event.game;
 				handle_scoreboard_event( event , scoreboards );
-				broadcast(x);
+				broadcast(x,ws);
 			break;
 			case 'graphics':
 			break;
 			case 'game':
+				current.Game = event;
+				broadcast(x,ws);
+			break;
+			case 'game request':
+				gamereq.data = scoreboards;
+				ws.send(JSON.stringify(gamereq));
 			break;
 		}
 	})
@@ -124,9 +129,9 @@ function add_new_scoreboard(title,mode){
 	//console.log (scoreboards[0]);
 }
 
-function broadcast(data){
+function broadcast(data,ws){
 	wss.clients.forEach(function each(client){
-		if (client.readyState === WebSocket.OPEN){
+		if (client!==ws && client.readyState === WebSocket.OPEN){
 			client.send(JSON.stringify(data));
 		}
 	});

@@ -39,6 +39,9 @@ class timer {
 				this.stop();
 				this.done = true;
 			}
+			else{
+				this.done = false;
+			}
 
 			if (this.pause){
 				return true;

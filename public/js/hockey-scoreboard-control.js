@@ -81,7 +81,7 @@ window.onload = function () {
 			game = this.value;
 			update_timers();
 			update_scoreboard(boards[game],graphics);
-		})
+		});
 	}
 
 	ws.onmessage = function (event) {
@@ -108,7 +108,9 @@ window.onload = function () {
 				update_scoreboard(boards[game],graphics);
 			break;
 			case "score":
-
+				if (msg.data.game == game){
+					handle_scoreboard_event(msg.data,boards,true,graphics);
+				}
 			break;
 		}
 	}
@@ -131,12 +133,25 @@ function sendmessage (item,action,value=false,subitem=false){
 	handle_scoreboard_event(obj,boards,true,graphics);
 }
 
+function request_update (){
+	var msg = {
+		type: "game request",
+		data: {}
+	}
+	ws.send(JSON.stringify(msg));
+}
+
 function update_timers () {
 	update_text(Math.floor(boards[game].clock.min/10),"m1",graphics);
 	update_text(boards[game].clock.min%10,"m2",graphics);
 	update_text(Math.floor(boards[game].clock.sec/10),"s1",graphics);
 	update_text(boards[game].clock.sec%10,"s2",graphics);
 	update_subitem_text("clock","ms",boards[game],graphics,false,"ms");
+
+	// Might not actually do anything, so will have to reevaluate the best way to do this
+	if(boards[game].done){
+		document.getElementById("btn_clock").value = "start";
+	}
 }
 
 function adjust_timer ( value , op = false ) {
@@ -149,8 +164,8 @@ function adjust_timer ( value , op = false ) {
 	}
 	else{
 		time = boards[game].clock.elap + value;
-		if (time>boards[game].total){
-			time = boards[game].total;
+		if (time>boards[game].clock.total){
+			time = boards[game].clock.total;
 		}
 	}
 	sendmessage("clock","update",time,"elap");

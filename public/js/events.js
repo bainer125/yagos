@@ -53,6 +53,13 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 
 		break;
 
+		case 'updateClock':
+
+			board[item].updateclock();
+			board[item].update();
+
+		break;
+
 		case 'bool':
 
 			board[item] = !board[item];
