@@ -25,7 +25,7 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 			board[item]++;
 
 			if (overlay){
-				update_text(item,board,graphics);
+				update_item_text(item,board,graphics);
 			}
 
 		break;
@@ -35,7 +35,7 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 			board[item]--;
 
 			if (overlay){
-				update_text(item,board,graphics);
+				update_item_text(item,board,graphics);
 			}
 
 		break;
@@ -143,7 +143,7 @@ function handle_graphics_event ( event , graphics = {}, animate = false){
 		case 'updateText':
 
 			mod_elements_by_class( item , graphics , function( elem ) {
-				elem.innerHTML = value;
+				elem.innerText = value;
 			});
 
 		break;
@@ -151,7 +151,17 @@ function handle_graphics_event ( event , graphics = {}, animate = false){
 
 }
 
-function update_text ( item , board , graphics = {} , text = false , diff = false) {
+function update_text ( text , id , graphics = {} ) {
+
+	mod_elements_by_class( id , graphics , function( elem ) {
+		
+		elem.innerText = text;
+
+	});
+
+}
+
+function update_item_text ( item , board , graphics = {} , text = false , diff = false) {
 
 	// "tbu" stands for "to be updated"
 	if (diff == false){tbu = item;}
@@ -189,6 +199,14 @@ function update_team ( board , graphics = {} ) {
 
 }
 
+function update_scoreboard ( board , graphics = {} ) {
+	for (var prop in board) {
+		if (typeof board[prop] == "number" || typeof board[prop] == "string"){
+			update_item_text(prop,board,graphics);
+		}
+	}
+}
+
 /*
 function push_event_button ( req , res ){
 
@@ -209,17 +227,32 @@ function mod_elements_by_class ( item , graphics , callback ) {
 
 }
 
+function update_timer ( target , source ){
+	Object.keys(source).forEach(function each(key){
+		if( typeof source[key] == undefined){}
+		else{
+			target[key] = source[key];
+		}
+	})
+}
+
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined'){
 	module.exports = {
 		handle_graphics_event: handle_graphics_event,
 		handle_scoreboard_event: handle_scoreboard_event,
 		update_text: update_text,
-		update_team: update_team
+		update_item_text: update_item_text,
+		update_subitem_text: update_subitem_text,
+		update_team: update_team,
+		update_timer: update_timer
 	}
 }
 else{
     window.handle_scoreboard_event = handle_scoreboard_event;
     window.handle_graphics_event = handle_scoreboard_event;
     window.update_text = update_text;
+    window.update_item_text = update_item_text;
+    window.update_subitem_text = update_subitem_text;
     window.update_team = update_team;
+    window.update_timer = update_timer;
 }

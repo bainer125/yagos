@@ -8,9 +8,9 @@
 
 var ws;
 
-var i = 0;
+var game = 0;
 
-var boards = [new Scoreboard("Game","Ice Hockey",updatetimers)];
+var boards = [new Scoreboard("Game","Ice Hockey",update_timers)];
 
 var graphics = {
 	doc: document
@@ -43,26 +43,79 @@ ws.onopen = function (){
 			document.getElementById("btn_clock").value = "start";
 		}
 	});
+	document.getElementById("game_select").addEventListener("change",function(){
+		game = this.value;
+		update_timers();
+		update_scoreboard(boards[game],graphics);
+	})
 }
 
 ws.onmessage = function (event) {
-	var obj = JSON.parse(event.data);
+	var msg = JSON.parse(event.data);
+	switch (msg.type){
+		case "boards":
+			var i=0;
+			msg.data.forEach(function(board){
+				var x = new Scoreboard("","",update_timers);
+				if(boards[i]===undefined){
+					boards[i] = x;
+				}
+				Object.assign(boards[i],assign_remove_functions(x,board));
+				var option = document.createElement("option");
+				option.text = boards[i].id;
+				option.value = i;
+				document.getElementById("game_select").add(option);
+				i++;
+			});
+			if(boards[game].clock.pause==false){
+				boards[game].clock.start();
+			}
+			update_timers();
+			update_scoreboard(boards[game],graphics);
+		break;
+		case "score":
+
+		break;
+	}
 }
 
 function sendmessage (item,action){
+	var msg = {
+		type: "score",
+		data: {}
+	}
 	var obj = {
 		item: item,
 		action: action,
-		game: 0
+		game: game
 	}
-	ws.send(JSON.stringify(obj));
+	msg.data = obj;
+	ws.send(JSON.stringify(msg));
 	handle_scoreboard_event(obj,boards,true,graphics);
 }
 
-function updatetimers () {
-	update_subitem_text("clock","min",boards[0],graphics,Math.floor(boards[0].clock.min/10),"m1");
-	update_subitem_text("clock","min",boards[0],graphics,boards[0].clock.min%10,"m2");
-	update_subitem_text("clock","sec",boards[0],graphics,Math.floor(boards[0].clock.sec/10),"s1");
-	update_subitem_text("clock","sec",boards[0],graphics,boards[0].clock.sec%10,"s2");
-	update_subitem_text("clock","ms",boards[0],graphics,false,"ms");
+function update_timers () {
+	update_text(Math.floor(boards[game].clock.min/10),"m1",graphics);
+	update_text(boards[game].clock.min%10,"m2",graphics);
+	update_text(Math.floor(boards[game].clock.sec/10),"s1",graphics);
+	update_text(boards[game].clock.sec%10,"s2",graphics);
+	update_subitem_text("clock","ms",boards[game],graphics,false,"ms");
+}
+
+function assign_remove_functions(target,obj) {
+	var ret = target;
+    for (var property in obj) {
+        if (obj.hasOwnProperty(property)) {
+            if (typeof obj[property] == "object"){
+                ret[property] = assign_remove_functions(target[property],obj[property]);
+            }
+            else{
+            	//console.log(typeof obj[property] + "  " + property);
+                if (typeof obj[property] !== "undefined"){
+                	ret[property] = obj[property];
+                }
+            }
+        }
+    }
+    return ret;
 }
