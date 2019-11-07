@@ -95,6 +95,26 @@ wss.on('connection', function connection ( ws ) {
 				gamereq.data = scoreboards;
 				ws.send(JSON.stringify(gamereq));
 			break;
+			case 'load teams':
+				var raw = fs.readFileSync('./public/Teams/team-data.json');
+				var data = JSON.parse(raw);
+				var newteams = [];
+				data.Teams.forEach(function(team){
+					var i = 1;
+					var path = "/Teams/"+team["league"]+"/"+team["location"];
+					fs.readdirSync("./public"+path).forEach(function(file){
+						team["logo"+i.toString()] = path + "/" + file;
+						i++;
+					});
+					newteams.push(team);
+				});
+				data.Teams = newteams;
+				var msg = {
+					type: "team data",
+					data: data
+				}
+				broadcast(msg,ws,false);
+			break;
 		}
 	})
 });
@@ -109,6 +129,10 @@ app.get('/control-panel',function(req,res){
 
 app.get('/hockey-scoreboard',function(req,res){
 	res.sendFile("/public/html/hockey-scoreboard.html", { root: '.' });
+});
+
+app.get('/team-settings',function(req,res){
+	res.sendFile("/public/html/team-settings.html", { root: '.' });
 });
 
 /*
@@ -129,10 +153,17 @@ function add_new_scoreboard(title,mode){
 	//console.log (scoreboards[0]);
 }
 
-function broadcast(data,ws){
+function broadcast(data,ws,exclude=true){
 	wss.clients.forEach(function each(client){
-		if (client!==ws && client.readyState === WebSocket.OPEN){
-			client.send(JSON.stringify(data));
+		if(exclude){
+			if (client!==ws && client.readyState === WebSocket.OPEN){
+				client.send(JSON.stringify(data));
+			}
+		}
+		else{
+			if (client.readyState === WebSocket.OPEN){
+				client.send(JSON.stringify(data));
+			}
 		}
 	});
 }

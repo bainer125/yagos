@@ -13,12 +13,12 @@
 
 			<div id="select">
 
-				<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)">
+				<select id="mode_select">
 					<option>Sports</option>
 					<option>News</option>
 					<option>Event</option>
 				</select>
-				<select id="sport_select" onchange="send_event('sport_switch',document.getElementById('sport_select	').value)">
+				<select id="sport_select">
 					<option>Ice Hockey</option>
 					<option>Soccer</option>
 					<option>Baseball</option>
@@ -35,7 +35,7 @@
 
 			<div class="centered" id="buttons">
 	
-				<button class="up" id="btn_Scoreboard" value="true" onclick="button_animation(this)">Scoreboard</button>
+				<button class="up" id="btn_Scoreboard" value="true">Scoreboard</button>
 				<button class="up" id="btn_Intermission" value="false">Intermission</button>
 				<button class="up" id="btn_Commercial" value="false">Commercial</button>
 				<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
@@ -93,5 +93,6 @@
 	</body>
 	<script type="text/javascript" src="/js/classes.js"></script>
 	<script type="text/javascript" src="/js/events.js"></script>
+	<script type="text/javascript" src="/js/client.js"></script>
 	<script type="text/javascript" src="/js/control-panel.js"></script>
 </html>

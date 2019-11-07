@@ -111,7 +111,7 @@
        height="92.616104"
        width="271.18658"
        id="awayColor"
-       class="awayColor1"
+       class="away_color1"
        style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.55975837;stroke-opacity:1"
        inkscape:label="awayColor" />
     <rect
@@ -120,7 +120,7 @@
        height="92.616104"
        width="271.18658"
        id="homeColor"
-       class="homeColor1"
+       class="home_color1"
        style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.56380457;stroke-opacity:1"
        inkscape:label="homeColor" />
     <image
@@ -134,7 +134,7 @@
        height="146.19591"
        width="146.19591"
        inkscape:label="awayLogo"
-       class="awayLogo1"
+       class="away_logo1"
        clip-path="url(#clipPath1084)" />
     <image
        sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
@@ -147,7 +147,7 @@
        height="151.66426"
        width="187.81953"
        inkscape:label="homeLogo"
-       class="homeLogo1"
+       class="home_logo1"
        clip-path="url(#clipPath976)" />
     <rect
        y="-67.375732"
@@ -169,7 +169,7 @@
        x="-62.30994"
        y="-0.086311147"
        id="homeName"
-       class="homeNickname"
+       class="home_nickname"
        inkscape:label="homeName">Canada</text>
     <text
        xml:space="preserve"
@@ -177,7 +177,7 @@
        x="104.01826"
        y="-0.66670215"
        id="awayName"
-       class="awayNickname"
+       class="away_nickname"
        inkscape:label="awayName"><tspan
          style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:34.89999771px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;stroke-width:0.65438527"
          id="tspan866">USA</tspan></text>
@@ -207,7 +207,7 @@
        x="-62.482372"
        y="-32.783287"
        id="homeName-4"
-       class="homeLocation"
+       class="home_location"
        inkscape:label="homeLocation">Team</text>
     <text
        xml:space="preserve"
@@ -215,7 +215,7 @@
        x="105.45325"
        y="-32.952766"
        id="awayName-8"
-       class="awayLocation"
+       class="away_location"
        inkscape:label="awayLocation"><tspan
          style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;stroke-width:0.65438527"
          id="tspan866-1">Team</tspan></text>

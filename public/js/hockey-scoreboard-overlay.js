@@ -6,12 +6,6 @@
 ########################################################
 */
 
-var ws;
-
-var game = 0;
-
-var boards = [new Scoreboard("Game","Ice Hockey",update_timers)];
-
 var graphics = {
 };
 
@@ -47,6 +41,7 @@ window.onload = function () {
 				}
 				update_timers();
 				update_scoreboard(boards[game],graphics);
+				update_teams(boards[game],graphics);
 			break;
 			case "score":
 				var disp=false;
@@ -61,31 +56,6 @@ window.onload = function () {
 	}
 };
 
-function sendmessage (item,action,value=false,subitem=false){
-	var msg = {
-		type: "score",
-		data: {}
-	}
-	var obj = {
-		item: item,
-		action: action,
-		game: game,
-		value: value,
-		subitem: subitem
-	}
-	msg.data = obj;
-	ws.send(JSON.stringify(msg));
-	handle_scoreboard_event(obj,boards,true,graphics);
-}
-
-function request_update (){
-	var msg = {
-		type: "game request",
-		data: {}
-	}
-	ws.send(JSON.stringify(msg));
-}
-
 function update_timers () {
 	if(boards[game].clock.min>0){
 		if(boards[game].clock.sec>9){
@@ -99,22 +69,4 @@ function update_timers () {
 		update_text(`${boards[game].clock.sec}.${boards[game].clock.ms}`,"clock_text",graphics);
 	}
 	
-}
-
-function assign_remove_functions(target,obj) {
-	var ret = target;
-    for (var property in obj) {
-        if (obj.hasOwnProperty(property)) {
-            if (typeof obj[property] == "object"){
-                ret[property] = assign_remove_functions(target[property],obj[property]);
-            }
-            else{
-            	//console.log(typeof obj[property] + "  " + property);
-                if (typeof obj[property] !== "undefined"){
-                	ret[property] = obj[property];
-                }
-            }
-        }
-    }
-    return ret;
 }

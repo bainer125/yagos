@@ -82,6 +82,9 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 
 			if (!subitem){
 				board[item] = value;
+				if (item.includes("teamInfo")&&overlay){
+					update_teams(board,graphics);
+				}
 			}
 			else{
 				board[item][subitem] = value;
@@ -208,7 +211,53 @@ function update_subitem_text ( item , subitem , board , graphics = {} , text = f
 
 }
 
-function update_team ( board , graphics = {} ) {
+function update_teams ( board , graphics = {} ) {
+
+	Object.keys(board["home_teamInfo"]).forEach(function(key){
+		if(key.includes("logo")){
+			mod_elements_by_class ( "home_"+key , graphics , function(elem){
+				elem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', board["home_teamInfo"][key]);
+			});
+		}
+		else if(key.includes("color")){
+			mod_elements_by_class ( "home_"+key , graphics , function(elem){
+				if(elem.tagName=="stop"){
+					elem.style["stop-color"]=board["home_teamInfo"][key];;
+				}
+				else{
+					elem.style.fill=board["home_teamInfo"][key];;
+				}
+			});
+		}
+		else{
+			mod_elements_by_class ( "home_"+key , graphics , function(elem){
+				elem.innerHTML = board["home_teamInfo"][key];
+			});
+		}
+	});
+
+	Object.keys(board["away_teamInfo"]).forEach(function(key){
+		if(key.includes("logo")){
+			mod_elements_by_class ( "away_"+key , graphics , function(elem){
+				elem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', board["away_teamInfo"][key]);
+			});
+		}
+		else if(key.includes("color")){
+			mod_elements_by_class ( "away_"+key , graphics , function(elem){
+				if(elem.tagName=="stop"){
+					elem.style["stop-color"]=board["away_teamInfo"][key];;
+				}
+				else{
+					elem.style.fill=board["away_teamInfo"][key];;
+				}
+			});
+		}
+		else{
+			mod_elements_by_class ( "away_"+key , graphics , function(elem){
+				elem.innerHTML = board["away_teamInfo"][key];
+			});
+		}
+	});
 
 }
 
@@ -256,7 +305,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined'){
 		update_text: update_text,
 		update_item_text: update_item_text,
 		update_subitem_text: update_subitem_text,
-		update_team: update_team,
+		update_teams: update_teams,
 		update_timer: update_timer
 	}
 }
@@ -266,6 +315,6 @@ else{
     window.update_text = update_text;
     window.update_item_text = update_item_text;
     window.update_subitem_text = update_subitem_text;
-    window.update_team = update_team;
+    window.update_teams = update_teams;
     window.update_timer = update_timer;
 }
