@@ -88,6 +88,9 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 			}
 			else{
 				board[item][subitem] = value;
+				if (item.includes("teamInfo")&&overlay){
+					update_teams(board,graphics);
+				}
 			}
 
 		break;
@@ -213,48 +216,41 @@ function update_subitem_text ( item , subitem , board , graphics = {} , text = f
 
 function update_teams ( board , graphics = {} ) {
 
-	Object.keys(board["home_teamInfo"]).forEach(function(key){
-		if(key.includes("logo")){
-			mod_elements_by_class ( "home_"+key , graphics , function(elem){
-				elem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', board["home_teamInfo"][key]);
-			});
-		}
-		else if(key.includes("color")){
-			mod_elements_by_class ( "home_"+key , graphics , function(elem){
-				if(elem.tagName=="stop"){
-					elem.style["stop-color"]=board["home_teamInfo"][key];;
-				}
-				else{
-					elem.style.fill=board["home_teamInfo"][key];;
-				}
-			});
-		}
-		else{
-			mod_elements_by_class ( "home_"+key , graphics , function(elem){
-				elem.innerHTML = board["home_teamInfo"][key];
-			});
-		}
-	});
+	update_full_info("home","teamInfo",board,graphics);
+	update_full_info("away","teamInfo",board,graphics);
 
-	Object.keys(board["away_teamInfo"]).forEach(function(key){
-		if(key.includes("logo")){
-			mod_elements_by_class ( "away_"+key , graphics , function(elem){
-				elem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', board["away_teamInfo"][key]);
+}
+
+function update_full_info ( team , info , board , graphics = {} ){
+
+	var info = team + "_" + info;
+	Object.keys(board[info]).forEach(function(key){
+		if(key.includes("logo")||key.includes("image")||key.includes("photo")){
+			mod_elements_by_class ( team+"_"+key , graphics , function(elem){
+				if(elem.tagName=="IMG"){
+					elem.src = board[info][key];
+				}
+				else{
+					elem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', board[info][key]);
+				}
 			});
 		}
 		else if(key.includes("color")){
-			mod_elements_by_class ( "away_"+key , graphics , function(elem){
+			mod_elements_by_class ( team+"_"+key , graphics , function(elem){
 				if(elem.tagName=="stop"){
-					elem.style["stop-color"]=board["away_teamInfo"][key];;
+					elem.style["stop-color"]=board[info][key];
+				}
+				else if(elem.tagName=="INPUT"){
+					elem.value=board[info][key];
 				}
 				else{
-					elem.style.fill=board["away_teamInfo"][key];;
+					elem.style.fill=board[info][key];
 				}
 			});
 		}
 		else{
-			mod_elements_by_class ( "away_"+key , graphics , function(elem){
-				elem.innerHTML = board["away_teamInfo"][key];
+			mod_elements_by_class ( team+"_"+key , graphics , function(elem){
+				elem.innerHTML = board[info][key];
 			});
 		}
 	});
@@ -276,6 +272,20 @@ function push_event_button ( req , res ){
 */
 
 function mod_elements_by_class ( item , graphics , callback ) {
+
+	// Callback takes a DOM element as an argument and modifies it
+
+	var vals = Object.keys(graphics);
+	for (const graphic of vals) {
+		var a = graphics[graphic].getElementsByClassName(item);
+		for (i=0,len=a.length;i<len;i++){
+			callback(a[i]);
+		}
+	}
+
+}
+
+function edit_elements_by_class ( item , callback ) {
 
 	// Callback takes a DOM element as an argument and modifies it
 

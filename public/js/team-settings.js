@@ -40,6 +40,8 @@ window.onload = function () {
 			sendmessage("away_teamInfo","update",boards[game]["away_teamInfo"]);
 		});
 		load_teams();
+		add_color_event_listeners();
+		add_logo_event_listeners();
 	}
 
 	ws.onmessage = function (event) {
@@ -153,4 +155,30 @@ function removeOptions(selectbox){
     {
         selectbox.remove(i);
     }
+}
+
+function add_color_event_listeners () {
+	edit_elements_by_class ("home_color" , function(elem){
+		elem.addEventListener("change",function(){
+			sendmessage("home_teamInfo","update",this.value,(this.id).split("_")[1]);
+		});
+	});
+	edit_elements_by_class ("away_color" , function(elem){
+		elem.addEventListener("change",function(){
+			sendmessage("away_teamInfo","update",this.value,(this.id).split("_")[1]);
+		});
+	});
+}
+
+function add_logo_event_listeners () {
+	edit_elements_by_class ("home_logo" , function(elem){
+		elem.addEventListener("change",function(){
+			sendmessage("home_teamInfo","update",this.value,(this.id).split("_")[1]);
+		});
+	});
+	edit_elements_by_class ("away_logo" , function(elem){
+		elem.addEventListener("change",function(){
+			sendmessage("away_teamInfo","update",this.value,(this.id).split("_")[1]);
+		});
+	});
 }
