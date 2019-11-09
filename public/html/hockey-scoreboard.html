@@ -18,7 +18,7 @@
 	<!-- HOME STATS START ================================= -->
 			<div id="home_stats" class="column inherit_h stats_1">
 				<div class="row inherit_w stats_title_1"><div class="column inherit_w inherit_h">
-					<h3 class="stats_title_text_1">Home</h3>
+					<h3 class="stats_title_text_1 home_location">Home</h3>
 				</div></div>
 				<div class="row inherit_w stats_score_1">
 					<div class="column inherit_h stats_section_1 margin_right_1">
@@ -137,7 +137,7 @@
 	<!-- AWAY STATS START =================================== -->
 			<div id="away_stats" class="column inherit_h stats_1">
 				<div class="row inherit_w stats_title_1"><div class="column inherit_w inherit_h">
-					<h3 class="stats_title_text_1">Away</h3>
+					<h3 class="stats_title_text_1 away_location">Away</h3>
 				</div></div>
 				<div class="row inherit_w stats_score_1">
 					<div class="column inherit_h stats_section_1 margin_right_1">
@@ -186,65 +186,36 @@
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_1">Number:</div>
 						<div class="col inherit_h penalty_col_2">
-            				<input id="diff" type="number" min="0" max="30" value="0" class="inherit_w inherit_h"/> 
+            				<select id="home_new_penalty_number" value="0" class="inherit_w inherit_h"></select>
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_1">Penalty Length:</div>
 						<div class="col inherit_h penalty_col_2">
-            				<input id="diff" type="number" min="0" max="1000" value="0" class="inherit_w inherit_h"/> 
+            				<select id="home_new_penalty_time" value="2" class="inherit_w inherit_h">
+            					<option value="2" >2:00</option>
+								<option value="4" >4:00</option>
+								<option value="5" >5:00</option>
+            				</select> 
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_3">Infraction</div>
 						<div class="col inherit_h penalty_col_3">
-            				<select id="mode_select" class="inherit_w	inherit_h">
-								<option>Roughing</option>
-								<option>Tripping</option>
-								<option>Slashing</option>
+            				<select id="home_new_penalty_infraction" class="inherit_w	inherit_h">
 							</select> 
 						</div>
 					</div></div>
-					<div class="col inherit_h penalty_btn">
+					<div id="add_home_penalty" class="col inherit_h penalty_btn">
 						<button class="inherit_w inherit_h btn_plus">+</button>
 					</div>
 				</div>
 
 	<!-- Home Penalty List ----------------------------------- -->
-				<div class="row inherit_w penalty_list margin_top_1"><div class="col inherit_w inherit_h">
+				<div class="row inherit_w penalty_list margin_top_1"><div id="home_penalty_list" class="col inherit_w inherit_h">
 		<!-- HOME INFRACTION 1 --> <!-- these will be added dynamically -->
-					<div class="row inherit_w penalty_list_item">
-						<div class="col inherit_h penalty_col">
-							2
-						</div>
-						<div class="col inherit_h penalty_col">
-							1:15
-						</div>
-						<div class="col inherit_h penalty_col">
-							Roughing
-						</div>
-						<div class="col inherit_h penalty_btn">
-							<button class="inherit_w inherit_h btn_minus">-</button>
-						</div>
-					</div>
+					
 					<!-- end home infraction 1 -->
-
-		<!-- HOME INFRACTION 2 -->
-					<div class="row inherit_w penalty_list_item">
-						<div class="col inherit_h penalty_col">
-							11
-						</div>
-						<div class="col inherit_h penalty_col">
-							0:41
-						</div>
-						<div class="col inherit_h penalty_col">
-							Tripping
-						</div>
-						<div class="col inherit_h penalty_btn">
-							<button class="inherit_w inherit_h btn_minus">-</button>
-						</div>
-					</div>
-					<!-- end home infraction 2 -->
 				</div></div>
 			</div>
 <!-- HOME PENALTIES [end] =============================== -->
@@ -258,33 +229,35 @@
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_1">Number:</div>
 						<div class="col inherit_h penalty_col_2">
-            				<input id="diff" type="number" min="0" max="30" value="0" class="inherit_w inherit_h"/> 
+            				<select id="away_new_penalty_number" value="0" class="inherit_w inherit_h"></select>
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_1">Penalty Length:</div>
 						<div class="col inherit_h penalty_col_2">
-            				<input id="diff" type="number" min="0" max="1000" value="0" class="inherit_w inherit_h"/> 
+            				<select id="away_new_penalty_time" value="2" class="inherit_w inherit_h">
+            					<option value="2" >2:00</option>
+								<option value="4" >4:00</option>
+								<option value="5" >5:00</option>
+            				</select> 
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_3">Infraction</div>
 						<div class="col inherit_h penalty_col_3">
-            				<select id="mode_select" class="inherit_w	inherit_h">
-								<option>Roughing</option>
-								<option>Tripping</option>
-								<option>Slashing</option>
+            				<select id="away_new_penalty_infraction" class="inherit_w	inherit_h">
 							</select> 
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_btn">
-						<button class="inherit_w inherit_h btn_plus">+</button>
+						<button id="add_away_penalty" class="inherit_w inherit_h btn_plus">+</button>
 					</div>
 				</div>
 
 	<!-- Away Penalty List ----------------------------------- -->
-				<div class="row inherit_w penalty_list margin_top_1"><div class="col inherit_w inherit_h">
+				<div class="row inherit_w penalty_list margin_top_1"><div id="away_penalty_list" class="col inherit_w inherit_h">
 		<!-- AWAY INFRACTION 1 --> <!-- these will be added dynamically -->
+		<!-- Example infraction
 					<div class="row inherit_w penalty_list_item">
 						<div class="col inherit_h penalty_col">
 							12
@@ -299,6 +272,7 @@
 							<button class="inherit_w inherit_h btn_minus">-</button>
 						</div>
 					</div>
+				-->
 					<!-- end away infraction 1 -->
 
 				</div></div>

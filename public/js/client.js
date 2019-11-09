@@ -46,7 +46,11 @@ function assign_remove_functions(target,obj) {
 	var ret = target;
     for (var property in obj) {
         if (obj.hasOwnProperty(property)) {
-            if (typeof obj[property] == "object"){
+            if (typeof obj[property] == "object" && typeof obj[property] !== "undefined"){
+                if (Array.isArray(ret)){
+                    ret[0]={};
+                    target[0]={};
+                }
                 ret[property] = assign_remove_functions(target[property],obj[property]);
             }
             else{
@@ -58,4 +62,10 @@ function assign_remove_functions(target,obj) {
         }
     }
     return ret;
+}
+
+function create_and_assign_option ( select , option ){
+    var opt = document.createElement('option');
+    opt.innerHTML = option;
+    select.appendChild(opt);
 }

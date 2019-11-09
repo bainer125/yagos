@@ -100,16 +100,14 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 		case 'show':
 
 			if ( overlay ) {
-
-				handle_graphics_button( event , graphics );
-
+				handle_graphics_event( event , graphics );
 			}
 
 		break;
 	}
 }
 
-function handle_graphics_event ( event , graphics = {}, animate = false){
+function handle_graphics_event( event , graphics = {}, animate = false){
 
 	action = event.action;
 	item = event.item;
@@ -321,7 +319,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined'){
 }
 else{
     window.handle_scoreboard_event = handle_scoreboard_event;
-    window.handle_graphics_event = handle_scoreboard_event;
+    window.handle_graphics_event = handle_graphics_event;
     window.update_text = update_text;
     window.update_item_text = update_item_text;
     window.update_subitem_text = update_subitem_text;

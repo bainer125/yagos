@@ -116,7 +116,7 @@
        style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
        x="10"
        y="27"
-       class="periodText"
+       class="period_text"
        id="periodText">1st</text>
     <text
        xml:space="preserve"
@@ -143,6 +143,7 @@
   <g
      style="display:none"
      id="evenPenalty"
+     class="even_penalty"
      inkscape:label="evenPenalty">
     <rect
        style="fill:#000000;fill-opacity:0.78399999;stroke:none;stroke-width:0.28254917;stroke-opacity:1"
@@ -158,6 +159,7 @@
        x="160"
        y="132"
        id="evenPenaltyClock"
+       class="penaltyClock"
        inkscape:label="evenPenaltyClock">1:23</text>
     <text
        xml:space="preserve"
@@ -165,11 +167,13 @@
        x="65"
        y="130"
        id="evenPenaltyText"
+       class="even_penaltyText"
        inkscape:label="evenPenaltyText">4 on 4</text>
   </g>
   <g
      style="display:none"
      id="awayPenalty"
+     class="away_penalty"
      inkscape:label="awayPenalty">
     <rect
        style="fill:#ff0000;fill-opacity:0.78399999;stroke:none;stroke-width:0.28254917;stroke-opacity:1"
@@ -185,6 +189,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
        x="160"
        y="132"
+       class="penaltyClock"
        id="awayPenaltyClock"
        inkscape:label="awayPenaltyClock">1:23</text>
     <text
@@ -192,11 +197,13 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
        x="65"
        y="130"
+       class="away_penaltyText"
        id="awayPenaltyText"
        inkscape:label="awayPenaltyText">Power Play</text>
   </g>
   <g
      style="display:inline"
+     class="home_penalty"
      id="homePenalty"
      inkscape:label="homePenalty">
     <rect
@@ -213,6 +220,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
        x="160"
        y="132"
+       class="penaltyClock"
        id="homePenaltyClock"
        inkscape:label="homePenaltyClock">1:23</text>
     <text
@@ -220,6 +228,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
        x="65"
        y="130"
+       class="home_penaltyText"
        id="homePenaltyText"
        inkscape:label="homePenaltyText">Power Play</text>
   </g>

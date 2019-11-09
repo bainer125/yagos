@@ -68,5 +68,88 @@ function update_timers () {
 	else{
 		update_text(`${boards[game].clock.sec}.${boards[game].clock.ms}`,"clock_text",graphics);
 	}
+	update_penalty_display();
 	
+}
+
+function update_penalty_display () {
+	var t = ["home", "away"];
+	var times = [];
+	for(var i=0;i<t.length;i++){
+		boards[game][t[i]+"_penalties"].forEach(function(pen,index){
+			var rem = pen.initial + pen.finish - boards[game].clock.elap;
+			times.push(rem);
+		});
+	}
+	if(times.length>0){
+		var time = times.reduce(function(a, b) {
+		    return Math.max(a, b);
+		});
+	}
+	var min = Math.floor((time)/60000);
+	var sec = Math.floor(time/1000) - 60*min;
+	if(sec>9){
+		update_text(`${min}:${sec}`,"penaltyClock",graphics);
+	}
+	else{
+		update_text(`${min}:0${sec}`,"penaltyClock",graphics);
+	}
+	var hp = boards[game]["home_penalties"].length;
+	var ap = boards[game]["away_penalties"].length;
+	console.log(hp,ap);
+
+	if(hp == 0 && ap == 0){
+		sendmessage("home_penalty","hide");
+		sendmessage("away_penalty","hide");
+		sendmessage("even_penalty","hide");
+	}
+
+	else if(hp == 1 && ap == 0){
+		sendmessage("home_penalty","show");
+		sendmessage("away_penalty","hide");
+		sendmessage("even_penalty","hide");
+	}
+
+	else if(hp > 1 && ap == 1){
+		sendmessage("home_penalty","show");
+		sendmessage("away_penalty","hide");
+		sendmessage("even_penalty","hide");
+	}
+
+	else if(hp > 1 && ap == 0){
+		sendmessage("home_penalty","show");
+		sendmessage("away_penalty","hide");
+		sendmessage("even_penalty","hide");
+	}
+
+	else if(hp == 0 && ap == 1){
+		sendmessage("home_penalty","hide");
+		sendmessage("away_penalty","show");
+		sendmessage("even_penalty","hide");
+	}
+
+	else if(hp == 1 && ap > 1){
+		sendmessage("home_penalty","hide");
+		sendmessage("away_penalty","show");
+		sendmessage("even_penalty","hide");
+	}
+
+	else if(hp == 0 && ap > 1){
+		sendmessage("home_penalty","hide");
+		sendmessage("away_penalty","show");
+		sendmessage("even_penalty","hide");
+	}
+
+	else if(hp == 1 && ap == 1){
+		sendmessage("home_penalty","hide");
+		sendmessage("away_penalty","hide");
+		sendmessage("even_penalty","show");
+	}
+
+	else if(hp > 1 && ap > 1){
+		sendmessage("home_penalty","hide");
+		sendmessage("away_penalty","hide");
+		sendmessage("even_penalty","show");
+	}
+
 }

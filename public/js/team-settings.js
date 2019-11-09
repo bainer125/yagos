@@ -20,7 +20,10 @@ window.onload = function () {
 		console.log( "Connection established" );
 		document.getElementById("game_select").addEventListener("change",function(){
 			game = this.value;
+			update_teams(boards[game],graphics);
+
 		});
+		update_teams(boards[game],graphics);
 		document.getElementById("home_league_select").addEventListener("change",function(){
 			update_team_data("home");
 			boards[game]["home_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("home_league_select").value && x["fullName"] == document.getElementById("home_team_select").value)[0];
@@ -61,6 +64,7 @@ window.onload = function () {
 					document.getElementById("game_select").add(option);
 					i++;
 				});
+				update_teams(boards[game],graphics);
 			break;
 			case "score":
 				if (msg.data.game == game){

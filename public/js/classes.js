@@ -117,14 +117,13 @@ team, it will be preceded by either "home" or
 
 class penalty_timer {
 
-	constructor( minutes , starttime , number , infraction , callback ){
+	constructor( minutes , starttime , number , infraction ){
 
 		// Pass the elapsed time of the main clock into 'starttime'
 		this.initial = starttime;
 
 		// Amount of ms needed to pass before time is over
 		this.finish = minutes * 60000;
-		this.update = callback || function(){};
 		this.number = number;
 		this.infraction = infraction;
 
@@ -190,6 +189,8 @@ class Scoreboard {
 		this.away_delayedPenalty = false;
 
 
+		var that = this;
+
 		// Delete penalties from arrays
 
 		this.delete_penalties = function (){
@@ -199,7 +200,7 @@ class Scoreboard {
 
 			this.home_penalties.forEach(function(item,index){
 
-				if (item.start + item.finish < this.clock.elap){
+				if (item.initial + item.finish > that.clock.elap+1000){
 					new_home_pen.push(item);
 				}
 
@@ -207,7 +208,7 @@ class Scoreboard {
 
 			this.away_penalties.forEach(function(item,index){
 
-				if (item.start + item.finish < this.clock.elap){
+				if (item.initial + item.finish > that.clock.elap+1000){
 					new_away_pen.push(item);
 				}
 
@@ -263,8 +264,6 @@ class Scoreboard {
 
 		// All functions that should be run every second
 		// after scoreboard construction
-
-		var that = this;
 
 	    setInterval( function() {
 
