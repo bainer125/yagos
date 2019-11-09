@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/team-settings.css">	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
+	<title>Team Settings</title>
+</head>
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+	<body class="fullscreen"><div class="container fullscreen">
+		<div id="header_1" class="row inherit_w"><div class="column inherit_w inherit_h">
+			<h1>Team Settings</h1><select id="game_select" style="float:right"></select>
+		</div></div>
+		
+<!-- TOP SECTION START -->
+		<div id="top_1" class="row inherit_w">
+
+	<!-- HOME INFO START ================================= -->
+			<div id="home_info" class="column inherit_h stats_1">
+				<div class="row inherit_w stats_title_1"><div class="column inherit_w inherit_h">
+					<h3 class="stats_title_text_1">Home</h3>
+				</div></div>
+				<br>League: <select id="home_league_select">
+				</select></br>
+				<br>Team: <select id="home_team_select">
+				</select></br>
+				<br>Color 1: <input class="home_color1 home_color" type="color" value="#ff0000" id="home_color1"></input></br>
+				<br>Color 2: <input class="home_color2 home_color" type="color" value="#ff0000" id="home_color2"></input></br>
+				<br>Color 3: <input class="home_color3 home_color" type="color" value="#ff0000" id="home_color3"></input></br>
+				<br>Color 4: <input class="home_color4 home_color" type="color" value="#ff0000" id="home_color4"></input></br>
+				<br>Logo 1: <input type="file" id="home_logo1" class="home_logo"></input><select class="home_logo"></select><img id="home_logo1_preview" class="home_logo1 logo" src="/Teams/International/Canada/logo1.png"/></br>
+				<br>Logo 2: <input type="file" id="home_logo2" class="home_logo"></input><select class="home_logo"></select><img id="home_logo2_preview" class="home_logo2 logo" src="/Teams/International/Canada/logo2.png"/></br>
+				<br>Logo 3: <input type="file" id="home_logo3"class="home_logo" ></input><select class="home_logo"></select><img id="home_logo3_preview" class="home_logo3 logo" src="/Teams/International/Canada/logo3.png"/></br>
+
+
+			</div>
+	<!-- HOME INFO END =================================== -->
+
+
+	<!-- AWAY INFO START =================================== -->
+			<div id="away_info" class="column inherit_h stats_1">
+				<div class="row inherit_w stats_title_1"><div class="column inherit_w inherit_h">
+					<h3 class="stats_title_text_1">Away</h3>
+				</div></div>
+				<br>League: <select id="away_league_select">
+				</select></br>
+				<br>Team: <select id="away_team_select">
+				</select></br>
+				<br>Color 1: <input class="away_color1 away_color" type="color" value="#ff0000" id="away_color1"></input></br>
+				<br>Color 2: <input class="away_color2 away_color" type="color" value="#ff0000" id="away_color2"></input></br>
+				<br>Color 3: <input class="away_color3 away_color" type="color" value="#ff0000" id="away_color3"></input></br>
+				<br>Color 4: <input class="away_color4 away_color" type="color" value="#ff0000" id="away_color4"></input></br>
+				<br>Logo 1: <input type="file" id="away_logo1" class="away_logo"></input><select class="away_logo"></select><img id="away_logo1_preview" class="away_logo1 logo" src="/Teams/International/Canada/logo1.png"/></br>
+				<br>Logo 2: <input type="file" id="away_logo2" class="away_logo"></input><select class="away_logo"></select><img id="away_logo2_preview" class="away_logo2 logo" src="/Teams/International/Canada/logo2.png"/></br>
+				<br>Logo 3: <input type="file" id="away_logo3"class="away_logo" ></input><select class="away_logo"></select><img id="away_logo3_preview" class="away_logo3 logo" src="/Teams/International/Canada/logo3.png"/></br>
+
+			</div>
+	<!-- AWAY INFO END =================================== -->
+		</div>
+<!-- TOP SECTION END -->
+
+
+	</div></body>
+	<script type="text/javascript" src="/js/classes.js"></script>
+	<script type="text/javascript" src="/js/events.js"></script>
+	<script type="text/javascript" src="/js/client.js"></script>
+	<script type="text/javascript" src="/js/team-settings.js"></script>
+</html>

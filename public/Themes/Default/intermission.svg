@@ -45,27 +45,91 @@
   </metadata>
   <defs
      id="defs43">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter1000">
+      <feFlood
+         flood-opacity="0.658824"
+         flood-color="rgb(255,255,255)"
+         result="flood"
+         id="feFlood990" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite992" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="10.0529"
+         result="blur"
+         id="feGaussianBlur994" />
+      <feOffset
+         dx="8.32667e-17"
+         dy="1.38778e-16"
+         result="offset"
+         id="feOffset996" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite998" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter1025">
+      <feFlood
+         flood-opacity="0.658824"
+         flood-color="rgb(255,255,255)"
+         result="flood"
+         id="feFlood1015" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1017" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="10"
+         result="blur"
+         id="feGaussianBlur1019" />
+      <feOffset
+         dx="8.32667e-17"
+         dy="1.38778e-16"
+         result="offset"
+         id="feOffset1021" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite1023" />
+    </filter>
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath976">
+       id="clipPath1027">
       <rect
-         y="-67.375725"
-         x="-249.98727"
-         height="92.616104"
-         width="271.18658"
-         id="rect978"
+         inkscape:label="homeLogoMask"
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.56380457;stroke-opacity:1"
-         inkscape:label="homeLogoMask" />
+         id="rect1029"
+         width="271.18658"
+         height="92.616104"
+         x="-249.98727"
+         y="-67.375725" />
     </clipPath>
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath1084">
+       id="clipPath1031">
       <rect
          y="-67.375725"
-         x="21.199337"
+         x="21.199345"
          height="92.616104"
          width="271.18658"
-         id="rect1086"
+         id="rect1033"
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.55975837;stroke-opacity:1"
          inkscape:label="awayLogoClip" />
     </clipPath>
@@ -84,8 +148,8 @@
      id="namedview41"
      showgrid="false"
      inkscape:zoom="2.1001071"
-     inkscape:cx="387.23046"
-     inkscape:cy="85.985534"
+     inkscape:cx="411.66172"
+     inkscape:cy="206.70225"
      inkscape:window-x="900"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -111,7 +175,7 @@
        height="92.616104"
        width="271.18658"
        id="awayColor"
-       class="awayColor1"
+       class="away_color1"
        style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.55975837;stroke-opacity:1"
        inkscape:label="awayColor" />
     <rect
@@ -120,35 +184,36 @@
        height="92.616104"
        width="271.18658"
        id="homeColor"
-       class="homeColor1"
+       class="home_color1"
        style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.56380457;stroke-opacity:1"
        inkscape:label="homeColor" />
     <image
-       sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/United States/logo1.png"
-       y="-93.709412"
-       x="204.80255"
+       sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
+       y="-92.848625"
+       x="121.3929"
        id="image1073"
        xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/United%20States/logo1.png"
-       style="opacity:0.60477451;image-rendering:optimizeQuality"
+       style="opacity:0.5;filter:url(#filter1025);image-rendering:optimizeQuality"
        preserveAspectRatio="xMidYMid meet"
-       height="146.19591"
-       width="146.19591"
+       height="140"
+       width="140"
        inkscape:label="awayLogo"
-       class="awayLogo1"
-       clip-path="url(#clipPath1084)" />
+       class="away_logo1"
+       clip-path="url(#clipPath1031)"
+       mask="none" />
     <image
        sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
-       y="-107.55975"
-       x="-335.50668"
+       y="-92.848717"
+       x="-224.4922"
        id="image944"
        xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
-       style="opacity:0.60500004;image-rendering:optimizeQuality"
+       style="opacity:0.5;filter:url(#filter1000);image-rendering:optimizeQuality"
        preserveAspectRatio="xMidYMid meet"
-       height="151.66426"
-       width="187.81953"
+       height="140"
+       width="140"
        inkscape:label="homeLogo"
-       class="homeLogo1"
-       clip-path="url(#clipPath976)" />
+       class="home_logo1"
+       clip-path="url(#clipPath1027)" />
     <rect
        y="-67.375732"
        x="-43.329086"
@@ -169,7 +234,7 @@
        x="-62.30994"
        y="-0.086311147"
        id="homeName"
-       class="homeNickname"
+       class="home_nickname"
        inkscape:label="homeName">Canada</text>
     <text
        xml:space="preserve"
@@ -177,7 +242,7 @@
        x="104.01826"
        y="-0.66670215"
        id="awayName"
-       class="awayNickname"
+       class="away_nickname"
        inkscape:label="awayName"><tspan
          style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:34.89999771px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;stroke-width:0.65438527"
          id="tspan866">USA</tspan></text>
@@ -192,14 +257,14 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
        x="-10.704814"
        y="-2.7586017"
-       class="homeScore"
+       class="home_score"
        id="homeScore">2</text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
        x="55.95845"
        y="-2.9949002"
-       class="awayScore"
+       class="away_score"
        id="awayScore">1</text>
     <text
        xml:space="preserve"
@@ -207,7 +272,7 @@
        x="-62.482372"
        y="-32.783287"
        id="homeName-4"
-       class="homeLocation"
+       class="home_location"
        inkscape:label="homeLocation">Team</text>
     <text
        xml:space="preserve"
@@ -215,7 +280,7 @@
        x="105.45325"
        y="-32.952766"
        id="awayName-8"
-       class="awayLocation"
+       class="away_location"
        inkscape:label="awayLocation"><tspan
          style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;stroke-width:0.65438527"
          id="tspan866-1">Team</tspan></text>

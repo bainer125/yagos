@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
+	<title>Control Panel</title>
+</head>
+	<body>
+		<div id="header">
+			<h1>Control Panel</h1>
+		</div>
+
+		<div id="main">
+
+			<div id="select">
+
+				<select id="mode_select">
+					<option>Sports</option>
+					<option>News</option>
+					<option>Event</option>
+				</select>
+				<select id="sport_select">
+					<option>Ice Hockey</option>
+					<option>Soccer</option>
+					<option>Baseball</option>
+					<option>Football</option>
+				</select>
+				<br>
+
+				<select id="league_select"></select>
+				<select id="home_select"></select>
+				<select id="away_select"></select>
+				<select id="game_select"></select>
+			
+			</div>
+
+			<div class="centered" id="buttons">
+	
+				<button class="up" id="btn_Scoreboard" value="true">Scoreboard</button>
+				<button class="up" id="btn_Intermission" value="false">Intermission</button>
+				<button class="up" id="btn_Commercial" value="false">Commercial</button>
+				<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
+				<button class="up" id="btn_Player_Info" value="false">Player Info</button>
+				<button class="up" id="btn_Player_Info" value="false">Test</button>
+
+			</div>
+			
+			<!-- categories with checklists, width is dynamic with respect to window size, but not to number of categories -->
+			<!-- 
+				'category' class determines visual style (height, background color, corners)
+				'left/center/right' class determines where it is aligned
+				'section3' class makes sure that it works for 3 sections
+			-->
+			<div class="category left sections3">
+				<h2>Scoreboard Options</h2>
+
+				
+				<div id="hideoverflow">
+    				<div id="outer">
+        				<div id="inner">
+        					<form action="/action_page.php" method="get">
+  							<input type="checkbox" name="test1" value="test1">Animate Goal<br>
+  							<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
+  							<input type="checkbox" name="test3" value="test3">Show Shots<br>
+  					
+
+  						</div>
+    				</div>
+				</div>	
+				<input type="submit" value="Submit">
+				</form>
+
+			</div>
+			<div class="category center sections3">
+				<h2>Intermission Options</h2>
+				2
+			</div>
+			<div class="category right sections3">
+				<h2>Commercial Options</h2>
+				3
+			</div>
+
+
+		</div>
+	 <iframe src="/html/overlay.html" style="
+		height:1080px;width:1920px;
+		-ms-zoom: 0.5;
+	    -moz-transform: scale(0.5);
+	    -moz-transform-origin: 0 0;
+	    -o-transform: scale(0.5);
+	    -o-transform-origin: 0 0;
+	    -webkit-transform: scale(0.5);
+	    -webkit-transform-origin: 0 0;"></iframe> 
+	</body>
+	<script type="text/javascript" src="/js/classes.js"></script>
+	<script type="text/javascript" src="/js/events.js"></script>
+	<script type="text/javascript" src="/js/client.js"></script>
+	<script type="text/javascript" src="/js/control-panel.js"></script>
+</html>
