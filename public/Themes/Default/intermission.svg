@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="/css/overlay.css" ?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -9,12 +10,13 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    preserveAspectRatio="xMidYMid meet"
-   width="1000"
-   viewBox="0 0 542 150"
+   width="1400"
+   viewBox="0 0 542 217.00268"
    version="1.1"
    id="Intermission"
    sodipodi:docname="intermission.svg"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   height="280">
   <animate
      class="showGraphic"
      attributeName="opacity"
@@ -46,7 +48,7 @@
   <defs
      id="defs43">
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Drop Shadow"
        id="filter1000">
       <feFlood
@@ -78,7 +80,7 @@
          id="feComposite998" />
     </filter>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Drop Shadow"
        id="filter1025">
       <feFlood
@@ -109,29 +111,157 @@
          result="composite2"
          id="feComposite1023" />
     </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter2196">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood2186" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2188" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.6"
+         result="blur"
+         id="feGaussianBlur2190" />
+      <feOffset
+         dx="1.7"
+         dy="1.2"
+         result="offset"
+         id="feOffset2192" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2194" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter2208">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood2198" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2200" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.6"
+         result="blur"
+         id="feGaussianBlur2202" />
+      <feOffset
+         dx="1.7"
+         dy="1.2"
+         result="offset"
+         id="feOffset2204" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2206" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter2484">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood2474" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2476" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.4"
+         result="blur"
+         id="feGaussianBlur2478" />
+      <feOffset
+         dx="0.9"
+         dy="0.8"
+         result="offset"
+         id="feOffset2480" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2482" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter2496">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood2486" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2488" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.4"
+         result="blur"
+         id="feGaussianBlur2490" />
+      <feOffset
+         dx="0.9"
+         dy="0.8"
+         result="offset"
+         id="feOffset2492" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2494" />
+    </filter>
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath1027">
+       id="clipPath2500">
       <rect
-         inkscape:label="homeLogoMask"
-         style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.56380457;stroke-opacity:1"
-         id="rect1029"
+         inkscape:label="awayLogoClip"
+         style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.55975837;stroke-opacity:1"
+         id="rect2502"
          width="271.18658"
          height="92.616104"
-         x="-249.98727"
+         x="21.199345"
          y="-67.375725" />
     </clipPath>
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath1031">
+       id="clipPath2504">
       <rect
          y="-67.375725"
-         x="21.199345"
+         x="-249.98727"
          height="92.616104"
          width="271.18658"
-         id="rect1033"
-         style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.55975837;stroke-opacity:1"
-         inkscape:label="awayLogoClip" />
+         id="rect2506"
+         style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.56380457;stroke-opacity:1"
+         inkscape:label="homeLogoMask" />
     </clipPath>
   </defs>
   <sodipodi:namedview
@@ -143,14 +273,14 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1550"
+     inkscape:window-width="1366"
+     inkscape:window-height="718"
      id="namedview41"
      showgrid="false"
-     inkscape:zoom="2.1001071"
-     inkscape:cx="411.66172"
-     inkscape:cy="206.70225"
-     inkscape:window-x="900"
+     inkscape:zoom="0.5250268"
+     inkscape:cx="459.8151"
+     inkscape:cy="324.87225"
+     inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="mainGroup"
@@ -168,120 +298,124 @@
      style="display:inline"
      id="mainGroup"
      inkscape:label="scoreboard"
-     transform="translate(249.98727,102.37572)">
+     transform="translate(43.843215,191.76228)">
     <rect
-       y="-67.375725"
-       x="21.199326"
-       height="92.616104"
-       width="271.18658"
+       y="-132.24709"
+       x="227.15646"
+       height="157.48738"
+       width="500.00037"
        id="awayColor"
        class="away_color1"
-       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.55975837;stroke-opacity:1"
+       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.99113256;stroke-opacity:1"
        inkscape:label="awayColor" />
     <rect
-       y="-67.375725"
-       x="-249.98727"
-       height="92.616104"
-       width="271.18658"
+       y="-132.24709"
+       x="-272.84326"
+       height="157.48738"
+       width="499.99951"
        id="homeColor"
        class="home_color1"
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.56380457;stroke-opacity:1"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.9982962;stroke-opacity:1"
        inkscape:label="homeColor" />
     <image
-       sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
-       y="-92.848625"
+       y="-84.599716"
        x="121.3929"
        id="image1073"
-       xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/United%20States/logo1.png"
+       xlink:href="/Teams/International/United%20States/logo1.png"
        style="opacity:0.5;filter:url(#filter1025);image-rendering:optimizeQuality"
        preserveAspectRatio="xMidYMid meet"
        height="140"
        width="140"
        inkscape:label="awayLogo"
        class="away_logo1"
-       clip-path="url(#clipPath1031)"
-       mask="none" />
+       clip-path="url(#clipPath2500)"
+       mask="none"
+       transform="matrix(1.7004332,0,0,1.7004332,191.10844,-17.679266)" />
     <image
-       sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
-       y="-92.848717"
-       x="-224.4922"
+       y="-84.599556"
+       x="-220.28345"
        id="image944"
-       xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
+       xlink:href="/Teams/International/Canada/logo1.png"
        style="opacity:0.5;filter:url(#filter1000);image-rendering:optimizeQuality"
        preserveAspectRatio="xMidYMid meet"
        height="140"
        width="140"
        inkscape:label="homeLogo"
        class="home_logo1"
-       clip-path="url(#clipPath1027)" />
+       clip-path="url(#clipPath2504)"
+       transform="matrix(1.7004332,0,0,1.7004332,191.10844,-17.679266)" />
     <rect
-       y="-67.375732"
-       x="-43.329086"
-       height="92.616119"
-       width="129.05682"
+       y="-132.2471"
+       x="117.43024"
+       height="157.48749"
+       width="219.45233"
        id="scoreShade"
-       style="fill:#000000;fill-opacity:0.44444448;stroke:none;stroke-width:0.49186298;stroke-opacity:1" />
+       style="fill:#000000;fill-opacity:0.44444448;stroke:none;stroke-width:0.83637953;stroke-opacity:1" />
     <rect
-       y="-102.37572"
-       x="-249.98727"
-       height="34.999996"
-       width="542.37317"
+       y="-191.76228"
+       x="-272.84326"
+       height="59.515186"
+       width="999.99988"
        id="periodBack"
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.49015605;stroke-opacity:1" />
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.86789042;stroke-opacity:1" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:35.35866547px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.6629647"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:35.35866547px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.6629647;filter:url(#filter2208)"
        x="-62.30994"
        y="-0.086311147"
        id="homeName"
        class="home_nickname"
-       inkscape:label="homeName">Canada</text>
+       inkscape:label="homeName"
+       transform="matrix(1.7004332,0,0,1.7004332,191.10844,-17.679266)">Canada</text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:34.89999771px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.65438527"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:34.89999771px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.65438527;filter:url(#filter2196)"
        x="104.01826"
        y="-0.66670215"
        id="awayName"
        class="away_nickname"
-       inkscape:label="awayName"><tspan
+       inkscape:label="awayName"
+       transform="matrix(1.7004332,0,0,1.7004332,191.10844,-17.679266)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:34.89999771px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;stroke-width:0.65438527"
          id="tspan866">USA</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="20.475658"
-       y="-74.899567"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:42.5108223px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.7004329"
+       x="225.92595"
+       y="-145.04105"
        id="periodText">End of 1st</text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="-10.704814"
-       y="-2.7586017"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90.68972015px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.7004329"
+       x="172.90561"
+       y="-22.370081"
        class="home_score"
        id="homeScore">2</text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="55.95845"
-       y="-2.9949002"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90.68972015px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.7004329"
+       x="286.26199"
+       y="-22.771891"
        class="away_score"
        id="awayScore">1</text>
     <text
        xml:space="preserve"
-       style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.6629647"
+       style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.6629647;filter:url(#filter2484)"
        x="-62.482372"
        y="-32.783287"
        id="homeName-4"
        class="home_location"
-       inkscape:label="homeLocation">Team</text>
+       inkscape:label="homeLocation"
+       transform="matrix(1.7004332,0,0,1.7004332,191.10844,-17.679266)">Team</text>
     <text
        xml:space="preserve"
-       style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.65438527"
+       style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.65438527;filter:url(#filter2496)"
        x="105.45325"
        y="-32.952766"
        id="awayName-8"
        class="away_location"
-       inkscape:label="awayLocation"><tspan
+       inkscape:label="awayLocation"
+       transform="matrix(1.7004332,0,0,1.7004332,191.10844,-17.679266)"><tspan
          style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Oblique';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;stroke-width:0.65438527"
          id="tspan866-1">Team</tspan></text>
   </g>

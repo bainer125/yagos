@@ -547,9 +547,9 @@ td{
 }
 
 .end_btn_sides{
-	width: 13vw;
-	min-width: 13vw;
-	max-width: 13vw;
+	width: 19vw;
+	min-width: 19vw;
+	max-width: 19vw;
 }
 
 .end_btn_mid{
@@ -562,6 +562,12 @@ td{
 	height: 12vh;
 	min-height: 12vh;
 	max-height: 12vh;
+}
+
+.end_btn_side_v{
+	height: 8vh;
+	min-height: 8vh;
+	max-height: 8vh;
 }
 
 .btn_plus{

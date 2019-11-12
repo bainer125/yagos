@@ -57,6 +57,20 @@ window.onload = function () {
 		document.getElementById("away_score_down").addEventListener("click",function(){sendmessage("away_score","down");});
 		document.getElementById("away_shots_up").addEventListener("click",function(){sendmessage("away_shots","up");});
 		document.getElementById("away_shots_down").addEventListener("click",function(){sendmessage("away_shots","down");});
+		document.getElementById("home_goal").addEventListener("click",function(){
+			sendmessage("home_goal","animate");
+			sendmessage("home_score","up");
+		});
+		document.getElementById("away_goal").addEventListener("click",function(){
+			sendmessage("away_goal","animate");
+			sendmessage("away_score","up");
+		});
+		document.getElementById("period_up").addEventListener("click",function(){sendmessage("period","up");});
+		document.getElementById("period_down").addEventListener("click",function(){
+			if(boards[game].period>1){
+				sendmessage("period","down");
+			}
+		});
 
 
 		// Event listeners for timer adjustment
@@ -156,6 +170,7 @@ function update_timers () {
 
 	var t = ["home", "away"];
 	for(var i=0;i<t.length;i++){
+		var deleted = 0;
 		boards[game][t[i]+"_penalties"].forEach(function(pen,index){
 			var rem = pen.initial + pen.finish - boards[game].clock.elap;
 			var min = Math.floor((rem)/60000);
@@ -164,6 +179,15 @@ function update_timers () {
 				update_text(min.toString() + ":" + sec.toString(),t[i]+"_penalty_time"+(index+1).toString(),graphics);
 			}
 			else{update_text(min.toString() + ":0" + sec.toString(),t[i]+"_penalty_time"+(index+1).toString(),graphics);}
+			if (pen.initial+pen.finish<boards[game].clock.elap+1000){
+				console.log(index);
+				var ind = index+deleted;
+				console.log(index,ind)
+				boards[game][t[i]+"_penalties"].splice(index,1);
+				deleted++;
+				console.log(deleted);
+				delete_penalty_view(t[i],ind);
+			};
 		});
 	}
 
@@ -284,6 +308,10 @@ function add_penalty_view ( team , penalty , penaltynum ){
 function delete_penalty_view ( team , penaltynum ){
 	var pen = document.getElementById(team + "_penalty"+(penaltynum + 1).toString());
 	pen.parentNode.removeChild(pen);
+}
+
+function repopulate_penalty_view ( team , penalty , penaltynum ){
+	
 }
 
 function update_penalties (){

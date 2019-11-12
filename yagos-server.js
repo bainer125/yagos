@@ -123,6 +123,10 @@ app.get('/', function (req, res) {
 	res.sendFile("/public/html/overlay.html", { root: '.' });
 });
 
+app.get('/preview', function (req, res) {
+	res.sendFile("/public/html/overlay-preview.html", { root: '.' });
+});
+
 app.get('/control-panel',function(req,res){
 	res.sendFile("/public/html/control-panel.html", { root: '.' });
 });
