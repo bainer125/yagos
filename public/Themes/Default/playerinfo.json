@@ -1,0 +1,36 @@
+/*
+ * An example of how a new graphic overlay's settings will be stored.
+ * It will require:
+ * 		- an unique id which can be used to designate which overlay it is exactly.
+ *		- an object which will hold all infomration asociated with that overlay.
+ * 
+ * This is the information for the player info overlay. Currently there are only
+ * 4 options for this specific graphic overlay:
+ * 		- visible : whether this is seen on the screen.
+ * 		- animate : whether this overlay is animated when it is shown or hidden.
+ * 		- display_text : all attributes of the text shown on the overlay.
+ * 		- player_headshot : the attributes of the picture of the player to be
+ *												shown, which will default to the team's primary logo.
+*/
+{
+	"id"		: "player_info",
+	"info"	:
+	{
+		"visible" 			: false,
+		"animate" 			: false,
+		"text"	:
+		{
+			"text" 				: "temp text",
+			"font" 				: "",
+			"size" 				: 12,
+			"bold" 				: false,
+			"italics" 		: false,
+			"under_line"	: false
+		},
+		"player_headshot" :
+		{
+			"id" : "img",
+			"file_path" : "",
+		}
+	}
+}
