@@ -53,7 +53,7 @@
 
 
 	<!-- TIMER SECTION START ================================ -->
-			<div class="column inherit_h timer_1">
+			<div id="timer_block" class="column inherit_h timer_1">
 				<div class="row inherit_w timer_clock"><div class="col inherit_w inherit_h">
 
 		<!-- Timer Time Increment -->			
@@ -185,13 +185,21 @@
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_1">Number:</div>
 						<div class="col inherit_h penalty_col_2">
-            				<input id="diff" type="number" min="0" max="30" value="0" class="inherit_w inherit_h"/> 
+							<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)" class="inherit_w	inherit_h">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select> 
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_1">Penalty Length:</div>
 						<div class="col inherit_h penalty_col_2">
-            				<input id="diff" type="number" min="0" max="1000" value="0" class="inherit_w inherit_h"/> 
+							<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)" class="inherit_w	inherit_h">
+								<option>0:15</option>
+								<option>0:30</option>
+								<option>0:45</option>
+							</select>  
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
@@ -257,13 +265,21 @@
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_1">Number:</div>
 						<div class="col inherit_h penalty_col_2">
-            				<input id="diff" type="number" min="0" max="30" value="0" class="inherit_w inherit_h"/> 
+            				<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)" class="inherit_w	inherit_h">
+								<option>1</option>
+								<option>2:30</option>
+								<option>3:45</option>
+							</select>   
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
 						<div class="col inherit_h penalty_col_1">Penalty Length:</div>
 						<div class="col inherit_h penalty_col_2">
-            				<input id="diff" type="number" min="0" max="1000" value="0" class="inherit_w inherit_h"/> 
+            				<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)" class="inherit_w	inherit_h">
+								<option>0:15</option>
+								<option>0:30</option>
+								<option>0:45</option>
+							</select>  
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">

@@ -446,7 +446,9 @@ td{
 	padding: 0;
 }
 
-
+#timer_block{
+	background-color: lightcyan;
+}
 
 .timer_1{
 	width: 34vw;
@@ -523,12 +525,28 @@ td{
 	line-height: 6vh;
 	font-size: 3vh;
 	text-align: center;
+	background-color: lightseagreen;
+	color: white;
+}
+
+.penalty_add_bar select{
+	background-color: transparent;
+	border: 0;
+	text-align: left;
+	padding-left: 0.5vw;
+	font-size: 2vh;
+	margin: 0;
+}
+
+.penalty_add_bar:after{
+	background-color: transparent;
 }
 
 .penalty_list{
 	height: 20vh;
 	min-height: 20vh;
 	max-height: 20vh;
+	background-color: lightcyan;
 }
 
 .penalty_list_item{
@@ -545,6 +563,34 @@ td{
 	max-width: 14vw;
 	padding: 2px;
 }
+
+.penalty_col_1{
+	width: 9vw;
+	min-width: 9vw;
+	max-width: 9vw;
+}
+.penalty_col_2{
+	width: 3vw;
+	min-width: 3vw;
+	max-width: 3vw;
+}
+.penalty_col_3{
+	width: 6vw;
+	min-width: 6vw;
+	max-width: 6vw;
+}
+
+.penalty_btn{
+	width: 4vw;
+	min-width: 4vw;
+	max-width: 4vw;
+}
+
+.penalty_btn button{
+	border: 0;
+	border-radius: 0;
+}
+
 
 .end_btn_sides{
 	width: 13vw;
