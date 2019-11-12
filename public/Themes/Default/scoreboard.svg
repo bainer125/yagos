@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="/css/overlay.css" ?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -293,4 +294,11 @@
        id="text953"
        inkscape:label="text953">Shots</text>
   </g>
+  <script>
+    document.onload = function(){
+      document.getElementById("home_color").onclick(function(){
+        document.getElementById("home_shots").innerHTML = 32;
+      });
+    }
+  </script>
 </svg>

@@ -4,6 +4,10 @@
 
 */
 
+var preview;
+
+var max_X, max_Y;
+
 var ws;
 
 var game = 0;
@@ -24,6 +28,22 @@ function sendmessage (item,action,value=false,subitem=false){
     }
     msg.data = obj;
     ws.send(JSON.stringify(msg));
+    handle_scoreboard_event(obj,boards,true,graphics);
+}
+
+function send_self_message (item,action,value=false,subitem=false){
+    var msg = {
+        type: "score",
+        data: {}
+    }
+    var obj = {
+        item: item,
+        action: action,
+        game: game,
+        value: value,
+        subitem: subitem
+    }
+    msg.data = obj;
     handle_scoreboard_event(obj,boards,true,graphics);
 }
 

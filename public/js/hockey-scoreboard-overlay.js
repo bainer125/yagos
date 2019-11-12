@@ -6,14 +6,12 @@
 ########################################################
 */
 
-var graphics = {
-};
-
 window.onload = function () {
 	console.log( "Document loaded" );
-	graphics["scoreboard"] = document.getElementById('Scoreboard').contentDocument;
-	graphics["intermission"] = document.getElementById('Intermission').contentDocument;
-
+	graphics["Scoreboard"] = document.getElementById('Scoreboard').contentDocument;
+	graphics["Intermission"] = document.getElementById('Intermission').contentDocument;
+	console.log(graphics);
+	if(preview){make_graphics_draggable();}
 	ws = new WebSocket("ws://"+location.host);
 
 	// Bind button actions after websockets connection has been established
@@ -47,6 +45,24 @@ window.onload = function () {
 				var disp=false;
 				if (msg.data.game == game){disp=true;}
 				handle_scoreboard_event( msg.data , boards , disp , graphics );
+				if(disp&&msg.data.item=="period"){
+					var p = boards[game].period;
+					if(p == 1){
+						update_text("1st","period_text",graphics);
+					}
+					else if(p == 2){
+						update_text("2nd","period_text",graphics);
+					}
+					else if(p == 3){
+						update_text("3rd","period_text",graphics);
+					}
+					else if(p == 4){
+						update_text("OT","period_text",graphics);
+					}
+					else if(p>4){
+						update_text((p-3).toString()+"OT","period_text",graphics);
+					}
+				}
 			break;
 			case "game":
 				game = msg.data;
@@ -83,7 +99,7 @@ function update_penalty_display () {
 	}
 	if(times.length>0){
 		var time = times.reduce(function(a, b) {
-		    return Math.max(a, b);
+		    return Math.min(a, b);
 		});
 	}
 	var min = Math.floor((time)/60000);
@@ -99,57 +115,57 @@ function update_penalty_display () {
 	console.log(hp,ap);
 
 	if(hp == 0 && ap == 0){
-		sendmessage("home_penalty","hide");
-		sendmessage("away_penalty","hide");
-		sendmessage("even_penalty","hide");
+		send_self_message("home_penalty","hide");
+		send_self_message("away_penalty","hide");
+		send_self_message("even_penalty","hide");
 	}
 
 	else if(hp == 1 && ap == 0){
-		sendmessage("home_penalty","show");
-		sendmessage("away_penalty","hide");
-		sendmessage("even_penalty","hide");
+		send_self_message("home_penalty","show");
+		send_self_message("away_penalty","hide");
+		send_self_message("even_penalty","hide");
 	}
 
 	else if(hp > 1 && ap == 1){
-		sendmessage("home_penalty","show");
-		sendmessage("away_penalty","hide");
-		sendmessage("even_penalty","hide");
+		send_self_message("home_penalty","show");
+		send_self_message("away_penalty","hide");
+		send_self_message("even_penalty","hide");
 	}
 
 	else if(hp > 1 && ap == 0){
-		sendmessage("home_penalty","show");
-		sendmessage("away_penalty","hide");
-		sendmessage("even_penalty","hide");
+		send_self_message("home_penalty","show");
+		send_self_message("away_penalty","hide");
+		send_self_message("even_penalty","hide");
 	}
 
 	else if(hp == 0 && ap == 1){
-		sendmessage("home_penalty","hide");
-		sendmessage("away_penalty","show");
-		sendmessage("even_penalty","hide");
+		send_self_message("home_penalty","hide");
+		send_self_message("away_penalty","show");
+		send_self_message("even_penalty","hide");
 	}
 
 	else if(hp == 1 && ap > 1){
-		sendmessage("home_penalty","hide");
-		sendmessage("away_penalty","show");
-		sendmessage("even_penalty","hide");
+		send_self_message("home_penalty","hide");
+		send_self_message("away_penalty","show");
+		send_self_message("even_penalty","hide");
 	}
 
 	else if(hp == 0 && ap > 1){
-		sendmessage("home_penalty","hide");
-		sendmessage("away_penalty","show");
-		sendmessage("even_penalty","hide");
+		send_self_message("home_penalty","hide");
+		send_self_message("away_penalty","show");
+		send_self_message("even_penalty","hide");
 	}
 
 	else if(hp == 1 && ap == 1){
-		sendmessage("home_penalty","hide");
-		sendmessage("away_penalty","hide");
-		sendmessage("even_penalty","show");
+		send_self_message("home_penalty","hide");
+		send_self_message("away_penalty","hide");
+		send_self_message("even_penalty","show");
 	}
 
 	else if(hp > 1 && ap > 1){
-		sendmessage("home_penalty","hide");
-		sendmessage("away_penalty","hide");
-		sendmessage("even_penalty","show");
+		send_self_message("home_penalty","hide");
+		send_self_message("away_penalty","hide");
+		send_self_message("even_penalty","show");
 	}
 
 }

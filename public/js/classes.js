@@ -182,6 +182,8 @@ class Scoreboard {
 
 		// Hockey specific variables
 
+		this.period = 1;
+		
 		this.home_emptyNet = false;
 		this.away_emptyNet = false;
 

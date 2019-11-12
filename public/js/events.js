@@ -107,7 +107,7 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 	}
 }
 
-function handle_graphics_event( event , graphics = {}, animate = false){
+function handle_graphics_event( event , graphics = {}, animate = false, graphid=false ){
 
 	action = event.action;
 	item = event.item;
@@ -117,55 +117,84 @@ function handle_graphics_event( event , graphics = {}, animate = false){
 
 	var board = boards[event.game];
 
-	switch(action){
+	if(!graphid){
+		switch(action){
 
-		case 'animate':
+			case 'animate':
 
-			var vals = Object.keys(graphics);
-			for (const graphic of vals) {
-				var a = graphics[graphic].getElementsByClassName(item);
-				for (i=0,len=a.length;i<len;i++){
-					a[i].beginElement();
+				var vals = Object.keys(graphics);
+				for (const graphic of vals) {
+					var a = graphics[graphic].getElementsByClassName(item);
+					for (i=0,len=a.length;i<len;i++){
+						a[i].beginElement();
+					}
 				}
-			}
 
-		break;
+			break;
 
-		case 'hide':
-			if(animate){
-				mod_elements_by_class( item + "_hide" , graphics , function( elem ) {
-					elem.beginElement();
-				});
-			}
-			else{
+			case 'hide':
+				if(animate){
+					mod_elements_by_class( item + "_hide" , graphics , function( elem ) {
+						elem.beginElement();
+					});
+				}
+				else{
+					mod_elements_by_class( item , graphics , function( elem ) {
+						elem.style.display = 'none';
+					});
+				}
+			break;
+
+			case 'show':
+				if(animate){
+					mod_elements_by_class( item + "_show" , graphics , function( elem ) {
+						elem.beginElement();
+					});
+				}
+				else{
+					mod_elements_by_class( item , graphics , function( elem ) {
+						elem.style.display = 'inline';
+					});
+				}
+			break;
+
+			case 'updateText':
+
 				mod_elements_by_class( item , graphics , function( elem ) {
-					elem.style.display = 'none';
+					elem.innerHTML = value;
 				});
-			}
-		break;
 
-		case 'show':
-			if(animate){
-				mod_elements_by_class( item + "_show" , graphics , function( elem ) {
-					elem.beginElement();
-				});
-			}
-			else{
-				mod_elements_by_class( item , graphics , function( elem ) {
-					elem.style.display = 'inline';
-				});
-			}
-		break;
-
-		case 'updateText':
-
-			mod_elements_by_class( item , graphics , function( elem ) {
-				elem.innerHTML = value;
-			});
-
-		break;
+			break;
+		}
 	}
+	else{
+		switch(action){
+			case 'hide':
+				if(animate){
+					mod_elements_by_class( "hide_graphic" , graphics , function( elem ) {
+						elem.beginElement();
+					});
+				}
+				else{
+					graphics[graphid].style.display = 'none';
+				}
+			break;
 
+			case 'show':
+				if(animate){
+					mod_elements_by_class( "show_graphic" , graphics , function( elem ) {
+						elem.beginElement();
+					});
+				}
+				else{
+					graphics[graphid].style.display = 'none';
+				}
+			break;
+
+			case 'move':
+			break;
+		}
+	}
 }
 
 function update_text ( text , id , graphics = {} ) {
