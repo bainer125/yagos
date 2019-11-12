@@ -43,11 +43,11 @@
    id="defs1079"><linearGradient
    id="linearGradient1115"
    inkscape:collect="always"><stop
-     class="awayColor2"
+     class="away_color2"
      id="stop1189"
      offset="0"
      style="stop-color:#000000;stop-opacity:1" /><stop
-     class="awayColor1"
+     class="away_color1"
      id="stop1191"
      offset="1"
      style="stop-color:#ff0000;stop-opacity:0" /></linearGradient><linearGradient
@@ -55,11 +55,11 @@
    id="linearGradient1115-5"><stop
      offset="0"
      id="stop1111"
-     class="homeColor2"
+     class="home_color2"
      style="stop-color:#000000;stop-opacity:1" /><stop
      offset="1"
      id="stop1113"
-     class="homeColor1"
+     class="home_color1"
      style="stop-color:#ff0000;stop-opacity:0" /></linearGradient><linearGradient
    inkscape:collect="always"
    xlink:href="#linearGradient1115-5"
@@ -104,7 +104,7 @@
      inkscape:connector-curvature="0"
      id="path1263"
      d="M 1117.6571,114 H 998.69382 958.51412 750 V 44.000004 h 208.51412 40.1797 118.96328 c 7.8784,10.3 12.3428,22.2 12.3428,34.999996 0,12.8 -4.4644,24.7 -12.3428,35 z"
-     class="awayColor1 st13" /></clipPath><clipPath
+     class="away_color1 st13" /></clipPath><clipPath
    clipPathUnits="userSpaceOnUse"
    id="clipPath1265"><path
      inkscape:label="awayGoalClip"
@@ -113,7 +113,7 @@
      inkscape:connector-curvature="0"
      id="path1267"
      d="M 1117.6571,114 H 998.69382 958.51412 750 V 44.000004 h 208.51412 40.1797 118.96328 c 7.8784,10.3 12.3428,22.2 12.3428,34.999996 0,12.8 -4.4644,24.7 -12.3428,35 z"
-     class="awayColor1 st13" /></clipPath><clipPath
+     class="away_color1 st13" /></clipPath><clipPath
    clipPathUnits="userSpaceOnUse"
    id="clipPath1265-7"><path
      inkscape:label="awayGoalClip"
@@ -122,7 +122,7 @@
      inkscape:connector-curvature="0"
      id="path1267-5"
      d="M 1117.6571,114 H 998.69382 958.51412 750 V 44.000004 h 208.51412 40.1797 118.96328 c 7.8784,10.3 12.3428,22.2 12.3428,34.999996 0,12.8 -4.4644,24.7 -12.3428,35 z"
-     class="awayColor1 st13" /></clipPath><clipPath
+     class="away_color1 st13" /></clipPath><clipPath
    clipPathUnits="userSpaceOnUse"
    id="clipPath1109"><g
      id="use1111"
@@ -133,7 +133,7 @@
    inkscape:connector-curvature="0"
    id="path1123"
    d="m 1743.3341,114 h -282.7686 -50.6739 -262.9747 l 45.4026,-69.999996 h 217.5721 50.6739 328.1712 z"
-   class="awayColor1 st13"
+   class="away_color1 st13"
    clip-path="" />
 
 
@@ -160,7 +160,7 @@
 
 
         <animateTransform
-   class="awayGoal"
+   class="away_goal"
    id="awayGoalRushIn"
    attributeName="transform"
    type="translate"
@@ -209,7 +209,7 @@
    inkscape:label="awayGoalClip" /></clipPath><clipPath
    clipPathUnits="userSpaceOnUse"
    id="clipPath1154-5"><animateTransform
-     class="homeGoal"
+     class="home_goal"
      id="homeGoalRushIn"
      attributeName="transform"
      type="translate"
@@ -244,7 +244,23 @@
      inkscape:connector-curvature="0"
      style="display:inline;fill:#000000;fill-opacity:1;stroke-width:1.28686118"
      sodipodi:nodetypes="ccccccccc"
-     inkscape:label="homeGoalClip" /></clipPath></defs><sodipodi:namedview
+     inkscape:label="homeGoalClip" /></clipPath><clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath1149"><path
+     class="home_color1 st13"
+     d="m 379.40004,114 h 90.6 30.6 158.79998 c -6,-10.3 -9.4,-22.2 -9.4,-35 0,-12.8 3.4,-24.7 9.4,-35 h -158.79998 -30.6 -90.6 c -6,10.3 -9.4,22.2 -9.4,35 0,12.8 3.4,24.7 9.4,35 z"
+     id="path1151"
+     inkscape:connector-curvature="0"
+     style="display:inline;fill:#ff0000;fill-opacity:1"
+     inkscape:label="homeLogoClip" /></clipPath><clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath1153"><path
+     inkscape:label="awayLogoClip"
+     style="display:inline;fill:#ff0000;fill-opacity:1"
+     inkscape:connector-curvature="0"
+     id="path1155"
+     d="M 1120.6,114 H 1030 999.4 840.60002 c 6,-10.3 9.4,-22.2 9.4,-35 0,-12.8 -3.4,-24.7 -9.4,-35 H 999.4 h 30.6 90.6 c 6,10.3 9.4,22.2 9.4,35 0,12.8 -3.4,24.7 -9.4,35 z"
+     class="away_color1 st13" /></clipPath></defs><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -258,13 +274,13 @@
    id="namedview1077"
    showgrid="false"
    inkscape:pagecheckerboard="true"
-   inkscape:zoom="0.58333335"
-   inkscape:cx="532.96147"
-   inkscape:cy="99.809372"
+   inkscape:zoom="1.4142136"
+   inkscape:cx="362.46935"
+   inkscape:cy="-15.178313"
    inkscape:window-x="0"
    inkscape:window-y="27"
    inkscape:window-maximized="1"
-   inkscape:current-layer="g1148-9"
+   inkscape:current-layer="RPI_home"
    fit-margin-top="0"
    fit-margin-left="0"
    fit-margin-right="0"
@@ -489,6 +505,8 @@
 
 
 
+
+
 		<rect
    x="860"
    y="124"
@@ -502,6 +520,8 @@
    class="st5 st6 st11"
    id="text142"
    style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">2:00</text>
+
+
 
 
 
@@ -670,6 +690,8 @@
 
 
 
+
+
 		<rect
    x="571"
    y="124"
@@ -706,6 +728,8 @@
 
 
 
+
+
 	</g>
 </g>
 <g
@@ -718,7 +742,7 @@
    class="st2"
    style="display:inline">
 		<path
-   class="awayColor1 st13"
+   class="away_color1 st13"
    d="M 1120.6,114 H 1030 999.39998 840.6 c 6,-10.3 9.4,-22.2 9.4,-35 0,-12.8 -3.4,-24.7 -9.4,-35 H 999.39998 1030 h 90.6 c 6,10.3 9.4,22.2 9.4,35 0,12.8 -3.4,24.7 -9.4,35 z"
    id="path233-4-6-1-6"
    inkscape:connector-curvature="0"
@@ -736,15 +760,16 @@
 		
 			<image
    sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
-   y="52.705727"
-   x="1051.1389"
+   y="29.865013"
+   x="1022.8532"
    id="image1966-6"
-   class="awayLogo1"
+   class="away_logo1"
    xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
    style="display:inline;image-rendering:optimizeQuality"
    preserveAspectRatio="xMidYMid meet"
-   height="53.794273"
-   width="66.618294" />
+   height="99.4757"
+   width="123.18972"
+   clip-path="url(#clipPath1153)" />
 		<rect
    x="806.59998"
    y="62.700001"
@@ -754,15 +779,17 @@
    id="rect237"
    style="fill:none" />
 		<text
-   class="st5 st6 st14 awayAbbreviation"
+   class="st5 st6 st14 away_abbreviation"
    id="text239"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45px;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#ffffff"
-   x="1041.8142"
+   x="1009.9139"
    y="95.055603"><tspan
      sodipodi:role="line"
      id="tspan1208"
-     x="1041.8142"
+     x="1009.9139"
      y="95.055603">CAN</tspan></text>
+
+
 
 
 
@@ -791,7 +818,7 @@
    id="RPI_home"
    class="st2"
    style="display:inline"><path
-   class="homeColor1 st13"
+   class="home_color1 st13"
    d="m 379.40004,114 h 90.6 30.6 158.79998 c -6,-10.3 -9.4,-22.2 -9.4,-35 0,-12.8 3.4,-24.7 9.4,-35 h -158.79998 -30.6 -90.6 c -6,10.3 -9.4,22.2 -9.4,35 0,12.8 3.4,24.7 9.4,35 z"
    id="path233-4-6-1"
    inkscape:connector-curvature="0"
@@ -884,15 +911,16 @@
    inkscape:connector-curvature="0"
    style="display:inline;fill:url(#linearGradient1117-3);fill-opacity:1" /><image
    sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
-   y="52.705727"
-   x="382.56744"
+   y="29.865019"
+   x="353.7001"
    id="image1966"
-   class="homeLogo1"
+   class="home_logo1"
    xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
    style="image-rendering:optimizeQuality"
    preserveAspectRatio="xMidYMid meet"
-   height="53.794273"
-   width="66.618294" />
+   height="99.475693"
+   width="123.18973"
+   clip-path="url(#clipPath1149)" />
 		
 			
 		<rect
@@ -904,15 +932,17 @@
    id="rect281"
    style="fill:none" />
 		<text
-   class="homeAbbreviation st5 st6 st14"
+   class="home_abbreviation st5 st6 st14"
    id="text283"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45px;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff"
-   x="463.99979"
+   x="491.80002"
    y="95.055603"><tspan
      sodipodi:role="line"
      id="tspan1206"
-     x="463.99979"
+     x="491.80002"
      y="95.055603">CAN</tspan></text>
+
+
 
 
 
@@ -1626,28 +1656,32 @@
    id="path1064"
    inkscape:connector-curvature="0"
    style="fill:url(#SVGID_22_);stroke:#ffffff;stroke-width:3;stroke-miterlimit:10" /><text
-   class="st5 st6 st14 awayScore"
+   class="st5 st6 st14 away_score"
    id="text239-3-3"
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:48px;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff"
    x="800.30914"
    y="96.089142"
-   inkscape:label="awayScore"><tspan
+   inkscape:label="away_score"><tspan
      sodipodi:role="line"
      id="tspan1208-5-6"
      x="800.30914"
      y="96.089142">0</tspan></text>
 
+
+
 <text
-   class="st5 st6 st14 homeScore"
+   class="st5 st6 st14 home_score"
    id="text239-3-3-7"
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:48px;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff"
    x="701.78571"
    y="96.089142"
-   inkscape:label="homeScore"><tspan
+   inkscape:label="home_score"><tspan
      sodipodi:role="line"
      id="tspan1208-5-6-5"
      x="701.78571"
      y="96.089142">0</tspan></text>
+
+
 
 
 	<g
@@ -1665,12 +1699,12 @@
    inkscape:connector-curvature="0"
    id="path233-4-6-1-6-5"
    d="m 385.78285,114 h 90.60002 30.6 249.39994 V 44 h -249.39994 -30.6 -90.60002 c -5.99999,10.299998 -9.4,22.2 -9.4,35.000001 0,12.800002 3.40001,24.699999 9.4,34.999999 z"
-   class="homeColor1 st13" /><image
+   class="home_color1 st13" /><image
    sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
    y="-10.454044"
    x="440.38089"
    id="image1966-3"
-   class="homeLogo1"
+   class="home_logo1"
    xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
    style="display:inline;opacity:0.41087611;image-rendering:optimizeQuality"
    preserveAspectRatio="xMidYMid meet"
@@ -1690,7 +1724,9 @@
    from="6.36px"
    attributeName="letter-spacing"
    id="homeSpaceGoal"
-   class="homeGoal" /></text>
+   class="home_goal" /></text>
+
+
 
 
 
@@ -1717,12 +1753,12 @@
    inkscape:connector-curvature="0"
    id="path233-4-6-1-6-5-1"
    d="M 1120.6,114 H 1030 999.4 750.00002 V 44 H 999.4 h 30.6 90.6 c 6,10.3 9.4,22.2 9.4,35 0,12.8 -3.4,24.7 -9.4,35 z"
-   class="awayColor1 st13" /><image
+   class="away_color1 st13" /><image
    sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
    y="-237.13223"
    x="1069.2844"
    id="image1966-6-6"
-   class="awayLogo1"
+   class="away_logo1"
    xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
    style="display:inline;opacity:0.41087611;image-rendering:optimizeQuality"
    preserveAspectRatio="xMidYMid meet"
@@ -1746,7 +1782,9 @@
      from="6.36px"
      attributeName="letter-spacing"
      id="awaySpaceGoal"
-     class="awayGoal" /></text>
+     class="away_goal" /></text>
+
+
 
 
 
@@ -1755,16 +1793,18 @@
 
 
 </g></g></g><text
-   class="st5 st6 st14 clockText"
+   class="st5 st6 st14 clock_text"
    id="text239-3"
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:48px;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff"
    x="1518.9932"
    y="95.49794"
-   inkscape:label="clockText"><tspan
+   inkscape:label="clock_text"><tspan
      sodipodi:role="line"
      id="tspan1208-5"
      x="1518.9932"
      y="95.49794">20:00</tspan></text>
+
+
 
 
 
@@ -1797,16 +1837,18 @@
    style="fill:none;stroke:#ffffff;stroke-width:5;stroke-miterlimit:10" />
 	</g>
 <text
-   class="st5 st6 st14 periodText"
+   class="st5 st6 st14 period_text"
    id="text239-3-8"
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:48px;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff"
    x="1361.2281"
    y="95.459145"
-   inkscape:label="periodText"><tspan
+   inkscape:label="period_text"><tspan
      sodipodi:role="line"
      id="tspan1208-5-1"
      x="1361.2281"
      y="95.459145">1st</tspan></text>
+
+
 
 
 

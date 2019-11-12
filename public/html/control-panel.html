@@ -1,305 +1,98 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
+	<title>Control Panel</title>
 </head>
-	<style>
-	    #frame { width: 1920px; height: 1080px; border: 1px solid black; }
-	    #frame {
-	        -ms-zoom: 0.4;
-	        -moz-transform: scale(0.4);
-	        -moz-transform-origin: 0 0;
-	        -o-transform: scale(0.4);
-	        -o-transform-origin: 0 0;
-	        -webkit-transform: scale(0.4);
-	        -webkit-transform-origin: 0 0;
-	    }
-	</style>
 	<body>
-		<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)">
-			<option>Ice Hockey</option>
-			<option>Soccer</option>
-			<option>Baseball</option>
-			<option>Football</option>
-		</select>
-
-		<div>
-			<select id="league_select">
-			</select>
-
-			<select id="home_select">
-			</select>
-
-			<select id="away_select">
-			</select>
-
-			<select id="game_select" onchange="send_event('game_switch',document.getElementById('game_select').value)">
-			</select>
+		<div id="header">
+			<h1>Control Panel</h1>
 		</div>
-		<button class="up solo graphic" id="btn_Scoreboard" value="true" style="background:green">Scoreboard</button>
-		<button class="up solo graphic" id="btn_Intermission" value="false" style="background:red">Intermission</button>
-		<button class="up solo graphic" id="btn_Commercial" value="false" style="background:red">Commercial</button>
-		<button class="up solo graphic" id="btn_Full_Screen" value="false" style="background:red">Full Screen</button>
-		<button class="up solo graphic" id="btn_Player_Info" value="false" style="background:red">Player Info</button>
-		<button class="up solo graphic" id="btn_Test_Overlay" value="false" style="background:red">Move Overlay</button>
-		<div>
+
+		<div id="main">
+
+			<div id="select">
+
+				<select id="mode_select">
+					<option>Sports</option>
+					<option>News</option>
+					<option>Event</option>
+				</select>
+				<select id="sport_select">
+					<option>Ice Hockey</option>
+					<option>Soccer</option>
+					<option>Baseball</option>
+					<option>Football</option>
+				</select>
+				<br>
+
+				<select id="league_select"></select>
+				<select id="home_select"></select>
+				<select id="away_select"></select>
+				<select id="game_select"></select>
+			
+			</div>
+
+			<div class="centered" id="buttons">
+	
+				<button class="up" id="btn_Scoreboard" value="true">Scoreboard</button>
+				<button class="up" id="btn_Intermission" value="false">Intermission</button>
+				<button class="up" id="btn_Commercial" value="false">Commercial</button>
+				<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
+				<button class="up" id="btn_Player_Info" value="false">Player Info</button>
+				<button class="up" id="btn_Player_Info" value="false">Test</button>
+
+			</div>
+			
+			<!-- categories with checklists, width is dynamic with respect to window size, but not to number of categories -->
+			<!-- 
+				'category' class determines visual style (height, background color, corners)
+				'left/center/right' class determines where it is aligned
+				'section3' class makes sure that it works for 3 sections
+			-->
+			<div class="category left sections3">
+				<h2>Scoreboard Options</h2>
+
+				
+				<div id="hideoverflow">
+    				<div id="outer">
+        				<div id="inner">
+        					<form action="/action_page.php" method="get">
+  							<input type="checkbox" name="test1" value="test1">Animate Goal<br>
+  							<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
+  							<input type="checkbox" name="test3" value="test3">Show Shots<br>
+  					
+
+  						</div>
+    				</div>
+				</div>	
+				<input type="submit" value="Submit">
+				</form>
+
+			</div>
+			<div class="category center sections3">
+				<h2>Intermission Options</h2>
+				2
+			</div>
+			<div class="category right sections3">
+				<h2>Commercial Options</h2>
+				3
+			</div>
+
+
 		</div>
+	 <iframe src="/overlay-preview" style="
+		height:1100px;width:2000px;
+		-ms-zoom: 0.5;
+	    -moz-transform: scale(0.5);
+	    -moz-transform-origin: 0 0;
+	    -o-transform: scale(0.5);
+	    -o-transform-origin: 0 0;
+	    -webkit-transform: scale(0.5);
+	    -webkit-transform-origin: 0 0;"></iframe> 
 	</body>
-
-	<form>
-		<br>Top: <input type="text" id="top_Input">
-		<br>Left: <input type="text" id="left_Input">
-		<br><input type="submit" id="update_Pos">
-	</form>
-	<script type="text/javascript">
-
-		var games = [];
-
-		var leagues = [];
-
-		var teams = {
-			Teams: []
-		};
-
-		var home_info = {
-			"Sport": "Ice Hockey",
-			"League": "International",
-			"City": "Ottawa",
-
-			"Full Name": "Team Canada",
-			"Location": "Canada",
-			"Nickname": "Canadians",
-			"Abbreviation": "OTT",
-
-			"Color1": "#ff0000",
-			"Color2": "#000000",
-			"Color3": "#ffffff",
-			"Color4": "#ffffff",
-
-			"Logo1": "/Teams/International/Canada/logo1.png",
-			"Logo2": "/Teams/International/Canada/logo2.png",
-			"Logo3": "/Teams/International/Canada/logo3.png",
-			"Logo4": "/Teams/International/Canada/logo4.png",
-		}
-
-		var away_info = {
-			"Sport": "Ice Hockey",
-			"League": "International",
-			"City": "Ottawa",
-
-			"Full Name": "Team Canada",
-			"Location": "Canada",
-			"Nickname": "Canadians",
-			"Abbreviation": "OTT",
-
-			"Color1": "#ff0000",
-			"Color2": "#000000",
-			"Color3": "#ffffff",
-			"Color4": "#ffffff",
-
-			"Logo1": "/Teams/International/Canada/logo1.png",
-			"Logo2": "/Teams/International/Canada/logo2.png",
-			"Logo3": "/Teams/International/Canada/logo3.png",
-			"Logo4": "/Teams/International/Canada/logo4.png",
-		}
-
-		var overlay_pos = {
-			"top": "10px",
-			"left": "5px"
-		}
-
-		window.onload = function() {
-			load_league_data(teams);
-		    document.getElementById("league_select").addEventListener("change",load_team_data);
-			document.getElementById("home_select").addEventListener("change",change_team);
-			document.getElementById("away_select").addEventListener("change",change_team);
-		}
-
-		// Button click listeners
-		document.getElementById("btn_Scoreboard").addEventListener("click",function(){
-			button_bool("btn_Scoreboard");
-			if(document.getElementById("btn_Scoreboard").classList.contains("solo")){
-				var a = document.getElementsByClassName("graphic");
-				for (var i=0;i<a.length;i++){
-					if(a[i].id!="btn_Scoreboard"){
-						a[i].value="false";
-						send_event(a[i].id,"false");
-					}
-				}
-			}
-			send_event("btn_Scoreboard",document.getElementById("btn_Scoreboard").value);
-		});
-
-		document.getElementById("btn_Intermission").addEventListener("click",function(){
-			button_bool("btn_Intermission");
-			if(document.getElementById("btn_Intermission").classList.contains("solo")){
-				var a = document.getElementsByClassName("graphic");
-				for (var i=0;i<a.length;i++){
-					if(a[i].id!="btn_Intermission"){
-						a[i].value="false";
-						send_event(a[i].id,"false");
-					}
-				}
-			}
-			send_event("btn_Intermission",document.getElementById("btn_Intermission").value);
-		});
-
-		document.getElementById("btn_Commercial").addEventListener("click",function(){
-			button_bool("btn_Commercial");
-		});
-
-		document.getElementById("btn_Full_Screen").addEventListener("click",function(){
-			button_bool("btn_Full_Screen");
-		});
-
-		document.getElementById("btn_Player_Info").addEventListener("click",function(){
-			button_bool("btn_Player_Info");
-		});
-
-		document.getElementById("btn_Test_Overlay").addEventListener("click", function(){
-			button_bool("btn_Test_Overlay");
-			send_event("btn_Test_Overlay", document.getElementById("btn_Test_Overlay").value);
-		});
-
-		document.getElementById("update_Pos").addEventListener("click", function() {
-			overlay_pos.top = document.getElementById("top_Input").value;
-			overlay_pos.left = document.getElementById("left_Input").value;
-
-			// Set values for top and left fields
-			document.getElementById("top_Input").value = overlay_pos.top;
-			document.getElementById("left_Input").value = overlay_pos.left;
-
-			send_event("update_Overlay_Pos", overlay_pos);
-		})
-
-		httpGetAsync("/current-scores/ice-hockey",function(res){
-
-			g = Object.entries(JSON.parse(res));
-			g.forEach(game => {
-				var x = document.getElementById("game_select");
-				var option = document.createElement("option");
-				option.text = game[1].name;
-				option.value = game[0];
-				x.add(option);
-				//console.log(game[1].clock.dur)
-				games.push(game);
-			})
-		});
-
-		function send_event(button,value){
-			var xhr = new XMLHttpRequest();
-			xhr.open("POST", "/control-panel", true);
-			xhr.setRequestHeader('Content-Type', 'application/json');
-			xhr.send(JSON.stringify({
-			    "game": document.getElementById("game_select").value, "button": button, "value": value
-			}));
-		}
-
-		function httpGetAsync(theUrl, callback){
-		    var xmlHttp = new XMLHttpRequest();
-		    xmlHttp.onreadystatechange = function() {
-		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-		            callback(xmlHttp.responseText);
-		    }
-		    xmlHttp.open("GET", theUrl, true); // true for asynchronous
-		    xmlHttp.send(null);
-		}
-
-		function button_bool(btn){
-			if(document.getElementById(btn).value=="true"){
-				document.getElementById(btn).value="false";
-				document.getElementById(btn).style.backgroundColor="red";
-			}
-			else{
-				document.getElementById(btn).value="true";
-				document.getElementById(btn).style.backgroundColor="green";
-			}
-
-			console.log(document.getElementById(btn).value);
-		}
-
-		function load_league_data(ti) {
-
-		    var xobj = new XMLHttpRequest();
-		        xobj.overrideMimeType("application/json");
-		    xobj.open('GET', '/team-data.json', true); // Replace 'my_data' with the path to your file
-		    xobj.onreadystatechange = function () {
-		        if (xobj.readyState == 4 && xobj.status == "200") {
-		            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-		            temp = JSON.parse(xobj.responseText);
-		            Object.assign(ti,temp);
-
-	            	ti.Teams.forEach(function(item,index){
-						if(leagues.includes(ti.Teams[index].League)){
-							//console.log("Do nothing");
-						}
-						else{
-							leagues.push(ti.Teams[index].League);
-						}
-					});
-
-					//console.log(leagues);
-
-					leagues.forEach(function(item){
-						var x = document.getElementById("league_select");
-						var option = document.createElement("option");
-						option.text = item;
-						x.add(option);
-					});
-					//console.log(teams);
-					load_team_data();
-		        }
-		    };
-		    xobj.send(null);
-		}
-
-		function load_team_data(){
-			removeOptions(document.getElementById("home_select"));
-			removeOptions(document.getElementById("away_select"));
-
-			var filtered = teams.Teams.filter(function(a){
-				var y=new RegExp(document.getElementById("league_select").value);
-				//console.log(y);
-				return y.test(a["League"]);
-			});
-
-			filtered.forEach(function(item){
-				var x = document.getElementById("home_select");
-				var option = document.createElement("option");
-				option.text = item["Full Name"];
-				x.add(option);
-			});
-
-			filtered.forEach(function(item){
-				var x = document.getElementById("away_select");
-				var option = document.createElement("option");
-				option.text = item["Full Name"];
-				x.add(option);
-			});
-			change_team();
-		}
-
-		function change_team(){
-			var home = teams.Teams.filter(x => x["League"] == document.getElementById("league_select").value && x["Full Name"] == document.getElementById("home_select").value);
-			var away = teams.Teams.filter(x => x["League"] == document.getElementById("league_select").value && x["Full Name"] == document.getElementById("away_select").value);
-
-			Object.assign(home_info,home[0]);
-			Object.assign(away_info,away[0]);
-
-			home_info["Logo1"] = '/Teams/'.concat(home_info["League"],"/",home_info["Location"],"/logo1.png");
-			away_info["Logo1"] = '/Teams/'.concat(away_info["League"],"/",away_info["Location"],"/logo1.png");
-
-			send_event('home_change',home_info);
-			send_event('away_change',away_info);
-		}
-
-		function removeOptions(selectbox)
-		{
-		    var i;
-		    for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
-		    {
-		        selectbox.remove(i);
-		    }
-		}
-
-	</script>
+	<script type="text/javascript" src="/js/classes.js"></script>
+	<script type="text/javascript" src="/js/events.js"></script>
+	<script type="text/javascript" src="/js/client.js"></script>
+	<script type="text/javascript" src="/js/control-panel.js"></script>
 </html>
