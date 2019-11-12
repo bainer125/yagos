@@ -15,7 +15,7 @@
 // Import necessary modules
 
 var express = require('express');
-var webSocketServer = require ('ws').Server;
+var webSocketServer = require('ws').Server;
 var fs = require('fs');
 var bodyParser = require('body-parser');
 
