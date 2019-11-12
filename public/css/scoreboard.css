@@ -112,7 +112,7 @@ button:hover{ background-color: turquoise; }
 	margin-top: 3%;
 }
 
-.left{
+/*.left{
 	left: 3%;
 }
 .center{
@@ -120,7 +120,7 @@ button:hover{ background-color: turquoise; }
 }
 .right{
 	right: 3%;
-}
+}*/
 
 form{
 	text-align: left;
@@ -136,7 +136,7 @@ form{
 
 /* Scoreboards > Timer ================================= */
 
-.half{
+/*.half{
 	width: 48%;
 	height: inherit;
 	border: 0px solid orange;
@@ -149,28 +149,28 @@ form{
 	height: 48%;
 	border: 0px solid orange;
 	display: inline-block;
-}
+}*/
 
-.abcd{
+/*.abcd{
 	overflow: hidden;
 	max-height: 85%;
 	min-height: 85%;
 	border: 0px solid pink;
 	background-color: cyan;
-}
+}*/
 
-button.fill{
+/*button.fill{
 	height: 35%;
 	width: 100%;
 	vertical-align: bottom;
-}
+}*/
 
-.big{
+/*.big{
 	font-size: 2em;
 	font-weight: bold;
-}
+}*/
 
-.time{
+/*.time{
 	width: 12%;
 	height: 60%;
 	display: inline-block;
@@ -180,9 +180,9 @@ button.fill{
 }
 .timer{
 	display: block;
-}
+}*/
 
-#btn_clock{
+/*#btn_clock{
 	height: 40%;
 	width: 100%;
 }
@@ -190,9 +190,9 @@ button.fill{
 	display: block;
 	vertical-align: bottom;
 	margin-top: -5px;
-}
+}*/
 
-button.plus, button.minus{
+/*button.plus, button.minus{
 	line-height: 100%;
 	padding: 0;
 
@@ -201,16 +201,16 @@ button.plus, button.minus{
 	max-height: 100%;
 	width: 100%;
 	margin: 0;
-}
+}*/
 
-button.plus::before{
+/*button.plus::before{
 	padding: 0;
 	content: "+";
 }
 button.minus::before{
 	content: "-";
-}
-
+}*/
+/*
 #top, #middle, #bottom{
 	border: 1px solid lime;
 	min-height: 27%;
@@ -226,11 +226,11 @@ button.minus::before{
 	/*margin-top: 5%;*/
 }
 
-#middle{
+/*#middle{
 	background-color: orange;
-}
-
-.width7{
+}*/
+*/
+/*.width7{
 	width: 12%;
 	display: inline-block;
 	vertical-align: middle;
@@ -241,10 +241,10 @@ button.minus::before{
 	margin: 0;
 	border: 0px solid black;
 }
+*/
 
 
-
-.outline{
+/*.outline{
 	border: 0px solid magenta;
 }
 .outline1{
@@ -256,7 +256,7 @@ button.minus::before{
 .base{
 	padding: 0;
 	margin: 0;
-}
+}*/
 
 
 
@@ -284,7 +284,7 @@ td{
 
 /* ===================================================== */
 
-.clock-btn-div{
+/*.clock-btn-div{
 	min-height: 25%; 
 	max-height: 25%;
 	width: 100%;
@@ -304,16 +304,16 @@ td{
 	width: 12%;
 	display: inline-block;
 	vertical-align: middle;
-}
+}*/
 
-#top1{
+/*#top1{
 	max-height: 27%;
 	min-height: 27%;
 	width: 100%;
 	background-color: purple;
 	margin-top: 8%;
 }
-
+*/
 /* ================================================================================= */
 
 .inherit_w{
@@ -530,6 +530,8 @@ td{
 }
 
 .penalty_add_bar select{
+	appearance: none;
+	background: transparent;
 	background-color: transparent;
 	border: 0;
 	text-align: left;
@@ -538,8 +540,10 @@ td{
 	margin: 0;
 }
 
-.penalty_add_bar:after{
+.select_div:after{
 	background-color: transparent;
+	border: 0;
+	color: white;
 }
 
 .penalty_list{
@@ -547,6 +551,8 @@ td{
 	min-height: 20vh;
 	max-height: 20vh;
 	background-color: lightcyan;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .penalty_list_item{
@@ -578,6 +584,13 @@ td{
 	width: 6vw;
 	min-width: 6vw;
 	max-width: 6vw;
+}
+.penalty_col_4{
+	width: 6vw;
+	min-width: 6vw;
+	max-width: 6vw;
+	font-size: 2.5vh;
+	line-height: 3vh;
 }
 
 .penalty_btn{
@@ -615,4 +628,9 @@ td{
 }
 .btn_minus{
 	background-color: darkturquoise;
+}
+
+#header_1 h1{
+	line-height: 7vh;
+	font-size: 5.5vh;
 }
