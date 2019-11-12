@@ -16,6 +16,7 @@ function make_graphics_draggable () {
 
 function make_draggable(elmnt) {
 	var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+	var g = Object.keys(graphics);
 	var x = document.getElementById(elmnt).parentElement;
 	x.onmousedown = dragMouseDown;
 	var bar_h = x.childNodes[1].offsetHeight;
@@ -26,7 +27,6 @@ function make_draggable(elmnt) {
 		// get the mouse cursor position at startup:
 		pos3 = e.clientX;
 		pos4 = e.clientY;
-		console.log(pos3,pos4);
 
 		// Add the mouseup and mousemove functions to each graphic as well for smoother interface
 		document.onmouseup = closeDragElement;
@@ -41,26 +41,27 @@ function make_draggable(elmnt) {
 		The solution would be to pass the locations of the graphics into the callbacks
 		in order to adjust the offset.
 
-		var g = Object.keys(graphics);
 		for(var i=0;i<g.length;i++){
-			graphics[g[i]].onmousedown = dragMouseDown;
+			console.log(g[i]);
 			graphics[g[i]].onmouseup = closeDragElement;
-			graphics[g[i]].onmousemove = elementDrag;
+			graphics[g[i]].onmousemove = function (e){
+				elementDrag(e,document.getElementById(g[i]).parentNode.style.left,document.getElementById(g[i]).parentNode.style.top);
+			};
 		}
 
 		*/
 
 	}
 
-	function elementDrag(e) {
+	function elementDrag(e,xoff=0,yoff=0) {
 		e = e || window.event;
 		e.preventDefault();
 		var p = document.getElementById(elmnt).parentElement;
 		// calculate the new cursor position:
-		pos1 = pos3 - e.clientX;
-		pos2 = pos4 - e.clientY;
-		pos3 = e.clientX;
-		pos4 = e.clientY;
+		pos1 = pos3 - e.clientX + xoff;
+		pos2 = pos4 - e.clientY + yoff;
+		pos3 = e.clientX + xoff;
+		pos4 = e.clientY + yoff;
 		newY = p.offsetTop - pos2;
 		newX = p.offsetLeft - pos1;
 

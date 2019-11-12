@@ -121,11 +121,12 @@ function handle_graphics_event( event , graphics = {}, animate = false, graphid=
 		switch(action){
 
 			case 'animate':
-
+				console.log(item)
 				var vals = Object.keys(graphics);
 				for (const graphic of vals) {
 					var a = graphics[graphic].getElementsByClassName(item);
 					for (i=0,len=a.length;i<len;i++){
+						console.log(a[i]);
 						a[i].beginElement();
 					}
 				}

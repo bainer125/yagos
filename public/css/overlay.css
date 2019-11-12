@@ -31,6 +31,9 @@
     -webkit-transform: scaleX(1) scaleY(1) scaleZ(1);
     transform: scaleX(1) scaleY(1) scaleZ(1);
 }
+.grabber{
+}
+
 @font-face {
   font-family: 'URW Gothic';
   font-style: italic;

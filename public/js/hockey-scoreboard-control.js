@@ -57,6 +57,14 @@ window.onload = function () {
 		document.getElementById("away_score_down").addEventListener("click",function(){sendmessage("away_score","down");});
 		document.getElementById("away_shots_up").addEventListener("click",function(){sendmessage("away_shots","up");});
 		document.getElementById("away_shots_down").addEventListener("click",function(){sendmessage("away_shots","down");});
+		document.getElementById("home_goal").addEventListener("click",function(){
+			sendmessage("home_goal","animate");
+			sendmessage("home_score","up");
+		});
+		document.getElementById("away_goal").addEventListener("click",function(){
+			sendmessage("away_goal","animate");
+			sendmessage("away_score","up");
+		});
 		document.getElementById("period_up").addEventListener("click",function(){sendmessage("period","up");});
 		document.getElementById("period_down").addEventListener("click",function(){
 			if(boards[game].period>1){

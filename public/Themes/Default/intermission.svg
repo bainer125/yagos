@@ -10,13 +10,13 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    preserveAspectRatio="xMidYMid meet"
-   width="1000"
+   width="1400"
    viewBox="0 0 542 217.00268"
    version="1.1"
    id="Intermission"
    sodipodi:docname="intermission.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   height="217.00266">
+   height="280">
   <animate
      class="showGraphic"
      attributeName="opacity"
@@ -318,11 +318,10 @@
        style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.9982962;stroke-opacity:1"
        inkscape:label="homeColor" />
     <image
-       sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
        y="-84.599716"
        x="121.3929"
        id="image1073"
-       xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/United%20States/logo1.png"
+       xlink:href="/Teams/International/United%20States/logo1.png"
        style="opacity:0.5;filter:url(#filter1025);image-rendering:optimizeQuality"
        preserveAspectRatio="xMidYMid meet"
        height="140"
@@ -333,11 +332,10 @@
        mask="none"
        transform="matrix(1.7004332,0,0,1.7004332,191.10844,-17.679266)" />
     <image
-       sodipodi:absref="/home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
        y="-84.599556"
        x="-220.28345"
        id="image944"
-       xlink:href="file:///home/bainer/Documents/Git/yagos/public/Teams/International/Canada/logo1.png"
+       xlink:href="/Teams/International/Canada/logo1.png"
        style="opacity:0.5;filter:url(#filter1000);image-rendering:optimizeQuality"
        preserveAspectRatio="xMidYMid meet"
        height="140"
