@@ -1,46 +1,100 @@
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
 	<title>Control Panel</title>
 </head>
-	<body>
-		<div id="header">
-			<h1>Control Panel</h1>
+<body class="fullscreen"><div class="container fullscreen">
+	<div id="header_1" class="row inherit_w"><div class="column inherit_w inherit_h">
+		<h1>Hockey Scoreboard</h1>
+	</div></div>
+
+	<div class="row inherit_w game_select"><div class="col inherit_h control_panel_center">
+		<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)">
+			<option>Sports</option>
+			<option>News</option>
+			<option>Event</option>
+		</select>
+		<select id="sport_select" onchange="send_event('sport_switch',document.getElementById('sport_select	').value)">
+			<option>Ice Hockey</option>
+			<option>Soccer</option>
+			<option>Baseball</option>
+			<option>Football</option>
+		</select>
+		<br>
+
+		<select id="league_select"></select>
+		<select id="home_select"></select>
+		<select id="away_select"></select>
+		<select id="game_select" onchange="send_event('game_switch',document.getElementById('game_select').value)"></select>
+	</div></div>
+
+	<div class="row inherit_w control_panel_buttons"><div class="col inherit_h control_panel_center">
+		<button class="up" id="btn_Scoreboard" value="true" onclick="button_animation(this)">Scoreboard</button>
+		<button class="up" id="btn_Intermission" value="false">Intermission</button>
+		<button class="up" id="btn_Commercial" value="false">Commercial</button>
+		<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
+		<button class="up" id="btn_Player_Info" value="false">Player Info</button>
+	</div></div>
+
+	<div class="row inherit_w control_panel_options">
+		<div class="col inherit_h control_panel_options_section">
+			<div class="row option_section_header"><div class="col inherit_w inherit_h">
+				<h2>Scoreboard Options</h2>
+			</div></div>
+			<div class="row option_section_content"><div class="col inherit_w inherit_h">
+				<div id="outer"><div id="inner">
+					<form action="/action_page.php" method="get">
+						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
+						<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
+						<input type="checkbox" name="test3" value="test3">Show Shots<br>
+					</form>
+  				</div></div>
+			</div></div>
 		</div>
+		<div class="col inherit_h control_panel_options_section">
+			<div class="row option_section_header"><div class="col inherit_w inherit_h">
+				<h2>Intermission Options</h2>
+			</div></div>
+			<div class="row option_section_content"><div class="col inherit_w inherit_h">
+				<div id="outer"><div id="inner">
+					<form action="/action_page.php" method="get">
+						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
+						<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
+						<input type="checkbox" name="test3" value="test3">Show Shots<br>
+					</form>
+  				</div></div>
+			</div></div>
+		</div>
+		<div class="col inherit_h control_panel_options_section">
+			<div class="row option_section_header"><div class="col inherit_w inherit_h">
+				<h2>Commercial Options</h2>
+			</div></div>
+			<div class="row option_section_content"><div class="col inherit_w inherit_h">
+				<div id="outer"><div id="inner">
+					<form action="/action_page.php" method="get">
+						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
+						<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
+						<input type="checkbox" name="test3" value="test3">Show Shots<br>
+					</form>
+  				</div></div>
+			</div></div>
+		</div>
+	</div>
+</div></body>
 
-		<div id="main">
 
-			<div id="select">
+	<div id="select">
 
-				<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)">
-					<option>Sports</option>
-					<option>News</option>
-					<option>Event</option>
-				</select>
-				<select id="sport_select" onchange="send_event('sport_switch',document.getElementById('sport_select	').value)">
-					<option>Ice Hockey</option>
-					<option>Soccer</option>
-					<option>Baseball</option>
-					<option>Football</option>
-				</select>
-				<br>
 
-				<select id="league_select"></select>
-				<select id="home_select"></select>
-				<select id="away_select"></select>
-				<select id="game_select" onchange="send_event('game_switch',document.getElementById('game_select').value)"></select>
+				
 			
 			</div>
 
 			<div class="centered" id="buttons">
 	
-				<button class="up" id="btn_Scoreboard" value="true" onclick="button_animation(this)">Scoreboard</button>
-				<button class="up" id="btn_Intermission" value="false">Intermission</button>
-				<button class="up" id="btn_Commercial" value="false">Commercial</button>
-				<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
-				<button class="up" id="btn_Player_Info" value="false">Player Info</button>
-				<button class="up" id="btn_Player_Info" value="false">Test</button>
+				
 
 			</div>
 			
@@ -50,7 +104,7 @@
 				'left/center/right' class determines where it is aligned
 				'section3' class makes sure that it works for 3 sections
 			-->
-			<div class="category left sections3">
+			<!-- <div class="category left sections3">
 				<h2>Scoreboard Options</h2>
 
 				
@@ -80,7 +134,7 @@
 			</div>
 
 
-		</div>
+		</div> -->
 	
 	</body>
 	<script type="text/javascript">
