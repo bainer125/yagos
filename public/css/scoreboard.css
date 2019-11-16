@@ -12,7 +12,7 @@ body{
 
 	/*hide anything that would make the page scroll*/
 	overflow-x: hidden;
-	/*overflow-y: hidden;*/ 
+	overflow-y: hidden; 
 }
 
 h1, h2{
@@ -24,11 +24,11 @@ h3{
 	margin: 5px;
 }
 
-#main{
+/*#main{
 	max-width: 850px;
 	margin: auto;
 	margin-top: 120px;
-}
+}*/
 
 /*.centered{
 	text-align: center;
@@ -41,7 +41,7 @@ h3{
 
 
 /* Header ============================================== */
-
+/*
 #header{
 	min-height: 100px;
 	height: 8%;
@@ -58,7 +58,7 @@ h3{
 	position: absolute;
 	bottom: 0;
 	line-height: 1em;
-}
+}*/
 /* ===================================================== */
 
 
@@ -92,7 +92,7 @@ button:hover{ background-color: turquoise; }
 
 /* Control Panel > Categories ========================== */
 
-.sections3{
+/*.sections3{
 	display: inline-block;
 	position: static;
 	width: 30%;
@@ -115,7 +115,7 @@ button:hover{ background-color: turquoise; }
 .category > h2 {
 	line-height: 1em;
 	margin-top: 3%;
-}
+}*/
 
 /*.left{
 	left: 3%;
@@ -137,7 +137,6 @@ form{
 
 
 .game_select{
-	border: 1px solid green;
 	height: 15vh;
 	min-height: 15vh;
 	max-height: 15vh;
@@ -160,21 +159,19 @@ form{
 }
 
 .control_panel_buttons button{
-	width: 15.75vw;
-	min-width: 15.75vw;
-	max-width: 15.75vw;
+	width: 15vw;
+	min-width: 15vw;
+	max-width: 15vw;
 	height: 18vh;
 }
 
 .control_panel_options{
-	height: 33vh;
-	min-height: 33vh;
-	max-height: 33vh;
-	border: 1px solid red;
-}
-
-.option_section_header h2{
-	margin: 0;
+	height: 32vh;
+	min-height: 32vh;
+	max-height: 32vh;
+	margin-left: 17vw;
+	margin-right: 17vw;
+	text-align: center;
 }
 
 .control_panel_options_section{
@@ -182,13 +179,47 @@ form{
 	width: 20vw;
 	min-width: 20vw;
 	max-width: 20vw;
-	border: 1px solid pink;
+	border-radius: 4px;
+	border: 0;
 }
 
-.testpls{
+.option_section_header h2{
+	height: 10vh;
+	min-height: 10vh;
+	max-height: 10vh;
+	margin: 0;
+	margin-bottom: 1vh;
+}
+
+.option_section_content{
+	height: 16vh;
+	min-height: 16vh;
+	max-height: 16vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.option_section_submit{
+	height: 5vh;
+	min-height: 5vh;
+	max-height: 5vh;
+}
+
+.submit_btn{
+	background-color: white;
+	border: 1px solid silver;
+	border-radius: 4px;
+}
+
+.submit_btn:hover{
+	background-color: gainsboro;
+}
+
+
+/*.testpls{
 	width: 800px;
 	border: 1px solid purple;
-}
+}*/
 /* ===================================================== */
 
 
@@ -283,12 +314,12 @@ button.minus::before{
 	margin: 0;
 	border: 2px solid red;
 	/*margin-top: 5%;*/
-}
-
+/*}
+*/
 /*#middle{
 	background-color: orange;
 }*/
-*/
+
 /*.width7{
 	width: 12%;
 	display: inline-block;
@@ -319,15 +350,15 @@ button.minus::before{
 
 
 
-tr{
+/*tr{
 	border: 1px solid lime;
 }
 
 td{
 	border: 1px solid orange;
-}
+}*/
 
-.title{
+/*.title{
 	border: 1px solid blue;
 	max-height: 15%;
 	min-height: 15%;
@@ -339,7 +370,7 @@ td{
 	margin: 0;
 	font-weight: bold;
 	background-color: pink;
-}
+}*/
 
 /* ===================================================== */
 
@@ -401,6 +432,11 @@ td{
 	min-height: 7vh;
 	max-width: 7vh;
 	background-color: darkturquoise; 
+}
+
+#header_1 h1{
+	line-height: 7vh;
+	font-size: 5.5vh;
 }
 
 #top_1{
@@ -687,9 +723,4 @@ td{
 }
 .btn_minus{
 	background-color: darkturquoise;
-}
-
-#header_1 h1{
-	line-height: 7vh;
-	font-size: 5.5vh;
 }

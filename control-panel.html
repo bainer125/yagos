@@ -7,7 +7,7 @@
 </head>
 <body class="fullscreen"><div class="container fullscreen">
 	<div id="header_1" class="row inherit_w"><div class="column inherit_w inherit_h">
-		<h1>Hockey Scoreboard</h1>
+		<h1>Control Panel</h1>
 	</div></div>
 
 	<div class="row inherit_w game_select"><div class="col inherit_h control_panel_center">
@@ -30,7 +30,7 @@
 		<select id="game_select" onchange="send_event('game_switch',document.getElementById('game_select').value)"></select>
 	</div></div>
 
-	<div class="row inherit_w control_panel_buttons"><div class="col inherit_h control_panel_center">
+	<div class="row inherit_w control_panel_buttons"><div class="col justify-content-center inherit_h control_panel_center">
 		<button class="up" id="btn_Scoreboard" value="true" onclick="button_animation(this)">Scoreboard</button>
 		<button class="up" id="btn_Intermission" value="false">Intermission</button>
 		<button class="up" id="btn_Commercial" value="false">Commercial</button>
@@ -38,8 +38,8 @@
 		<button class="up" id="btn_Player_Info" value="false">Player Info</button>
 	</div></div>
 
-	<div class="row inherit_w control_panel_options">
-		<div class="col inherit_h control_panel_options_section">
+	<div class="row justify-content-center inherit_w control_panel_options">
+		<div class="col control_panel_options_section">
 			<div class="row option_section_header"><div class="col inherit_w inherit_h">
 				<h2>Scoreboard Options</h2>
 			</div></div>
@@ -49,11 +49,14 @@
 						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
 						<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
 						<input type="checkbox" name="test3" value="test3">Show Shots<br>
-					</form>
   				</div></div>
 			</div></div>
+			<div class="row option_section_submit"><div class="col inherit_w inherit_h">
+					<input class="submit_btn" type="submit" value="Submit">
+				</form>
+			</div></div>
 		</div>
-		<div class="col inherit_h control_panel_options_section">
+		<div class="col inherit_h margin_sides_1 control_panel_options_section">
 			<div class="row option_section_header"><div class="col inherit_w inherit_h">
 				<h2>Intermission Options</h2>
 			</div></div>
@@ -61,10 +64,14 @@
 				<div id="outer"><div id="inner">
 					<form action="/action_page.php" method="get">
 						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
-						<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
+						<input type="checkbox" name="test2" value="test2">Animate Shots<br>
 						<input type="checkbox" name="test3" value="test3">Show Shots<br>
 					</form>
   				</div></div>
+			</div></div>
+			<div class="row option_section_submit"><div class="col inherit_w inherit_h">
+					<input class="submit_btn" type="submit" value="Submit">
+				</form>
 			</div></div>
 		</div>
 		<div class="col inherit_h control_panel_options_section">
@@ -75,68 +82,19 @@
 				<div id="outer"><div id="inner">
 					<form action="/action_page.php" method="get">
 						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
-						<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
+						<input type="checkbox" name="test2" value="test2">Animate Shots<br>
 						<input type="checkbox" name="test3" value="test3">Show Shots<br>
 					</form>
   				</div></div>
+			</div></div>
+			<div class="row option_section_submit"><div class="col inherit_w inherit_h">
+					<input class="submit_btn" type="submit" value="Submit">
+				</form>
 			</div></div>
 		</div>
 	</div>
 </div></body>
 
-
-	<div id="select">
-
-
-				
-			
-			</div>
-
-			<div class="centered" id="buttons">
-	
-				
-
-			</div>
-			
-			<!-- categories with checklists, width is dynamic with respect to window size, but not to number of categories -->
-			<!-- 
-				'category' class determines visual style (height, background color, corners)
-				'left/center/right' class determines where it is aligned
-				'section3' class makes sure that it works for 3 sections
-			-->
-			<!-- <div class="category left sections3">
-				<h2>Scoreboard Options</h2>
-
-				
-				<div id="hideoverflow">
-    				<div id="outer">
-        				<div id="inner">
-        					<form action="/action_page.php" method="get">
-  							<input type="checkbox" name="test1" value="test1">Animate Goal<br>
-  							<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
-  							<input type="checkbox" name="test3" value="test3">Show Shots<br>
-  					
-
-  						</div>
-    				</div>
-				</div>	
-				<input type="submit" value="Submit">
-				</form>
-
-			</div>
-			<div class="category center sections3">
-				<h2>Intermission Options</h2>
-				2
-			</div>
-			<div class="category right sections3">
-				<h2>Commercial Options</h2>
-				3
-			</div>
-
-
-		</div> -->
-	
-	</body>
 	<script type="text/javascript">
 
 		var games = [];
