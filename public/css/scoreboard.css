@@ -59,6 +59,21 @@ h3{
 	bottom: 0;
 	line-height: 1em;
 }*/
+
+
+#header{
+	height: 7vh;
+	min-height: 7vh;
+	max-width: 7vh;
+	background-color: darkturquoise; 
+}
+
+#header h1{
+	line-height: 7vh;
+	font-size: 5.5vh;
+}
+
+
 /* ===================================================== */
 
 
@@ -427,17 +442,7 @@ td{
 	max-height: 100vh;
 }
 
-#header_1{
-	height: 7vh;
-	min-height: 7vh;
-	max-width: 7vh;
-	background-color: darkturquoise; 
-}
 
-#header_1 h1{
-	line-height: 7vh;
-	font-size: 5.5vh;
-}
 
 #top_1{
 	height: 33vh;
@@ -723,4 +728,20 @@ td{
 }
 .btn_minus{
 	background-color: darkturquoise;
+}
+
+
+
+.menu{
+	position: absolute;
+	height: 200px;
+	min-height: 200px;
+	max-height: 200px;
+	width: 200px;
+	background-color: pink;
+	display: none;
+}
+
+.menu_btn:active + .menu:hover, .menu_btn + .menu:hover{
+	display: initial;
 }

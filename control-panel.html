@@ -6,9 +6,20 @@
 	<title>Control Panel</title>
 </head>
 <body class="fullscreen"><div class="container fullscreen">
-	<div id="header_1" class="row inherit_w"><div class="column inherit_w inherit_h">
-		<h1>Control Panel</h1>
-	</div></div>
+	<div id="header" class="row inherit_w">
+		<div class="col menu_btn_div inherit_h"><button class="menu_btn inherit_w inherit_h">☰</button></div>
+		<div class="menu">Test</div>
+		<div class="col inherit_h">
+			<h1>Control Panel</h1>
+		</div>
+		<div class="col inherit_h">
+			<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('game_select').value)" class="inherit_h">
+				<option>Hockey</option>
+				<option>Baseball</option>
+				<option>Football</option>
+			</select>  
+		</div>
+	</div>
 
 	<div class="row inherit_w game_select"><div class="col inherit_h control_panel_center">
 		<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)">
