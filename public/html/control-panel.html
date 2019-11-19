@@ -1,0 +1,346 @@
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
+
+<!-- JS Scripts for Menu Bar -->
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="menu-bar.js"></script>
+
+	<title>Control Panel</title>
+</head>
+<body class="fullscreen"><div class="container fullscreen">
+	
+<!-- HEADER + MENU BAR START -->
+	<div id="menu_bar"></div>
+	<div id="header" class="row inherit_w">
+		<div class="col menu_btn_div inherit_h"><button id="header_menu_btn" class="menu_btn inherit_w inherit_h">☰</button></div>
+		<div class="menu">Test</div>
+		<div class="col inherit_h menu_main_div">
+			<h1>Control Panel</h1>
+		</div>
+		<div class="col inherit_h menu_mode_div">
+			<!-- <select id="mode_select" onchange="send_event('mode_switch',document.getElementById('game_select').value)" class="inherit_h">
+				<option>Hockey</option>
+				<option>Baseball</option>
+				<option>Football</option>
+			</select>   -->
+		</div>
+	</div>
+<!-- ========================= -->
+
+
+	<div class="row inherit_w game_select"><div class="col inherit_h control_panel_center">
+		<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)">
+			<option>Sports</option>
+			<option>News</option>
+			<option>Event</option>
+		</select>
+		<select id="sport_select" onchange="send_event('sport_switch',document.getElementById('sport_select	').value)">
+			<option>Ice Hockey</option>
+			<option>Soccer</option>
+			<option>Baseball</option>
+			<option>Football</option>
+		</select>
+		<br>
+
+		<select id="league_select"></select>
+		<select id="home_select"></select>
+		<select id="away_select"></select>
+		<select id="game_select" onchange="send_event('game_switch',document.getElementById('game_select').value)"></select>
+	</div></div>
+
+	<div class="row inherit_w control_panel_buttons"><div class="col justify-content-center inherit_h control_panel_center">
+		<button class="up" id="btn_Scoreboard" value="true" onclick="button_animation(this)">Scoreboard</button>
+		<button class="up" id="btn_Intermission" value="false">Intermission</button>
+		<button class="up" id="btn_Commercial" value="false">Commercial</button>
+		<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
+		<button class="up" id="btn_Player_Info" value="false">Player Info</button>
+	</div></div>
+
+	<div class="row justify-content-center inherit_w control_panel_options">
+		<div class="col control_panel_options_section">
+			<div class="row option_section_header"><div class="col inherit_w inherit_h">
+				<h2>Scoreboard Options</h2>
+			</div></div>
+			<div class="row option_section_content"><div class="col inherit_w inherit_h">
+				<div id="outer"><div id="inner">
+					<form action="/action_page.php" method="get">
+						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
+						<input type="checkbox" name="test2" value="test2" checked="checked">Animate Shots<br>
+						<input type="checkbox" name="test3" value="test3">Show Shots<br>
+  				</div></div>
+			</div></div>
+			<div class="row option_section_submit"><div class="col inherit_w inherit_h">
+					<input class="submit_btn" type="submit" value="Submit">
+				</form>
+			</div></div>
+		</div>
+		<div class="col inherit_h margin_sides_1 control_panel_options_section">
+			<div class="row option_section_header"><div class="col inherit_w inherit_h">
+				<h2>Intermission Options</h2>
+			</div></div>
+			<div class="row option_section_content"><div class="col inherit_w inherit_h">
+				<div id="outer"><div id="inner">
+					<form action="/action_page.php" method="get">
+						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
+						<input type="checkbox" name="test2" value="test2">Animate Shots<br>
+						<input type="checkbox" name="test3" value="test3">Show Shots<br>
+					</form>
+  				</div></div>
+			</div></div>
+			<div class="row option_section_submit"><div class="col inherit_w inherit_h">
+					<input class="submit_btn" type="submit" value="Submit">
+				</form>
+			</div></div>
+		</div>
+		<div class="col inherit_h control_panel_options_section">
+			<div class="row option_section_header"><div class="col inherit_w inherit_h">
+				<h2>Commercial Options</h2>
+			</div></div>
+			<div class="row option_section_content"><div class="col inherit_w inherit_h">
+				<div id="outer"><div id="inner">
+					<form action="/action_page.php" method="get">
+						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
+						<input type="checkbox" name="test2" value="test2">Animate Shots<br>
+						<input type="checkbox" name="test3" value="test3">Show Shots<br>
+					</form>
+  				</div></div>
+			</div></div>
+			<div class="row option_section_submit"><div class="col inherit_w inherit_h">
+					<input class="submit_btn" type="submit" value="Submit">
+				</form>
+			</div></div>
+		</div>
+	</div>
+</div></body>
+
+	<script type="text/javascript">
+
+		var games = [];
+
+		var leagues = [];
+
+		var teams = {
+			Teams: []
+		};
+
+		var home_info = {
+			"Sport": "Ice Hockey",
+			"League": "International",
+			"City": "Ottawa",
+
+			"Full Name": "Team Canada",
+			"Location": "Canada",
+			"Nickname": "Canadians",
+			"Abbreviation": "OTT",
+
+			"Color1": "#ff0000",
+			"Color2": "#000000",
+			"Color3": "#ffffff",
+			"Color4": "#ffffff",
+
+			"Logo1": "/Teams/International/Canada/logo1.png",
+			"Logo2": "/Teams/International/Canada/logo2.png",
+			"Logo3": "/Teams/International/Canada/logo3.png",
+			"Logo4": "/Teams/International/Canada/logo4.png",
+		}
+
+		var away_info = {
+			"Sport": "Ice Hockey",
+			"League": "International",
+			"City": "Ottawa",
+
+			"Full Name": "Team Canada",
+			"Location": "Canada",
+			"Nickname": "Canadians",
+			"Abbreviation": "OTT",
+
+			"Color1": "#ff0000",
+			"Color2": "#000000",
+			"Color3": "#ffffff",
+			"Color4": "#ffffff",
+
+			"Logo1": "/Teams/International/Canada/logo1.png",
+			"Logo2": "/Teams/International/Canada/logo2.png",
+			"Logo3": "/Teams/International/Canada/logo3.png",
+			"Logo4": "/Teams/International/Canada/logo4.png",
+		}
+
+		window.onload = function() {
+			load_league_data(teams);
+		    document.getElementById("league_select").addEventListener("change",load_team_data);
+			document.getElementById("home_select").addEventListener("change",change_team);
+			document.getElementById("away_select").addEventListener("change",change_team);
+		}
+
+
+		document.getElementById("btn_Scoreboard").addEventListener("click",function(){
+			button_bool("btn_Scoreboard");
+			send_event("btn_Scoreboard",document.getElementById("btn_Scoreboard").value);
+		});
+
+		document.getElementById("btn_Intermission").addEventListener("click",function(){
+			button_bool("btn_Intermission");
+			send_event("btn_Intermission",document.getElementById("btn_Intermission").value);
+		});
+
+		document.getElementById("btn_Commercial").addEventListener("click",function(){
+			button_bool("btn_Commercial");
+		});
+
+		document.getElementById("btn_Full_Screen").addEventListener("click",function(){
+			button_bool("btn_Full_Screen");
+		});
+
+		document.getElementById("btn_Player_Info").addEventListener("click",function(){
+			button_bool("btn_Player_Info");
+		});
+
+		httpGetAsync("/current-scores/ice-hockey",function(res){
+
+			g = Object.entries(JSON.parse(res));
+			g.forEach(game => {
+				var x = document.getElementById("game_select");
+				var option = document.createElement("option");
+				option.text = game[1].name;
+				option.value = game[0];
+				x.add(option);
+				//console.log(game[1].clock.dur)
+				games.push(game);
+			})
+		});
+
+		function button_animation(b){
+			b.toggleClass("down");
+		}
+
+		function send_event(button,value){
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/control-panel", true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send(JSON.stringify({
+			    "game": document.getElementById("game_select").value, "button": button, "value": value
+			}));
+		}
+
+		function httpGetAsync(theUrl, callback){
+		    var xmlHttp = new XMLHttpRequest();
+		    xmlHttp.onreadystatechange = function() { 
+		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+		            callback(xmlHttp.responseText);
+		    }
+		    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		    xmlHttp.send(null);
+		}
+
+		function button_bool(btn){
+			if(document.getElementById(btn).value=="true"){
+				document.getElementById(btn).value="false";
+				//document.getElementById(btn)..classList.remove("up");
+				//document.getElementById(btn).classList.add("down");
+
+			}
+			else{
+				document.getElementById(btn).value="true";
+				//document.getElementById(btn).classList.add("down");
+				//document.getElementById(btn).classList.remove("up");
+			}
+
+			console.log(document.getElementById(btn).value);
+		}
+
+		function load_league_data(ti) {   
+
+		    var xobj = new XMLHttpRequest();
+		        xobj.overrideMimeType("application/json");
+		    xobj.open('GET', '/team-data.json', true); // Replace 'my_data' with the path to your file
+		    xobj.onreadystatechange = function () {
+		        if (xobj.readyState == 4 && xobj.status == "200") {
+		            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+		            temp = JSON.parse(xobj.responseText);
+		            Object.assign(ti,temp);
+
+	            	ti.Teams.forEach(function(item,index){
+						if(leagues.includes(ti.Teams[index].League)){
+							//console.log("Do nothing");
+						}
+						else{
+							leagues.push(ti.Teams[index].League);
+						}
+					});
+
+					//console.log(leagues);
+
+					leagues.forEach(function(item){
+						var x = document.getElementById("league_select");
+						var option = document.createElement("option");
+						option.text = item;
+						x.add(option);
+					});
+					//console.log(teams);
+					load_team_data();
+		        }
+		    };
+		    xobj.send(null);  
+		}
+
+		function load_team_data(){
+			removeOptions(document.getElementById("home_select"));
+			removeOptions(document.getElementById("away_select"));
+
+			var filtered = teams.Teams.filter(function(a){
+				var y=new RegExp(document.getElementById("league_select").value);
+				//console.log(y);
+				return y.test(a["League"]);
+			});
+
+			filtered.forEach(function(item){
+				var x = document.getElementById("home_select");
+				var option = document.createElement("option");
+				option.text = item["Full Name"];
+				x.add(option);
+			});
+
+			filtered.forEach(function(item){
+				var x = document.getElementById("away_select");
+				var option = document.createElement("option");
+				option.text = item["Full Name"];
+				x.add(option);
+			});
+		}
+
+		function change_team(){
+			var home = teams.Teams.filter(x => x["League"] == document.getElementById("league_select").value && x["Full Name"] == document.getElementById("home_select").value);
+			var away = teams.Teams.filter(x => x["League"] == document.getElementById("league_select").value && x["Full Name"] == document.getElementById("away_select").value);
+			//console.log(teams);
+			//console.log(away[0]);
+
+
+			Object.assign(home_info,home[0]);
+			Object.assign(away_info,away[0]);
+			//console.log(away_info);
+/*
+			filtered.forEach(function(item){
+				var x = document.getElementById("home_select");
+				var option = document.createElement("option");
+				option.text = item["Full Name"];
+				x.add(option);
+			});
+			*/
+			send_event('home_change',home_info);
+			send_event('away_change',away_info);
+		}
+
+		function removeOptions(selectbox)
+		{
+		    var i;
+		    for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
+		    {
+		        selectbox.remove(i);
+		    }
+		}
+
+	</script>
+</html>
