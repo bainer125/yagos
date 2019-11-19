@@ -115,6 +115,11 @@ wss.on('connection', function connection ( ws ) {
 				}
 				broadcast(msg,ws,false);
 			break;
+			case 'load themes':
+				var path = "/Teams/"+team["league"]+"/"+team["location"];
+				fs.readdirSync("./public"+path).forEach(function(file){
+				});
+			break;
 		}
 	})
 });

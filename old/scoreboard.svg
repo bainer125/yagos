@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="/css/overlay.css" ?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   preserveAspectRatio="xMidYMid meet"
+   width="350"
+   viewBox="0 0 255 150"
+   version="1.1"
+   id="Scoreboard"
+   sodipodi:docname="scoreboard.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <animate
+     class="showGraphic"
+     attributeName="opacity"
+     values="0;1"
+     dur="0.7s"
+     begin="indefinite"
+     repeatCount="1"
+     fill="freeze" />
+  <animate
+     class="hideGraphic"
+     attributeName="opacity"
+     values="1;0"
+     dur="0.7s"
+     begin="indefinite"
+     repeatCount="1"
+     fill="freeze" />
+  <metadata
+     id="metadata45">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>scbd</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs43">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath863">
+       <animateTransform
+   class="home_goal"
+   id="homeGoalRushIn"
+   attributeName="transform"
+   type="translate"
+   from="0 0"
+   to="255 0"
+   dur="0.3s"
+   begin="indefinite"
+   repeatCount="1"
+   fill="remove" />
+         <animateTransform
+   id="homeGoalSlowDown"
+   attributeName="transform"
+   type="translate"
+   from="255 0"
+   to="255 0"
+   dur="3s"
+   begin="homeGoalRushIn.end"
+   repeatCount="1"
+   fill="remove" />
+         <animateTransform
+   id="homeGoalRushOut"
+   attributeName="transform"
+   type="translate"
+   from="255 0"
+   to="600 0"
+   dur="0.3s"
+   begin="homeGoalSlowDown.end"
+   repeatCount="1"
+   fill="remove" />
+      <rect
+         inkscape:label="homeClip"
+         y="1.5258789e-05"
+         x="-254.99998"
+         height="104.99998"
+         width="255"
+         id="rect865"
+         style="opacity:0.5;fill:#ff2917;fill-opacity:1;stroke:none;stroke-width:2.87558651;stroke-miterlimit:4;stroke-dasharray:11.50234556, 11.50234556;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath868">
+       <animateTransform
+   class="away_goal"
+   id="awayGoalRushIn"
+   attributeName="transform"
+   type="translate"
+   from="0 0"
+   to="255 0"
+   dur="0.3s"
+   begin="indefinite"
+   repeatCount="1"
+   fill="remove" />
+         <animateTransform
+   id="awayGoalSlowDown"
+   attributeName="transform"
+   type="translate"
+   from="255 0"
+   to="255 0"
+   dur="3s"
+   begin="awayGoalRushIn.end"
+   repeatCount="1"
+   fill="remove" />
+         <animateTransform
+   id="awayGoalRushOut"
+   attributeName="transform"
+   type="translate"
+   from="255 0"
+   to="600 0"
+   dur="0.3s"
+   begin="awayGoalSlowDown.end"
+   repeatCount="1"
+   fill="remove" />
+      <rect
+         inkscape:label="awayClip"
+         y="1.2037497e-09"
+         x="-255"
+         height="104.90548"
+         width="255"
+         id="rect870"
+         style="opacity:0.5;fill:#122f7e;fill-opacity:1;stroke:none;stroke-width:2.87429214;stroke-miterlimit:4;stroke-dasharray:11.4971684, 11.4971684;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="718"
+     id="namedview41"
+     showgrid="false"
+     inkscape:zoom="2.1001071"
+     inkscape:cx="172.54097"
+     inkscape:cy="118.06582"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Scoreboard"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="true" />
+  <title
+     id="title2">scbd</title>
+  <style
+     type="text/css"
+     id="style6" />
+  <g
+     style="display:inline"
+     id="mainGroup"
+     inkscape:label="scoreboard">
+    <rect
+       y="70"
+       x="0"
+       height="35"
+       width="195"
+       id="away_color"
+       class="away_color1"
+       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.29179281;stroke-opacity:1"
+       inkscape:label="away_color" />
+    <rect
+       y="35"
+       x="0"
+       height="35"
+       width="195"
+       id="home_color"
+       class="home_color1"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.29390201;stroke-opacity:1"
+       inkscape:label="home_color" />
+    <rect
+       y="35"
+       x="155"
+       height="70"
+       width="40"
+       id="scoreShade"
+       style="fill:#000000;fill-opacity:0.44444448;stroke:none;stroke-width:0.23806167;stroke-opacity:1" />
+    <rect
+       y="0"
+       x="0"
+       height="35"
+       width="195"
+       id="periodBack"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.29390204;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="10"
+       y="62"
+       class="home_abbreviation"
+       id="homeName"
+       inkscape:label="homeName">CAN</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="10"
+       y="97"
+       class="away_abbreviation"
+       id="awayName"
+       inkscape:label="awayName">USA</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="10"
+       y="27"
+       class="period_text"
+       id="periodText">1st</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="155"
+       y="27"
+       class="clock_text"
+       id="clockText">18:24</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.50230598px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="175"
+       y="62"
+       class="home_score"
+       id="homeScore">2</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.50230598px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="175"
+       y="97"
+       class="away_score"
+       id="awayScore">1</text>
+  </g>
+  <g
+     style="display:none"
+     id="evenPenalty"
+     class="even_penalty"
+     inkscape:label="evenPenalty">
+    <rect
+       style="fill:#000000;fill-opacity:0.78399999;stroke:none;stroke-width:0.28254917;stroke-opacity:1"
+       id="evenPenalty_color"
+       width="195"
+       height="35"
+       x="0"
+       y="105"
+       inkscape:label="evenPenalty_color" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="160"
+       y="132"
+       id="evenPenaltyClock"
+       class="penaltyClock"
+       inkscape:label="evenPenaltyClock">1:23</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="65"
+       y="130"
+       id="evenPenaltyText"
+       class="even_penaltyText"
+       inkscape:label="evenPenaltyText">4 on 4</text>
+  </g>
+  <g
+     style="display:none"
+     id="awayPenalty"
+     class="away_penalty"
+     inkscape:label="awayPenalty">
+    <rect
+       style="fill:#ff0000;fill-opacity:0.78399999;stroke:none;stroke-width:0.28254917;stroke-opacity:1"
+       id="awayPenalty_color"
+       class="home_color1"
+       width="195"
+       height="35"
+       x="0"
+       y="105"
+       inkscape:label="awayPenalty_color" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="160"
+       y="132"
+       class="penaltyClock"
+       id="awayPenaltyClock"
+       inkscape:label="awayPenaltyClock">1:23</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="65"
+       y="130"
+       class="away_penaltyText"
+       id="awayPenaltyText"
+       inkscape:label="awayPenaltyText">Power Play</text>
+  </g>
+  <g
+     style="display:inline"
+     class="home_penalty"
+     id="homePenalty"
+     inkscape:label="homePenalty">
+    <rect
+       style="fill:#3c3b6e;fill-opacity:0.78399999;stroke:none;stroke-width:0.28254917;stroke-opacity:1"
+       id="homePenalty_color"
+       class="away_color1"
+       width="195"
+       height="35"
+       x="0"
+       y="105"
+       inkscape:label="homePenalty_color" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="160"
+       y="132"
+       class="penaltyClock"
+       id="homePenaltyClock"
+       inkscape:label="homePenaltyClock">1:23</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="65"
+       y="130"
+       class="home_penaltyText"
+       id="homePenaltyText"
+       inkscape:label="homePenaltyText">Power Play</text>
+  </g>
+  <g
+     style="display:inline"
+     id="shotsView"
+     inkscape:label="shotsView">
+    <rect
+       y="70"
+       x="195"
+       height="35"
+       width="60"
+       class="away_color1"
+       id="awayShots_color"
+       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.15800773;stroke-opacity:1"
+       inkscape:label="awayShots_color" />
+    <rect
+       ry="0"
+       y="35"
+       x="195"
+       height="35"
+       width="60"
+       class="home_color1"
+       id="homeShots_color"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.1591624;stroke-opacity:1"
+       inkscape:label="homeShots_color" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+       id="rect1795"
+       height="35"
+       width="60"
+       x="195"
+       y="0" />
+    <rect
+       style="fill:#000000;fill-opacity:0.7846791;stroke:none;stroke-width:0.22818737;stroke-opacity:1"
+       id="shotsShade"
+       height="70"
+       width="60"
+       x="195"
+       y="35" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.50230598px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="225"
+       y="97"
+       class="away_shots"
+       id="awayShots"
+       inkscape:label="awayShots">15</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.50230598px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="225"
+       y="62"
+       class="home_shots"
+       id="homeShots"
+       inkscape:label="homeShots">19</text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="225"
+       y="25"
+       id="text953"
+       inkscape:label="text953">Shots</text>
+  </g>
+  <script
+     id="script39">
+    document.onload = function(){
+      document.getElementById(&quot;home_color&quot;).onclick(function(){
+        document.getElementById(&quot;home_shots&quot;).innerHTML = 32;
+      });
+    }
+  </script>
+  <g
+     id="g918"
+     inkscape:label="awayGoal"
+     transform="matrix(1,0,0,1.0009008,0,-0.09457636)"
+     clip-path="url(#clipPath868)">
+    <rect
+       y="-7.6293945e-06"
+       x="0"
+       class="away_color1"
+       height="105"
+       width="255"
+       id="rect42-3"
+       style="opacity:1;fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:2.87558675;stroke-miterlimit:4;stroke-dasharray:11.50234656, 11.50234656;stroke-dashoffset:0;stroke-opacity:1" />
+    <image
+       inkscape:label="awayLogo"
+       width="130"
+       height="130"
+       class="away_logo1"
+       preserveAspectRatio="xMidYMid"
+       style="opacity:0.61299995;image-rendering:optimizeQuality"
+       xlink:href="/Teams/International/United States/logo1.png"
+       id="image907"
+       x="61.437035"
+       y="-12.387236"
+       sodipodi:absref="" />
+    <text
+       inkscape:label="awayGoalText"
+       id="text912"
+       y="76.670403"
+       x="128"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:63.97119522px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:0.92192191;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:63.97119522px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:0.92192191"
+         y="76.670403"
+         x="128"
+         id="tspan910"
+         sodipodi:role="line">GOAL</tspan><animate
+         fill="remove"
+         repeatCount="1"
+         begin="indefinite"
+         dur="3.6s"
+         to="15px"
+         from="5px"
+         attributeName="letter-spacing"
+         id="awaySpaceGoal"
+         class="away_goal" /></text>
+  </g>
+  <g
+     transform="translate(0,7.6293945e-6)"
+     id="g918-8"
+     inkscape:label="homeGoal"
+     clip-path="url(#clipPath863)">
+    <rect
+       y="-7.6293945e-06"
+       x="0"
+       height="105"
+       width="255"
+       class="home_color1"
+       id="rect42-3-9"
+       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:2.87558675;stroke-miterlimit:4;stroke-dasharray:11.50234656, 11.50234656;stroke-dashoffset:0;stroke-opacity:1" />
+    <image
+       inkscape:label="homeLogo"
+       width="130"
+       height="130"
+       preserveAspectRatio="xMidYMid"
+       class="home_logo1"
+       style="opacity:0.61299995;image-rendering:optimizeQuality"
+       xlink:href="/Teams/International/Canada/logo1.png"
+       id="image907-6"
+       x="61.437035"
+       y="-12.387236"
+       sodipodi:absref="" />
+    <text
+       inkscape:label="homeGoalText"
+       id="text912-4"
+       y="76.670403"
+       x="128"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:64px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:0.92192191;stroke:none"
+       xml:space="preserve"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:64px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:0.92192191"
+   y="76.670403"
+   x="128"
+   id="tspan910-3"
+   sodipodi:role="line">GOAL</tspan><animate
+   fill="remove"
+   repeatCount="1"
+   begin="indefinite"
+   dur="3.6s"
+   to="15px"
+   from="5px"
+   attributeName="letter-spacing"
+   id="homeSpaceGoal"
+   class="home_goal" /></text>
+  </g>
+</svg>

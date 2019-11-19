@@ -23,7 +23,7 @@
      values="0;1"
      dur="0.7s"
      begin="indefinite"
-     repeatCount="once"
+     repeatCount="1"
      fill="freeze" />
   <animate
      class="hideGraphic"
@@ -31,7 +31,7 @@
      values="1;0"
      dur="0.7s"
      begin="indefinite"
-     repeatCount="once"
+     repeatCount="1"
      fill="freeze" />
   <metadata
      id="metadata45">
