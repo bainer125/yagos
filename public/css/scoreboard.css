@@ -208,6 +208,7 @@ form{
 	min-height: 25vh;
 	max-height: 25vh;
 	margin-top: 2vh;
+	padding-left: 2vw;
 }
 
 .stats_1{
@@ -452,10 +453,16 @@ form{
 }
 
 
+.end_btn_goal{
+	width: 15vw;
+	min-width: 15vw;
+	max-width: 15vw;
+}
+
 .end_btn_sides{
-	width: 13vw;
-	min-width: 13vw;
-	max-width: 13vw;
+	width: 22vw;
+	min-width: 22vw;
+	max-width: 22vw;
 }
 
 .end_btn_mid{
@@ -478,7 +485,7 @@ form{
 }
 
 
-/* ================================================================================= */
+/* MENU SIDEBAR =================================================================== */
 
 #menu_bar{
 	display: none;
@@ -584,4 +591,10 @@ form{
 	border: 0;
 	font-size: 5vh;
 	line-height: 7vh;
+}
+
+.end_btn_side_v{
+	height: 8.33vh;
+	min-height: 8.33vh;
+	max-height: 8.33vh;
 }

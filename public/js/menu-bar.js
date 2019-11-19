@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-	$("#menu_bar").load("../menu-bar.html");
+	$("#menu_bar").load("/html/menu-bar.html");
 	//$("#menu_bar").css({"display": "initial"});
 });
 
