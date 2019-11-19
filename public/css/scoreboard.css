@@ -4,15 +4,10 @@
 body{
 	font-family: 'PT Sans', sans-serif;
 	border: 0;
-	margin: 0;
 	padding: 0;
 	width: 100vw;
 	min-width: 100vw;
 	max-width: 100vw;
-
-	/*hide anything that would make the page scroll*/
-	overflow-x: hidden;
-	overflow-y: hidden; 
 }
 
 h1, h2{
@@ -24,6 +19,17 @@ h3{
 	margin: 5px;
 }
 
+#main{
+	max-width: 850px;
+	margin: auto;
+	margin-top: 120px;
+}
+
+.centered{
+	text-align: center;
+	overflow-wrap: normal;
+}
+
 
 /* ===================================================== */
 
@@ -32,18 +38,22 @@ h3{
 /* Header ============================================== */
 
 #header{
-	height: 7vh;
-	min-height: 7vh;
-	max-width: 7vh;
-	background-color: darkturquoise; 
+	min-height: 100px;
+	height: 8%;
+	width: 97%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 3%;
+	overflow: hidden;
+	background-color: darkturquoise;
 }
 
-#header h1{
-	line-height: 7vh;
-	font-size: 5.5vh;
+#header > h1{
+	position: absolute;
+	bottom: 0;
+	line-height: 1em;
 }
-
-
 /* ===================================================== */
 
 
@@ -62,15 +72,55 @@ button{
 	overflow-wrap: break-word;
 }
 
+.down{
+	background-color: blue;
+}
+
+button.up:active { background-color: #224a2e; }
+button.up { background-color: mediumturquoise; }
 button:hover{ background-color: turquoise; }
+/* button.down { background-color: #ffffff; }*/
 
 /* ===================================================== */
 
 
 
-/* Control Panel ========================== */
+/* Control Panel > Categories ========================== */
 
+.sections3{
+	display: inline-block;
+	position: static;
+	width: 30%;
+	min-height: inherit;
+	max-height: inherit;
+	text-align: center;
+	border: 1px solid pink;
+	padding: 0;
+	vertical-align: bottom;
+}
 
+.category{
+	border-radius: 4px;
+	background-color: turquoise;
+	bottom: 3%;
+
+	text-align: center;
+}
+
+.category > h2 {
+	line-height: 1em;
+	margin-top: 3%;
+}
+
+.left{
+	left: 3%;
+}
+.center{
+	left: 35%;
+}
+.right{
+	right: 3%;
+}
 
 form{
 	text-align: left;
@@ -80,91 +130,189 @@ form{
 #outer { position: relative; left: 50%; float: left; }
 #inner { position: relative; left: -50%; float: left; }
 
-
-.game_select{
-	height: 15vh;
-	min-height: 15vh;
-	max-height: 15vh;
-	padding-top: 5vh;
-}
-
-.control_panel_center{
-	margin: auto;
-	width: 80vw;
-	max-width: 800px;
-	min-width: 80vw;
-}
-
-.control_panel_buttons{
-	height: 45vh;
-	min-height: 45vh;
-	max-height: 45vh;
-	overflow-y: auto;
-	overflow-x: hidden;
-}
-
-.control_panel_buttons button{
-	width: 15vw;
-	min-width: 15vw;
-	max-width: 15vw;
-	height: 18vh;
-}
-
-.control_panel_options{
-	height: 32vh;
-	min-height: 32vh;
-	max-height: 32vh;
-	margin-left: 17vw;
-	margin-right: 17vw;
-	text-align: center;
-}
-
-.control_panel_options_section{
-	background-color: turquoise;
-	width: 20vw;
-	min-width: 20vw;
-	max-width: 20vw;
-	border-radius: 4px;
-	border: 0;
-}
-
-.option_section_header h2{
-	height: 10vh;
-	min-height: 10vh;
-	max-height: 10vh;
-	margin: 0;
-	margin-bottom: 1vh;
-}
-
-.option_section_content{
-	height: 16vh;
-	min-height: 16vh;
-	max-height: 16vh;
-	overflow-y: auto;
-	overflow-x: hidden;
-}
-
-.option_section_submit{
-	height: 5vh;
-	min-height: 5vh;
-	max-height: 5vh;
-}
-
-.submit_btn{
-	background-color: white;
-	border: 1px solid silver;
-	border-radius: 4px;
-}
-
-.submit_btn:hover{
-	background-color: gainsboro;
-}
-
 /* ===================================================== */
 
 
 
 /* Scoreboards > Timer ================================= */
+
+.half{
+	width: 48%;
+	height: inherit;
+	border: 0px solid orange;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.half-height{
+	width: 100%;
+	height: 48%;
+	border: 0px solid orange;
+	display: inline-block;
+}
+
+.abcd{
+	overflow: hidden;
+	max-height: 85%;
+	min-height: 85%;
+	border: 0px solid pink;
+	background-color: cyan;
+}
+
+button.fill{
+	height: 35%;
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.big{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.time{
+	width: 12%;
+	height: 60%;
+	display: inline-block;
+	font-size: 4em;
+	vertical-align: middle;
+	line-height: 1em;
+}
+.timer{
+	display: block;
+}
+
+#btn_clock{
+	height: 40%;
+	width: 100%;
+}
+#btn_clock_div{
+	display: block;
+	vertical-align: bottom;
+	margin-top: -5px;
+}
+
+button.plus, button.minus{
+	line-height: 100%;
+	padding: 0;
+
+	max-height: inherit;
+	min-height: inherit;
+	max-height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+button.plus::before{
+	padding: 0;
+	content: "+";
+}
+button.minus::before{
+	content: "-";
+}
+
+#top, #middle, #bottom{
+	border: 1px solid lime;
+	min-height: 27%;
+	max-height: 27%;
+	display: block;
+	width: 100%;
+}
+#top{
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	border: 2px solid red;
+	/*margin-top: 5%;*/
+}
+
+#middle{
+	background-color: orange;
+}
+
+.width7{
+	width: 12%;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 4em;
+	line-height: 1em;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	border: 0px solid black;
+}
+
+
+
+.outline{
+	border: 0px solid magenta;
+}
+.outline1{
+	border: 0px solid pink;
+	vertical-align: top;
+	height: 65%;
+	margin: 0;
+}
+.base{
+	padding: 0;
+	margin: 0;
+}
+
+
+
+tr{
+	border: 1px solid lime;
+}
+
+td{
+	border: 1px solid orange;
+}
+
+.title{
+	border: 1px solid blue;
+	max-height: 15%;
+	min-height: 15%;
+}
+.title h3{
+	font-size: 100%;
+	line-height: 100%;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+	background-color: pink;
+}
+
+/* ===================================================== */
+
+.clock-btn-div{
+	min-height: 25%; 
+	max-height: 25%;
+	width: 100%;
+}
+.clock-num-div{
+	min-height: 50%;
+	max-height: 25%;
+	width: 100%;
+}
+
+.clock-btn{
+	max-height: inherit;
+	min-height: inherit;
+	height: inherit;
+	display: inline-block;
+	padding: 0;
+	width: 12%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#top1{
+	max-height: 27%;
+	min-height: 27%;
+	width: 100%;
+	background-color: purple;
+	margin-top: 8%;
+}
 
 /* ================================================================================= */
 
@@ -189,7 +337,12 @@ form{
 	max-height: 100vh;
 }
 
-
+#header_1{
+	height: 7vh;
+	min-height: 7vh;
+	max-width: 7vh;
+	background-color: darkturquoise; 
+}
 
 #top_1{
 	height: 33vh;
@@ -214,7 +367,7 @@ form{
 	width: 29vw;
 	min-width: 29vw;
 	max-width: 29vw;
-	margin-left: 2vw; 
+	margin-left: 1.9vw; /* RESET THIS BACK TO 2VW +++++++++++++++++++++++++++++++++++++ */
 	margin-right: 2vw;
 	border: 0px solid lime;
 }
@@ -293,9 +446,7 @@ form{
 	padding: 0;
 }
 
-#timer_block{
-	background-color: lightcyan;
-}
+
 
 .timer_1{
 	width: 34vw;
@@ -372,34 +523,12 @@ form{
 	line-height: 6vh;
 	font-size: 3vh;
 	text-align: center;
-	background-color: lightseagreen;
-	color: white;
-}
-
-.penalty_add_bar select{
-	appearance: none;
-	background: transparent;
-	background-color: transparent;
-	border: 0;
-	text-align: center;
-	padding-left: 0.5vw;
-	font-size: 2vh;
-	margin: 0;
-}
-
-.select_div:after{
-	background-color: transparent;
-	border: 0;
-	color: white;
 }
 
 .penalty_list{
 	height: 20vh;
 	min-height: 20vh;
 	max-height: 20vh;
-	background-color: lightcyan;
-	overflow-y: auto;
-	overflow-x: hidden;
 }
 
 .penalty_list_item{
@@ -417,45 +546,10 @@ form{
 	padding: 2px;
 }
 
-.penalty_col_1{
-	width: 9vw;
-	min-width: 9vw;
-	max-width: 9vw;
-}
-.penalty_col_2{
-	width: 3vw;
-	min-width: 3vw;
-	max-width: 3vw;
-}
-.penalty_col_3{
-	width: 6vw;
-	min-width: 6vw;
-	max-width: 6vw;
-}
-.penalty_col_4{
-	width: 6vw;
-	min-width: 6vw;
-	max-width: 6vw;
-	font-size: 2.5vh;
-	line-height: 3vh;
-}
-
-.penalty_btn{
-	width: 4vw;
-	min-width: 4vw;
-	max-width: 4vw;
-}
-
-.penalty_btn button{
-	border: 0;
-	border-radius: 0;
-}
-
-
 .end_btn_sides{
-	width: 13vw;
-	min-width: 13vw;
-	max-width: 13vw;
+	width: 19vw;
+	min-width: 19vw;
+	max-width: 19vw;
 }
 
 .end_btn_mid{
@@ -470,118 +564,15 @@ form{
 	max-height: 12vh;
 }
 
+.end_btn_side_v{
+	height: 8vh;
+	min-height: 8vh;
+	max-height: 8vh;
+}
+
 .btn_plus{
 	background-color: mediumturquoise;
 }
 .btn_minus{
 	background-color: darkturquoise;
-}
-
-
-/* ================================================================================= */
-
-#menu_bar{
-	display: none;
-	position: fixed;
-	left: 0;
-	height: 100vh;
-	min-height: 100vh;
-	max-height: 100vh;
-	width: 20vw;
-	min-width: 20vw;
-	max-width: 20vw;
-	background-color: darkcyan;
-	color: white;
-	z-index: 1;
-	overflow-y: auto;
-	overflow-x: hidden;
-}
-
-.menu_bar_title_div{
-	height: 7vh;
-	min-height: 7vh;
-	max-height: 7vh;
-	line-height: 7vh;
-	background-color: teal;
-}
-
-.menu_bar_title_text{
-	color: black;
-	display: inline-block;
-	width: 15vw;
-	min-width: 15vw;
-	max-width: 15vw;
-	padding-left: 2vw;
-	font-size: 4vh;
-}
-.menu_bar_title_arrow{
-	display: inline-block;
-	width: 4vw;
-	min-width: 4vw;
-	max-width: 4vw;
-	font-size: 5vh;
-	cursor: pointer;
-}
-
-.menu_bar_title_arrow:hover{
-	color: black;
-}
-
-.menu_bar_section{
-	height: 7vh;
-	line-height: 7vh;
-	margin-top: 1.5vh;
-	margin-bottom: 1.5vh;
-	padding-left: 1vw;
-}
-
-.menu_bar_section a:hover{
-	text-decoration: none;
-}
-
-.menu_bar_section h2:hover{
-	color: black;
-}
-
-
-.menu_btn_div{
-	width: 10vw;
-	min-width: 10vw;
-	max-width: 10vw;
-}
-
-.menu_main_div{
-	padding-left: 2vw;
-}
-
-.menu_mode_div{
-	width: 25vw;
-	min-width: 25vw;
-	max-width: 25vw;
-	padding-right: 2vw;
-	text-align: right;`
-}
-
-.menu_mode_div select{
-	background: transparent;
-	background-color: transparent;
-	border: 0;
-	font-size: 3vh;
-}
-
-.menu{
-	position: absolute;
-	height: 200px;
-	min-height: 200px;
-	max-height: 200px;
-	width: 200px;
-	background-color: pink;
-	display: none;
-}
-
-#header_menu_btn{
-	border-radius: 0;
-	border: 0;
-	font-size: 5vh;
-	line-height: 7vh;
 }
