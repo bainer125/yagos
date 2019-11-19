@@ -467,7 +467,7 @@ td{
 	width: 29vw;
 	min-width: 29vw;
 	max-width: 29vw;
-	margin-left: 1.9vw; /* RESET THIS BACK TO 2VW +++++++++++++++++++++++++++++++++++++ */
+	margin-left: 2vw; /* RESET THIS BACK TO 2VW +++++++++++++++++++++++++++++++++++++ */
 	margin-right: 2vw;
 	border: 0px solid lime;
 }
@@ -634,7 +634,7 @@ td{
 	background: transparent;
 	background-color: transparent;
 	border: 0;
-	text-align: left;
+	text-align: center;
 	padding-left: 0.5vw;
 	font-size: 2vh;
 	margin: 0;
@@ -731,6 +731,95 @@ td{
 }
 
 
+/* ================================================================================= */
+
+#menu_bar{
+	display: none;
+	position: fixed;
+	left: 0;
+	height: 100vh;
+	min-height: 100vh;
+	max-height: 100vh;
+	width: 20vw;
+	min-width: 20vw;
+	max-width: 20vw;
+	background-color: darkcyan;
+	color: white;
+	z-index: 1;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.menu_bar_title_div{
+	height: 7vh;
+	min-height: 7vh;
+	max-height: 7vh;
+	line-height: 7vh;
+	background-color: teal;
+}
+
+.menu_bar_title_text{
+	color: black;
+	display: inline-block;
+	width: 15vw;
+	min-width: 15vw;
+	max-width: 15vw;
+	padding-left: 2vw;
+	font-size: 4vh;
+}
+.menu_bar_title_arrow{
+	display: inline-block;
+	width: 4vw;
+	min-width: 4vw;
+	max-width: 4vw;
+	font-size: 5vh;
+	cursor: pointer;
+}
+
+.menu_bar_title_arrow:hover{
+	color: black;
+}
+
+.menu_bar_section{
+	height: 7vh;
+	line-height: 7vh;
+	margin-top: 1.5vh;
+	margin-bottom: 1.5vh;
+}
+
+.menu_bar_section a:hover{
+	text-decoration: none;
+}
+
+.menu_bar_section h2:hover{
+	color: black;
+}
+
+
+.menu_btn_div{
+	width: 10vw;
+	min-width: 10vw;
+	max-width: 10vw;
+}
+
+.menu_main_div{
+	padding-left: 2vw;
+}
+
+.menu_mode_div{
+	width: 25vw;
+	min-width: 25vw;
+	max-width: 25vw;
+	padding-right: 2vw;
+	text-align: right;`
+}
+
+.menu_mode_div select{
+	background: transparent;
+	background-color: transparent;
+	border: 0;
+	font-size: 3vh;
+}
 
 .menu{
 	position: absolute;
@@ -742,6 +831,9 @@ td{
 	display: none;
 }
 
-.menu_btn:active + .menu:hover, .menu_btn + .menu:hover{
-	display: initial;
+#header_menu_btn{
+	border-radius: 0;
+	border: 0;
+	font-size: 5vh;
+	line-height: 7vh;
 }

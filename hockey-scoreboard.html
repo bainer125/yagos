@@ -4,13 +4,34 @@
 	
 	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
-	<title>&#x2730;Hockey Scoreboard</title>
+
+<!-- JS Scripts for Menu Bar -->
+    <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../menu-bar.js"></script>
+
+	<title>Hockey Scoreboard</title>
 </head>
-	<body class="fullscreen"><div class="container fullscreen">
-		<div id="header" class="row inherit_w"><div class="column inherit_w inherit_h">
+<body class="fullscreen"><div class="container fullscreen">
+
+<!-- HEADER + MENU BAR START -->
+	<div id="menu_bar"></div>
+	<div id="header" class="row inherit_w">
+		<div class="col menu_btn_div inherit_h"><button id="header_menu_btn" class="menu_btn inherit_w inherit_h">☰</button></div>
+		<div class="menu">Test</div>
+		<div class="col inherit_h menu_main_div">
 			<h1>Hockey Scoreboard</h1>
-		</div></div>
+		</div>
+		<div class="col inherit_h menu_mode_div">
+			<select id="game_select" onchange="send_event('mode_switch',document.getElementById('game_select').value)" class="inherit_h">
+				<option>Hockey</option>
+				<option>Baseball</option>
+				<option>Football</option>
+			</select>  
+		</div>
+	</div>
+<!-- ========================= -->
 		
+
 <!-- TOP SECTION START -->
 		<div id="top_1" class="row inherit_w">
 
