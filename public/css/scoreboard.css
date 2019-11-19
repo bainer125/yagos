@@ -217,6 +217,7 @@ form{
 	max-width: 29vw;
 	margin-left: 2vw; 
 	margin-right: 2vw;
+	background-color: lightcyan;
 	border: 0px solid lime;
 }
 
@@ -282,6 +283,10 @@ form{
 	max-width: 8vh;
 }
 
+.stats_button_section_v button{
+	font-size: 4vh;
+}
+
 .row{
 	margin: 0;
 }
@@ -295,7 +300,7 @@ form{
 }
 
 #timer_block{
-	background-color: lightcyan;
+	/*background-color: lightcyan;*/
 }
 
 .timer_1{
@@ -321,6 +326,10 @@ form{
 	height: 5vh;
 	min-height: 5vh;
 	max-height: 5vh;
+}
+
+#timer_btn{
+	font-size: 3vh;
 }
 
 .timer_num_row{
@@ -457,6 +466,10 @@ form{
 	width: 15vw;
 	min-width: 15vw;
 	max-width: 15vw;
+}
+
+#bot_1 button{
+	font-size: 3vh;
 }
 
 .end_btn_sides{
