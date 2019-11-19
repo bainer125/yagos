@@ -1,7 +1,6 @@
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	
+	<link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
 
@@ -11,6 +10,7 @@
 
 	<title>Hockey Scoreboard</title>
 </head>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
 <body class="fullscreen"><div class="container fullscreen">
 
 <!-- HEADER + MENU BAR START -->
@@ -378,13 +378,18 @@
 <!-- BUTTONS SECTION START -->
 		<div id="bot_1" class="row inherit_w">
 			<div class="col inherit_h end_btn_sides">
-				<button id="home_timeout" class="inherit_w inherit_h">Timeout</button>
+				<div class="row inherit_w end_btn_side_v"><div class="col inherit_w inherit_h">
+					<button id="home_timeout" class="inherit_w inherit_h">Timeout</button>
+				</div></div>
+				<div class="row inherit_w end_btn_side_v"><div class="col inherit_w inherit_h">
+					<button id="home_challenge" class="inherit_w inherit_h">Challenge</button>
+				</div></div>
+				<div class="row inherit_w end_btn_side_v"><div class="col inherit_w inherit_h">
+					<button id="home_timeout" class="inherit_w inherit_h">Timeout</button>
+				</div></div>
 			</div>
 			<div class="col inherit_h end_btn_sides">
-				<button id="home_empty_net" class="inherit_w inherit_h">Empty Net</button>
-			</div>
-			<div class="col inherit_h end_btn_sides">
-				<button id="home_challenge" class="inherit_w inherit_h">Challenge</button>
+				<button id="home_goal" class="inherit_w inherit_h">Goal</button>
 			</div>
 
 			<div class="col inherit_h end_btn_mid margin_sides_1">
@@ -394,71 +399,28 @@
 				<div class="row inherit_w end_btn_mid_v margin_top_1"><div class="col inherit_w inherit_h">
 					<button id="period_down" class="inherit_w inherit_h btn_minus">Period Down</button>
 				</div></div>
-
+			</div>
+			<div class="col inherit_h end_btn_sides">
+				<button id="away_goal" class="inherit_w inherit_h">Goal</button>
 			</div>
 
 			<div class="col inherit_h end_btn_sides">
-				<button id="away_challenge" class="inherit_w inherit_h">Challenge</button>
-			</div>
-			<div class="col inherit_h end_btn_sides">
-				<button id="away_empty_net" class="inherit_w inherit_h">Empty Net</button>
-			</div>
-			<div class="col inherit_h end_btn_sides">
-				<button id="away_timeout" class="inherit_w inherit_h">Timeout</button>
+				<div class="row inherit_w end_btn_side_v"><div class="col inherit_w inherit_h">
+					<button id="away_timeout" class="inherit_w inherit_h">Timeout</button>
+				</div></div>
+				<div class="row inherit_w end_btn_side_v"><div class="col inherit_w inherit_h">
+					<button id="away_challenge" class="inherit_w inherit_h">Challenge</button>
+				</div></div>
+				<div class="row inherit_w end_btn_side_v"><div class="col inherit_w inherit_h">
+					<button id="away_timeout" class="inherit_w inherit_h">Timeout</button>
+				</div></div>
 			</div>
 
 		</div>
 <!-- BUTTONS SECTION END -->
-
-
-
-
 	</div></body>
-	<script type="text/javascript">
-
-		/*
-		########################################################
-
-			Handle button input
-		
-		########################################################
-		*/
-
-		var games = [];
-		httpGetAsync("/current-scores/ice-hockey",function(res){
-
-			g = Object.entries(JSON.parse(res));
-			g.forEach(game => {
-				var x = document.getElementById("game_select");
-				var option = document.createElement("option");
-				option.text = game[1].name;
-				option.value = game[0];
-				x.add(option);
-				//console.log(game[1].clock.dur)
-				games.push(game);
-			})
-		});
-
-		console.log(games);
-
-		function send_event(button,value){
-			var xhr = new XMLHttpRequest();
-			xhr.open("POST", "/hockey-scoreboard", true);
-			xhr.setRequestHeader('Content-Type', 'application/json');
-			xhr.send(JSON.stringify({
-			    "game": document.getElementById("game_select").value, "button": button, "value": value
-			}));
-		}
-
-		function httpGetAsync(theUrl, callback){
-		    var xmlHttp = new XMLHttpRequest();
-		    xmlHttp.onreadystatechange = function() { 
-		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-		            callback(xmlHttp.responseText);
-		    }
-		    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-		    xmlHttp.send(null);
-		}
-
-	</script>
+	<script type="text/javascript" src="/js/events.js"></script>
+	<script type="text/javascript" src="/js/classes.js"></script>
+	<script type="text/javascript" src="/js/client.js"></script>
+	<script type="text/javascript" src="/js/hockey-scoreboard-control.js"></script>
 </html>
