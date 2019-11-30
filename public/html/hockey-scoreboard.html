@@ -1,17 +1,34 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous">
-	
 	<link rel="stylesheet" type="text/css" href="/css/scoreboard.css">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&display=swap" rel="stylesheet">
-	<title>&#x2730;Hockey Scoreboard</title>
+
+<!-- JS Scripts for Menu Bar -->
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/menu-bar.js"></script>
+
+	<title>Hockey Scoreboard</title>
 </head>
-	<meta name="viewport" content="width=device-width, user-scalable=no" />
-	<body class="fullscreen"><div class="container fullscreen">
-		<div id="header_1" class="row inherit_w"><div class="column inherit_w inherit_h">
-			<h1>Hockey Scoreboard</h1><select id="game_select" style="float:right"></select>
-		</div></div>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<body class="fullscreen"><div class="container fullscreen">
+
+<!-- HEADER + MENU BAR START -->
+	<div id="menu_bar"></div>
+	<div id="header" class="row inherit_w">
+		<div class="col menu_btn_div inherit_h"><button id="header_menu_btn" class="menu_btn inherit_w inherit_h">☰</button></div>
+		<div class="menu">Test</div>
+		<div class="col inherit_h menu_main_div">
+			<h1>Hockey Scoreboard</h1>
+		</div>
+		<div class="col inherit_h menu_mode_div">
+			<select id="game_select" class="inherit_h">
+			</select>  
+		</div>
+	</div>
+<!-- ========================= -->
 		
+
 <!-- TOP SECTION START -->
 		<div id="top_1" class="row inherit_w">
 
@@ -54,7 +71,7 @@
 
 
 	<!-- TIMER SECTION START ================================ -->
-			<div class="column inherit_h timer_1">
+			<div id="timer_block" class="column inherit_h timer_1">
 				<div class="row inherit_w timer_clock"><div class="col inherit_w inherit_h">
 
 		<!-- Timer Time Increment -->			
@@ -184,14 +201,12 @@
 	<!-- Home Penalty Bar ------------------------------------ -->
 				<div class="row inherit_w penalty_add_bar">
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
-						<div class="col inherit_h penalty_col_1">Number:</div>
-						<div class="col inherit_h penalty_col_2">
+						<div class="col inherit_h penalty_col_3">
             				<select id="home_new_penalty_number" value="0" class="inherit_w inherit_h"></select>
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
-						<div class="col inherit_h penalty_col_1">Penalty Length:</div>
-						<div class="col inherit_h penalty_col_2">
+						<div class="col inherit_h penalty_col_3">
             				<select id="home_new_penalty_time" value="2" class="inherit_w inherit_h">
             					<option value="2" >2:00</option>
 								<option value="4" >4:00</option>
@@ -200,7 +215,6 @@
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
-						<div class="col inherit_h penalty_col_3">Infraction</div>
 						<div class="col inherit_h penalty_col_3">
             				<select id="home_new_penalty_infraction" class="inherit_w	inherit_h">
 							</select> 
@@ -214,8 +228,7 @@
 	<!-- Home Penalty List ----------------------------------- -->
 				<div class="row inherit_w penalty_list margin_top_1"><div id="home_penalty_list" class="col inherit_w inherit_h">
 		<!-- HOME INFRACTION 1 --> <!-- these will be added dynamically -->
-					
-					<!-- end home infraction 1 -->
+					<!-- end home infraction 2 -->
 				</div></div>
 			</div>
 <!-- HOME PENALTIES [end] =============================== -->
@@ -227,14 +240,12 @@
 	<!-- Away Penalty Bar ------------------------------------ -->
 				<div class="row inherit_w penalty_add_bar">
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
-						<div class="col inherit_h penalty_col_1">Number:</div>
-						<div class="col inherit_h penalty_col_2">
+						<div class="col inherit_h penalty_col_3">
             				<select id="away_new_penalty_number" value="0" class="inherit_w inherit_h"></select>
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
-						<div class="col inherit_h penalty_col_1">Penalty Length:</div>
-						<div class="col inherit_h penalty_col_2">
+						<div class="col inherit_h penalty_col_3">
             				<select id="away_new_penalty_time" value="2" class="inherit_w inherit_h">
             					<option value="2" >2:00</option>
 								<option value="4" >4:00</option>
@@ -243,7 +254,6 @@
 						</div>
 					</div></div>
 					<div class="col inherit_h penalty_col"><div class="row inherit_w inherit_h">
-						<div class="col inherit_h penalty_col_3">Infraction</div>
 						<div class="col inherit_h penalty_col_3">
             				<select id="away_new_penalty_infraction" class="inherit_w	inherit_h">
 							</select> 
@@ -296,7 +306,8 @@
 					<button id="home_timeout" class="inherit_w inherit_h">Timeout</button>
 				</div></div>
 			</div>
-			<div class="col inherit_h end_btn_sides">
+
+			<div class="col inherit_h end_btn_goal">
 				<button id="home_goal" class="inherit_w inherit_h">Goal</button>
 			</div>
 
@@ -307,9 +318,9 @@
 				<div class="row inherit_w end_btn_mid_v margin_top_1"><div class="col inherit_w inherit_h">
 					<button id="period_down" class="inherit_w inherit_h btn_minus">Period Down</button>
 				</div></div>
-
 			</div>
-			<div class="col inherit_h end_btn_sides">
+
+			<div class="col inherit_h end_btn_goal">
 				<button id="away_goal" class="inherit_w inherit_h">Goal</button>
 			</div>
 
@@ -327,10 +338,6 @@
 
 		</div>
 <!-- BUTTONS SECTION END -->
-
-
-
-
 	</div></body>
 	<script type="text/javascript" src="/js/events.js"></script>
 	<script type="text/javascript" src="/js/classes.js"></script>
