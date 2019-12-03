@@ -28,12 +28,12 @@
 
 
 	<div class="row inherit_w game_select"><div class="col inherit_h control_panel_center">
-		<select id="mode_select" onchange="send_event('mode_switch',document.getElementById('mode_select').value)">
+		<select id="mode_select">
 			<option>Sports</option>
 			<option>News</option>
 			<option>Event</option>
 		</select>
-		<select id="sport_select" onchange="send_event('sport_switch',document.getElementById('sport_select	').value)">
+		<select id="sport_select">
 			<option>Ice Hockey</option>
 			<option>Soccer</option>
 			<option>Baseball</option>
@@ -44,7 +44,7 @@
 		<select id="league_select"></select>
 		<select id="home_select"></select>
 		<select id="away_select"></select>
-		<select id="game_select" onchange="send_event('game_switch',document.getElementById('game_select').value)"></select>
+		<select id="game_select"></select>
 	</div></div>
 
 	<div class="row inherit_w control_panel_buttons"><div class="col justify-content-center inherit_h control_panel_center">
@@ -54,6 +54,18 @@
 		<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
 		<button class="up" id="btn_Player_Info" value="false">Player Info</button>
 	</div></div>
+
+	<div>
+		<iframe src="/html/overlay-preview.html" style="
+		height:1100px;width:2000px;
+		-ms-zoom: 0.5;
+	    -moz-transform: scale(0.5);
+	    -moz-transform-origin: 0 0;
+	    -o-transform: scale(0.5);
+	    -o-transform-origin: 0 0;
+	    -webkit-transform: scale(0.5);
+	    -webkit-transform-origin: 0 0;"></iframe> 
+	</div>
 
 	<div class="row justify-content-center inherit_w control_panel_options">
 		<div class="col control_panel_options_section">
