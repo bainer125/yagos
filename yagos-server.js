@@ -49,7 +49,8 @@ displaying the overlay correctly when loaded.
 */
 
 var scoreboards = [];
-var graphics = [];
+var graphics = [];	// Stores all scoreboards (each scoreboard will have a scoreboards index
+										// and a graphics index)
 var settings = [];
 
 var current = {
@@ -86,6 +87,7 @@ wss.on('connection', function connection ( ws ) {
 				broadcast(x,ws);
 			break;
 			case 'graphics':
+				broadcast(x, ws);
 			break;
 			case 'game':
 				current.Game = event;

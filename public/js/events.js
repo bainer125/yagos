@@ -82,13 +82,13 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 
 			if (!subitem){
 				board[item] = value;
-				if (item.includes("teamInfo")&&overlay){
+				if (item.includes("teamInfo") && overlay){
 					update_teams(board,graphics);
 				}
 			}
 			else{
 				board[item][subitem] = value;
-				if (item.includes("teamInfo")&&overlay){
+				if (item.includes("teamInfo") && overlay){
 					update_teams(board,graphics);
 				}
 			}
@@ -107,7 +107,7 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 	}
 }
 
-function handle_graphics_event( event , graphics = {}, animate = false, graphid=false ){
+function handle_graphics_event( event , graphics = {}, animate = false, graphid = false){
 
 	action = event.action;
 	item = event.item;
@@ -134,12 +134,16 @@ function handle_graphics_event( event , graphics = {}, animate = false, graphid=
 			break;
 
 			case 'hide':
+				console.log("Hiding", item);
+
 				if(animate){
+					console.log("Using animate");
 					mod_elements_by_class( item + "_hide" , graphics , function( elem ) {
 						elem.beginElement();
 					});
 				}
 				else{
+					console.log("Not using animate");
 					mod_elements_by_class( item , graphics , function( elem ) {
 						elem.style.display = 'none';
 					});
@@ -177,7 +181,7 @@ function handle_graphics_event( event , graphics = {}, animate = false, graphid=
 					});
 				}
 				else{
-					graphics[graphid].style.display = 'none';
+					document.getElementById(graphid).style.display = 'none';
 				}
 			break;
 
@@ -188,7 +192,7 @@ function handle_graphics_event( event , graphics = {}, animate = false, graphid=
 					});
 				}
 				else{
-					graphics[graphid].style.display = 'none';
+					document.getElementById(graphid).style.display = 'inline';
 				}
 			break;
 

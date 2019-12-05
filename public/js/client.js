@@ -31,6 +31,36 @@ function sendmessage (item,action,value=false,subitem=false){
     handle_scoreboard_event(obj,boards,true,graphics);
 }
 
+function sendgraphicmessage (action){
+    var msg = {
+        type: "graphics",
+        data: {}
+    }
+
+    // var obj = {
+    //     item: item,
+    //     action: action,
+    //     game: game,
+    //     value: value,
+    //     subitem: subitem
+    // }
+
+    // msg.data = obj;
+    // ws.send(JSON.stringify(msg));
+    // handle_scoreboard_event(obj,boards,true,graphics);
+
+    var temp = {
+        action: action,
+        item: "Scoreboard",
+        value: false
+    };
+
+    msg.data = temp;
+
+    ws.send(JSON.stringify(msg));
+    // handle_graphics_event(temp, graphics, false, "Scoreboard");
+}
+
 function send_self_message (item,action,value=false,subitem=false){
     var msg = {
         type: "score",
