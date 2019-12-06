@@ -68,10 +68,6 @@ window.onload = function () {
 				game = msg.data;
 				request_update();
 			break;
-			case "graphics":
-				console.log(graphics[msg.data.item]);
-				handle_graphics_event( msg.data, graphics, false, msg.data.item);
-			break;
 		}
 	}
 };

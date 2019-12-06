@@ -27,31 +27,20 @@ window.onload = function () {
 		document.getElementById("home_league_select").addEventListener("change",function(){
 			update_team_data("home");
 			boards[game]["home_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("home_league_select").value && x["fullName"] == document.getElementById("home_team_select").value)[0];
-			document.getElementById("home_current_league").innerHTML = boards[game]["home_teamInfo"]["league"];
-			update_team_options();
-			// console.log(boards[game]["home_teamInfo"]);
-			// sendmessage("home_teamInfo","update",boards[game]["home_teamInfo"]);
-			// load_teams();
+			sendmessage("home_teamInfo","update",boards[game]["home_teamInfo"]);
 		});
 		document.getElementById("away_league_select").addEventListener("change",function(){
 			update_team_data("away");
 			boards[game]["away_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("away_league_select").value && x["fullName"] == document.getElementById("away_team_select").value)[0];
-			document.getElementById("away_current_league").innerHTML = boards[game]["away_teamInfo"]["league"];
-			update_team_options();
-			// sendmessage("away_teamInfo","update",boards[game]["away_teamInfo"]);
-			// load_teams();
+			sendmessage("away_teamInfo","update",boards[game]["away_teamInfo"]);
 		});
 		document.getElementById("home_team_select").addEventListener("change",function(){
 			boards[game]["home_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("home_league_select").value && x["fullName"] == document.getElementById("home_team_select").value)[0];
-			document.getElementById("home_current_team").innerHTML = boards[game]["home_teamInfo"]["fullName"];
 			sendmessage("home_teamInfo","update",boards[game]["home_teamInfo"]);
-			load_teams();
 		});
 		document.getElementById("away_team_select").addEventListener("change",function(){
 			boards[game]["away_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("away_league_select").value && x["fullName"] == document.getElementById("away_team_select").value)[0];
-			document.getElementById("away_current_team").innerHTML = boards[game]["away_teamInfo"]["fullName"];
 			sendmessage("away_teamInfo","update",boards[game]["away_teamInfo"]);
-			load_teams();
 		});
 		load_teams();
 		add_color_event_listeners();
@@ -101,31 +90,19 @@ function update_options () {
 		}
 	});
 
-	// console.log(leagues);
+	//console.log(leagues);
 
-	removeOptions(document.getElementById("home_league_select"));
-	removeOptions(document.getElementById("away_league_select"));
-
-	var homeLeagues = document.getElementById("home_league_select");
-	var homeLeagueTemp = document.createElement("option");
-	homeLeagueTemp.text = "Choose League";
-
-	homeLeagues.add(homeLeagueTemp);
 	leagues.forEach(function(item){
+		var x = document.getElementById("home_league_select");
 		var option = document.createElement("option");
 		option.text = item;
-		homeLeagues.add(option);
+		x.add(option);
 	});
-
-	var awayLeagues = document.getElementById("away_league_select");
-	var awayLeagueTemp = document.createElement("option");
-	awayLeagueTemp.text = "Choose League";
-
-	awayLeagues.add(awayLeagueTemp);
 	leagues.forEach(function(item){
+		var x = document.getElementById("away_league_select");
 		var option = document.createElement("option");
 		option.text = item;
-		awayLeagues.add(option);
+		x.add(option);
 	});
 
 	removeOptions(document.getElementById("home_team_select"));
@@ -137,16 +114,11 @@ function update_options () {
 		return y.test(a["league"]);
 	});
 
-	var homeTeams = document.getElementById("home_team_select");
-	var homeTemp = document.createElement("option");
-	homeTemp.text = "Choose Team";
-
-	homeTeams.add(homeTemp);
 	filtered.forEach(function(item){
-		// var x = document.getElementById("home_team_select");
+		var x = document.getElementById("home_team_select");
 		var option = document.createElement("option");
 		option.text = item["fullName"];
-		homeTeams.add(option);
+		x.add(option);
 	});
 
 	var filtered = teams.filter(function(a){
@@ -155,55 +127,11 @@ function update_options () {
 		return y.test(a["league"]);
 	});
 
-	var awayTeams = document.getElementById("away_team_select");
-	var awayTemp = document.createElement("option");
-	awayTemp.text = "Choose Team";
-
-	awayTeams.add(awayTemp);
 	filtered.forEach(function(item){
+		var x = document.getElementById("away_team_select");
 		var option = document.createElement("option");
 		option.text = item["fullName"];
-		awayTeams.add(option);
-	});
-}
-
-function update_team_options () {
-	removeOptions(document.getElementById("home_team_select"));
-	removeOptions(document.getElementById("away_team_select"));
-
-	var filtered = teams.filter(function(a){
-		var y=new RegExp(document.getElementById("home_league_select").value);
-		//console.log(y);
-		return y.test(a["league"]);
-	});
-
-	var homeTeams = document.getElementById("home_team_select");
-	var homeTemp = document.createElement("option");
-	homeTemp.text = "Choose Team";
-
-	homeTeams.add(homeTemp);
-	filtered.forEach(function(item){
-		// var x = document.getElementById("home_team_select");
-		var option = document.createElement("option");
-		option.text = item["fullName"];
-		homeTeams.add(option);
-	});
-
-	var filtered = teams.filter(function(a){
-		var y=new RegExp(document.getElementById("away_league_select").value);
-		//console.log(y);
-		return y.test(a["league"]);
-	});
-
-	var awayTeams = document.getElementById("away_team_select");
-	var awayTemp = document.createElement("option");
-	awayTemp.text = "Choose Team";
-
-	awayTeams.add(awayTemp);
-	filtered.forEach(function(item){
-		var option = document.createElement("option");
-		option.text = item["fullName"];
-		awayTeams.add(option);
+		x.add(option);
 	});
 }
 

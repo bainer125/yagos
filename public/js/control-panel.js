@@ -20,13 +20,6 @@ window.onload = function () {
 			game = this.value;
 			change_game();
 		});
-
-		/* add event listener to the scoreboard toggle button */
-		document.getElementById("btn_Scoreboard").addEventListener("click", function() {
-			console.log("Scoreboard button clicked!");
-
-			sendgraphicmessage();
-		});
 	}
 
 	ws.onmessage = function (event) {
