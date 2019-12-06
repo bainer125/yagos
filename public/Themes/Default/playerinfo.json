@@ -20,7 +20,7 @@
 		"animate" 			: false,
 		"text"	:
 		{
-			"text" 				: "temp text",
+			"value" 			: "temp text",
 			"font" 				: "",
 			"size" 				: 12,
 			"bold" 				: false,
