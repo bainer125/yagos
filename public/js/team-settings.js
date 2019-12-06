@@ -29,12 +29,17 @@ window.onload = function () {
 			boards[game]["home_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("home_league_select").value && x["fullName"] == document.getElementById("home_team_select").value)[0];
 			document.getElementById("home_current_league").innerHTML = boards[game]["home_teamInfo"]["league"];
 			update_team_options();
+			// console.log(boards[game]["home_teamInfo"]);
+			// sendmessage("home_teamInfo","update",boards[game]["home_teamInfo"]);
+			// load_teams();
 		});
 		document.getElementById("away_league_select").addEventListener("change",function(){
 			update_team_data("away");
 			boards[game]["away_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("away_league_select").value && x["fullName"] == document.getElementById("away_team_select").value)[0];
 			document.getElementById("away_current_league").innerHTML = boards[game]["away_teamInfo"]["league"];
 			update_team_options();
+			// sendmessage("away_teamInfo","update",boards[game]["away_teamInfo"]);
+			// load_teams();
 		});
 		document.getElementById("home_team_select").addEventListener("change",function(){
 			boards[game]["home_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("home_league_select").value && x["fullName"] == document.getElementById("home_team_select").value)[0];
