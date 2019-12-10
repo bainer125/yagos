@@ -13,14 +13,14 @@
  *												shown, which will default to the team's primary logo.
 */
 {
-	"id"		: "player_info",
+	"id"		: "playerinfo",
 	"info"	:
 	{
 		"visible" 			: false,
 		"animate" 			: false,
 		"text"	:
 		{
-			"text" 				: "temp text",
+			"value" 			: "temp text",
 			"font" 				: "",
 			"size" 				: 12,
 			"bold" 				: false,

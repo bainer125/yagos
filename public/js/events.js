@@ -80,15 +80,15 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 
 		case 'update':
 
-			if (!subitem){
-				board[item] = value;
-				if (item.includes("teamInfo")&&overlay){
+			if (!subitem) {
+				board[item] = JSON.parse(JSON.stringify(value));
+				if (item.includes("teamInfo") && overlay){
 					update_teams(board,graphics);
 				}
 			}
-			else{
+			else {
 				board[item][subitem] = value;
-				if (item.includes("teamInfo")&&overlay){
+				if (item.includes("teamInfo") && overlay){
 					update_teams(board,graphics);
 				}
 			}
@@ -253,9 +253,9 @@ function update_full_info ( team , info , board , graphics = {} ){
 
 	var info = team + "_" + info;
 	Object.keys(board[info]).forEach(function(key){
-		if(key.includes("logo")||key.includes("image")||key.includes("photo")){
-			mod_elements_by_class ( team+"_"+key , graphics , function(elem){
-				if(elem.tagName=="IMG"){
+		if(key.includes("logo") || key.includes("image") || key.includes("photo")){
+			mod_elements_by_class ( team+"_"+key , graphics , function(elem) {
+				if(elem.tagName == "IMG"){
 					elem.src = board[info][key];
 				}
 				else{
@@ -266,13 +266,13 @@ function update_full_info ( team , info , board , graphics = {} ){
 		else if(key.includes("color")){
 			mod_elements_by_class ( team+"_"+key , graphics , function(elem){
 				if(elem.tagName=="stop"){
-					elem.style["stop-color"]=board[info][key];
+					elem.style["stop-color"] = board[info][key];
 				}
-				else if(elem.tagName=="INPUT"){
-					elem.value=board[info][key];
+				else if(elem.tagName == "INPUT"){
+					elem.value = board[info][key];
 				}
 				else{
-					elem.style.fill=board[info][key];
+					elem.style.fill = board[info][key];
 				}
 			});
 		}
