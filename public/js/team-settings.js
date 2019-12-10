@@ -37,6 +37,7 @@ window.onload = function () {
 		document.getElementById("home_team_select").addEventListener("change",function(){
 			boards[game]["home_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("home_league_select").value && x["fullName"] == document.getElementById("home_team_select").value)[0];
 			sendmessage("home_teamInfo","update",boards[game]["home_teamInfo"]);
+			console.log(teams);
 		});
 		document.getElementById("away_team_select").addEventListener("change",function(){
 			boards[game]["away_teamInfo"] = teams.filter(x => x["league"] == document.getElementById("away_league_select").value && x["fullName"] == document.getElementById("away_team_select").value)[0];
@@ -164,12 +165,12 @@ function removeOptions(selectbox){
 function add_color_event_listeners () {
 	edit_elements_by_class ("home_color" , function(elem){
 		elem.addEventListener("change",function(){
-			sendmessage("home_teamInfo","update",this.value,(this.id).split("_")[1]);
+			sendmessage("home_teamInfo", "update", this.value, (this.id).split("_")[1]);
 		});
 	});
-	edit_elements_by_class ("away_color" , function(elem){
-		elem.addEventListener("change",function(){
-			sendmessage("away_teamInfo","update",this.value,(this.id).split("_")[1]);
+	edit_elements_by_class ("away_color", function(elem){
+		elem.addEventListener("change", function(){
+			sendmessage("away_teamInfo", "update", this.value, (this.id).split("_")[1]);
 		});
 	});
 }
