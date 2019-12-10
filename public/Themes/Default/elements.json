@@ -1,0 +1,15 @@
+/*
+ * This file is meant to show which overlays should be enabled/shown as options
+ * on the control panel.
+ *
+ * Format:
+ * 
+ *		"Name of overlay (same name that the svg and json files use)": true (to enable) / false (to disable)
+ *
+*/
+
+{
+	"intermission": true,
+	"playerinfoi": false,
+	"scoreboard": true
+}

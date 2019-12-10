@@ -13,7 +13,7 @@
  *												shown, which will default to the team's primary logo.
 */
 {
-	"id"		: "player_info",
+	"id"		: "playerinfo",
 	"info"	:
 	{
 		"visible" 			: false,
