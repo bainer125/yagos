@@ -20,6 +20,15 @@ window.onload = function () {
 			game = this.value;
 			change_game();
 		});
+
+		document.getElementById("btn_Scoreboard").addEventListener("click", function() {
+			var event = {
+				"action" : "hide",
+				"item" : "Scoreboard",
+				"value" : ""
+			};
+
+		});
 	}
 
 	ws.onmessage = function (event) {

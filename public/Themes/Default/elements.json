@@ -10,6 +10,6 @@
 
 {
 	"intermission": true,
-	"playerinfoi": false,
+	"playerinfo": false,
 	"scoreboard": true
 }

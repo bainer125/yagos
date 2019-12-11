@@ -11,7 +11,11 @@ window.onload = function () {
 	graphics["Scoreboard"] = document.getElementById('Scoreboard').contentDocument;
 	graphics["Intermission"] = document.getElementById('Intermission').contentDocument;
 	console.log(graphics);
-	if(preview){make_graphics_draggable();}
+
+	if(preview){
+		make_graphics_draggable();
+	}
+
 	ws = new WebSocket("ws://"+location.host);
 
 	// Bind button actions after websockets connection has been established

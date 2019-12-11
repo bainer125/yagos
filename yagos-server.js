@@ -81,20 +81,25 @@ wss.on('connection', function connection ( ws ) {
 		var x = JSON.parse(mess);
 		var event = x.data;
 		switch (x.type){
+			
 			case 'score':
 				handle_scoreboard_event( event , scoreboards );
 				broadcast(x,ws);
 			break;
+			
 			case 'graphics':
 			break;
+			
 			case 'game':
 				current.Game = event;
 				broadcast(x,ws);
 			break;
+			
 			case 'game request':
 				gamereq.data = scoreboards;
 				ws.send(JSON.stringify(gamereq));
 			break;
+
 			case 'load teams':
 				var raw = fs.readFileSync('./public/Teams/team-data.json');
 				var data = JSON.parse(raw);
@@ -115,6 +120,7 @@ wss.on('connection', function connection ( ws ) {
 				}
 				broadcast(msg,ws,false);
 			break;
+
 		}
 	})
 });
@@ -153,8 +159,6 @@ function add_new_scoreboard(title,mode){
 
 	// Add scoreboard object to scoreboards array
 	scoreboards.push(new Scoreboard(title,mode,update_display));
-
-	//console.log (scoreboards[0]);
 }
 
 function broadcast(data,ws,exclude=true){

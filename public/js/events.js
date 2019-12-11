@@ -107,7 +107,7 @@ function handle_scoreboard_event ( event , boards , overlay = false, graphics = 
 	}
 }
 
-function handle_graphics_event( event , graphics = {}, animate = false, graphid=false ){
+function handle_graphics_event( event , graphics = {}, animate = false, graphid=false){
 
 	action = event.action;
 	item = event.item;

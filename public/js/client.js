@@ -31,6 +31,25 @@ function sendmessage (item,action,value=false,subitem=false){
     handle_scoreboard_event(obj,boards,true,graphics);
 }
 
+function send_graphics_message (item, action, value=false, subitem=false) {
+    var msg = {
+        type: "graphics",
+        data: {}
+    }
+
+    var obj = {
+        item: item,
+        action: action,
+        value: value
+    }
+
+    msg.data = obj;
+
+    ws.send(JSON.stringify(msg));
+
+    handle_graphics_event(obj, graphics, true, item);
+}
+
 function send_self_message (item,action,value=false,subitem=false){
     var msg = {
         type: "score",

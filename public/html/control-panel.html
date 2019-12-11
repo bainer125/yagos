@@ -21,7 +21,6 @@
 			<h1>Control Panel</h1>
 		</div>
 		<div class="col inherit_h menu_mode_div">
-			
 		</div>
 	</div>
 <!-- ========================= -->
@@ -47,13 +46,15 @@
 		<select id="game_select"></select>
 	</div></div>
 
-	<div class="row inherit_w control_panel_buttons"><div class="col justify-content-center inherit_h control_panel_center">
-		<button class="up" id="btn_Scoreboard" value="true" onclick="button_animation(this)">Scoreboard</button>
-		<button class="up" id="btn_Intermission" value="false">Intermission</button>
-		<button class="up" id="btn_Commercial" value="false">Commercial</button>
-		<button class="up" id="btn_Full_Screen" value="false">Full Screen</button>
-		<button class="up" id="btn_Player_Info" value="false">Player Info</button>
-	</div></div>
+	<div class="row inherit_w control_panel_buttons">
+		<div class="col justify-content-center inherit_h control_panel_center">
+			<button class="up" id="btn_Scoreboard" value="true"> Scoreboard</button>
+			<button class="up" id="btn_Intermission" value="false"> Intermission</button>
+			<button class="up" id="btn_Commercial" value="false"> Commercial</button>
+			<button class="up" id="btn_Full_Screen" value="false"> Full Screen</button>
+			<button class="up" id="btn_Player_Info" value="false"> Player Info</button>
+		</div>
+	</div>
 
 	<div>
 		<iframe src="/html/overlay-preview.html" style="
@@ -90,7 +91,7 @@
 				<h2>Intermission Options</h2>
 			</div></div>
 			<div class="row option_section_content"><div class="col inherit_w inherit_h">
-				<div id="outer"><div id="inner">
+				<div id="outer"><div id="inner"> 
 					<form action="/action_page.php" method="get">
 						<input type="checkbox" name="test1" value="test1">Animate Goal<br>
 						<input type="checkbox" name="test2" value="test2">Animate Shots<br>
@@ -127,5 +128,6 @@
 	<script type="text/javascript" src="/js/classes.js"></script>
 	<script type="text/javascript" src="/js/events.js"></script>
 	<script type="text/javascript" src="/js/client.js"></script>
+	<script type="text/javascript" src="/js/overlay.js"></script>
 	<script type="text/javascript" src="/js/control-panel.js"></script>
 </html>

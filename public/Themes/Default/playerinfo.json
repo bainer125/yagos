@@ -8,7 +8,7 @@
  * 4 options for this specific graphic overlay:
  * 		- visible : whether this is seen on the screen.
  * 		- animate : whether this overlay is animated when it is shown or hidden.
- * 		- display_text : all attributes of the text shown on the overlay.
+ * 		- text : all attributes of the text shown on the overlay.
  * 		- player_headshot : the attributes of the picture of the player to be
  *												shown, which will default to the team's primary logo.
 */
